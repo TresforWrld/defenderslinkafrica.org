@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DefenderLink Africa - Protecting human rights defenders across the African continent. We provide emergency support, training, and advocacy for those who protect others.">
-    <meta name="keywords" content="human rights, defenders, Africa, NGO, protection, advocacy, emergency support, training">
+    <meta name="description" content="DefenderLink Africa - Protecting human rights defenders across the African continent.">
+    <meta name="keywords" content="human rights, defenders, Africa, NGO, protection, advocacy">
     <meta property="og:title" content="DefenderLink Africa - Protecting Those Who Protect Others">
-    <meta property="og:description" content="A pan-African organization dedicated to the protection and support of human rights defenders across the continent.">
+    <meta property="og:description" content="A pan-African organization dedicated to the protection of human rights defenders.">
     <meta property="og:image" content="https://i.imgur.com/KbDuWry.png">
-    <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="https://i.imgur.com/26vbOoF.png">
     <link rel="apple-touch-icon" href="https://i.imgur.com/26vbOoF.png">
@@ -17,49 +16,41 @@
     <style>
         :root {
             --deep-brown: #2C1810;
-            --espresso: #1E0F06;
-            --rich-brown: #4A2C1A;
-            --warm-brown: #6B3A2A;
-            --copper: #8B5E3C;
-            --terracotta: #A0522D;
-            --tan: #C49A6C;
-            --sand: #D4A574;
-            --cream: #F5EDE3;
-            --warm-cream: #FAF3E4;
-            --parchment: #FDF8F0;
+            --espresso: #1A0D06;
+            --rich-brown: #3E2016;
+            --warm-brown: #5C3424;
+            --copper: #7D4E34;
+            --terracotta: #8B5A3C;
+            --tan: #B88962;
+            --sand: #C9A07A;
+            --cream: #F2E8DC;
+            --warm-cream: #F7F0E6;
+            --parchment: #FBF6EF;
             --gold-accent: #C8963E;
-            --gold-light: #D4A84B;
+            --gold-light: #D9B056;
             --gold-dark: #A67C2E;
             --white: #FFFFFF;
-            --off-white: #FEFCF9;
-            --text-dark: #1E0F06;
-            --text-medium: #3E2415;
-            --text-muted: #7A5C4A;
-            --border-subtle: rgba(139, 94, 60, 0.2);
-            --border-medium: rgba(139, 94, 60, 0.35);
-            --shadow-sm: 0 1px 3px rgba(30, 15, 6, 0.08);
-            --shadow-md: 0 4px 16px rgba(30, 15, 6, 0.12);
-            --shadow-lg: 0 12px 40px rgba(30, 15, 6, 0.18);
-            --shadow-xl: 0 20px 60px rgba(30, 15, 6, 0.25);
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 16px;
-            --radius-xl: 24px;
-            --radius-full: 50%;
-            --space-xs: 0.5rem;
-            --space-sm: 0.75rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-2xl: 3rem;
-            --space-3xl: 4rem;
-            --space-4xl: 6rem;
-            --transition-fast: 0.2s ease;
-            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --off-white: #FEFBF8;
+            --text-dark: #1A0D06;
+            --text-medium: #3E2016;
+            --text-muted: #7D5C4A;
+            --border-subtle: rgba(139, 94, 60, 0.18);
+            --border-medium: rgba(139, 94, 60, 0.3);
+            --shadow-sm: 0 2px 8px rgba(26, 13, 6, 0.06);
+            --shadow-md: 0 6px 24px rgba(26, 13, 6, 0.1);
+            --shadow-lg: 0 14px 48px rgba(26, 13, 6, 0.16);
+            --shadow-xl: 0 22px 64px rgba(26, 13, 6, 0.22);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-2xl: 28px;
+            --font-heading: 'Georgia', 'Times New Roman', 'Palatino', serif;
             --font-body: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
-            --max-width: 1200px;
+            --max-width: 1120px;
+            --transition-smooth: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-fast: 0.2s ease;
         }
 
         *,
@@ -96,46 +87,56 @@
             position: fixed;
             inset: 0;
             background: linear-gradient(180deg,
-                    rgba(253, 248, 240, 0.92) 0%,
-                    rgba(245, 237, 227, 0.88) 30%,
-                    rgba(245, 237, 227, 0.9) 60%,
-                    rgba(240, 230, 218, 0.93) 100%);
+                    rgba(251, 246, 239, 0.9) 0%,
+                    rgba(247, 240, 230, 0.88) 25%,
+                    rgba(242, 232, 220, 0.9) 50%,
+                    rgba(240, 228, 214, 0.92) 100%);
             z-index: -1;
             pointer-events: none;
         }
 
-        /* ============ TYPOGRAPHY ============ */
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--copper);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--warm-brown);
+        }
+
+        /* Typography */
         h1,
         h2,
         h3,
-        h4,
-        h5,
-        h6 {
+        h4 {
             font-family: var(--font-heading);
             font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
             color: var(--deep-brown);
         }
-
         h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
         }
         h2 {
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
         }
         h3 {
-            font-size: clamp(1.25rem, 2vw, 1.6rem);
+            font-size: clamp(1.1rem, 1.6vw, 1.35rem);
         }
         h4 {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
         }
-
         p {
-            margin-bottom: var(--space-md);
+            margin-bottom: 1rem;
             color: var(--text-medium);
         }
-
         a {
             color: var(--warm-brown);
             text-decoration: none;
@@ -144,16 +145,14 @@
         a:hover {
             color: var(--terracotta);
         }
-
         .lead {
-            font-size: 1.15rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            line-height: 1.75;
             color: var(--text-medium);
             font-weight: 500;
         }
-
         .text-small {
-            font-size: 0.875rem;
+            font-size: 0.85rem;
         }
         .text-muted {
             color: var(--text-muted);
@@ -165,80 +164,78 @@
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 var(--space-xl);
+            padding: 0 1.5rem;
         }
-
         .section {
-            padding: var(--space-4xl) 0;
+            padding: 5rem 0;
             position: relative;
         }
         .section-sm {
-            padding: var(--space-3xl) 0;
+            padding: 3rem 0;
             position: relative;
         }
 
         .section-header {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto var(--space-3xl);
+            max-width: 650px;
+            margin: 0 auto 3.5rem;
         }
         .section-overline {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-sm);
+            display: inline-block;
             font-family: var(--font-body);
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.22em;
             color: var(--copper);
-            margin-bottom: var(--space-md);
-            padding-bottom: var(--space-sm);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--gold-accent);
         }
         .section-title {
-            margin-bottom: var(--space-md);
+            margin-bottom: 0.8rem;
         }
         .section-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--text-muted);
-            max-width: 550px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        .decorative-line {
-            width: 60px;
+        /* Decorative accent line */
+        .accent-line {
+            width: 50px;
             height: 3px;
             background: var(--gold-accent);
             border-radius: 2px;
-            margin-bottom: var(--space-lg);
+            margin: 0 auto 1.5rem;
         }
-        .decorative-line-left {
+        .accent-line-left {
             margin-left: 0;
         }
 
-        /* ============ BUTTONS ============ */
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: var(--space-sm);
-            padding: 0.85rem 1.75rem;
+            gap: 0.5rem;
+            padding: 0.8rem 1.6rem;
             font-family: var(--font-body);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             border-radius: var(--radius-md);
             cursor: pointer;
             transition: all var(--transition-smooth);
             text-decoration: none;
             border: 2px solid transparent;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
             position: relative;
             overflow: hidden;
-            white-space: nowrap;
-            letter-spacing: 0.01em;
         }
         .btn-lg {
-            padding: 1rem 2.25rem;
-            font-size: 1rem;
+            padding: 0.95rem 2.2rem;
+            font-size: 0.95rem;
             border-radius: var(--radius-lg);
         }
         .btn-primary {
@@ -251,8 +248,8 @@
             background: var(--rich-brown);
             border-color: var(--rich-brown);
             color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
         }
         .btn-white {
             background: var(--white);
@@ -264,7 +261,19 @@
             background: var(--cream);
             border-color: var(--cream);
             color: var(--deep-brown);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        .btn-outline-white {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        .btn-outline-white:hover {
+            background: var(--white);
+            color: var(--deep-brown);
+            border-color: var(--white);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
         .btn-outline {
@@ -276,23 +285,8 @@
             background: var(--warm-brown);
             color: var(--white);
             border-color: var(--warm-brown);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
-        }
-        .btn-outline-white {
-            background: transparent;
-            color: var(--white);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-        .btn-outline-white:hover {
-            background: var(--white);
-            color: var(--deep-brown);
-            border-color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        .btn svg {
-            flex-shrink: 0;
         }
 
         /* ============ NAVIGATION ============ */
@@ -302,15 +296,14 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 0;
+            background: rgba(26, 13, 6, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(200, 150, 62, 0.18);
             transition: all var(--transition-smooth);
-            background: rgba(30, 15, 6, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(200, 150, 62, 0.2);
         }
         .nav.scrolled {
-            background: rgba(30, 15, 6, 0.95);
+            background: rgba(26, 13, 6, 0.96);
             box-shadow: var(--shadow-lg);
         }
         .nav-inner {
@@ -319,23 +312,23 @@
             justify-content: space-between;
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0.6rem var(--space-xl);
-            gap: var(--space-lg);
+            padding: 0.55rem 1.5rem;
+            gap: 1rem;
         }
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: var(--space-md);
+            gap: 0.7rem;
             text-decoration: none;
             flex-shrink: 0;
         }
         .nav-logo img {
-            height: 44px;
+            height: 40px;
             width: auto;
             transition: transform var(--transition-smooth);
         }
         .nav-logo:hover img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
         .nav-logo-text {
             display: flex;
@@ -344,29 +337,29 @@
         .nav-logo-title {
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--white);
             letter-spacing: 0.02em;
             line-height: 1.2;
         }
         .nav-logo-subtitle {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--gold-accent);
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.16em;
             font-weight: 500;
         }
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: var(--space-xs);
+            gap: 0.2rem;
         }
         .nav-link {
             display: inline-block;
-            padding: 0.5rem 0.9rem;
-            font-size: 0.85rem;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.82rem;
             font-weight: 500;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.78);
             text-decoration: none;
             border-radius: var(--radius-sm);
             transition: all var(--transition-fast);
@@ -376,30 +369,34 @@
         .nav-link:hover,
         .nav-link.active {
             color: var(--white);
-            background: rgba(200, 150, 62, 0.2);
+            background: rgba(200, 150, 62, 0.18);
         }
         .nav-link.donate {
             background: var(--gold-accent) !important;
             color: var(--deep-brown) !important;
             font-weight: 700;
-            padding: 0.55rem 1.3rem;
+            padding: 0.5rem 1.2rem;
             border-radius: var(--radius-md);
-            margin-left: var(--space-sm);
-            box-shadow: 0 2px 8px rgba(200, 150, 62, 0.35);
+            margin-left: 0.4rem;
+            box-shadow: 0 2px 10px rgba(200, 150, 62, 0.3);
             transition: all var(--transition-smooth);
         }
         .nav-link.donate:hover {
             background: var(--gold-light) !important;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(200, 150, 62, 0.5);
+            box-shadow: 0 6px 22px rgba(200, 150, 62, 0.45);
         }
+
+        /* Hamburger */
         .nav-hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            padding: var(--space-sm);
+            padding: 0.5rem;
             z-index: 1001;
+            background: none;
+            border: none;
         }
         .nav-hamburger span {
             display: block;
@@ -414,53 +411,73 @@
         }
         .nav-hamburger.active span:nth-child(2) {
             opacity: 0;
+            transform: scaleX(0);
         }
         .nav-hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .mobile-menu {
+        /* Fullscreen mobile overlay */
+        .mobile-overlay {
             position: fixed;
-            top: 0;
-            right: -100%;
-            width: 300px;
-            height: 100vh;
-            background: var(--espresso);
+            inset: 0;
+            background: rgba(26, 13, 6, 0.97);
             z-index: 999;
-            padding: 5rem var(--space-xl) var(--space-xl);
-            transition: right var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-smooth);
+        }
+        .mobile-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-overlay-inner {
+            text-align: center;
             display: flex;
             flex-direction: column;
-            gap: var(--space-sm);
-            box-shadow: var(--shadow-xl);
+            gap: 0.3rem;
         }
-        .mobile-menu.active {
-            right: 0;
-        }
-        .mobile-menu-link {
+        .mobile-overlay-link {
             display: block;
-            padding: var(--space-md);
+            padding: 0.9rem 1.5rem;
             color: var(--cream);
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             font-weight: 500;
             text-decoration: none;
-            border-radius: var(--radius-md);
+            letter-spacing: 0.04em;
             transition: all var(--transition-fast);
+            border-radius: var(--radius-md);
         }
-        .mobile-menu-link:hover {
-            background: rgba(200, 150, 62, 0.2);
+        .mobile-overlay-link:hover {
             color: var(--gold-light);
+            background: rgba(200, 150, 62, 0.1);
+        }
+        .mobile-overlay-link.donate-mobile {
+            color: var(--gold-accent);
+            font-weight: 700;
+            font-size: 1.3rem;
+            border: 2px solid var(--gold-accent);
+            border-radius: var(--radius-lg);
+            margin-top: 0.8rem;
+            padding: 0.8rem 2rem;
+        }
+        .mobile-overlay-link.donate-mobile:hover {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
         }
 
-        /* ============ HERO ============ */
+        /* ============ HERO (60vh) ============ */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding-top: 80px;
+            padding-top: 70px;
         }
         .hero-bg {
             position: absolute;
@@ -471,64 +488,94 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
+            object-position: center 30%;
+            animation: hero-zoom 8s ease-in-out infinite alternate;
+        }
+        @keyframes hero-zoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.06);
+            }
         }
         .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg,
-                    rgba(30, 15, 6, 0.75) 0%,
-                    rgba(44, 24, 16, 0.7) 40%,
-                    rgba(30, 15, 6, 0.85) 100%);
+                    rgba(26, 13, 6, 0.7) 0%,
+                    rgba(44, 24, 16, 0.65) 50%,
+                    rgba(26, 13, 6, 0.8) 100%);
         }
         .hero-content {
             position: relative;
             z-index: 2;
             text-align: center;
-            max-width: 850px;
-            padding: var(--space-2xl) var(--space-xl);
+            max-width: 750px;
+            padding: 2rem 1.5rem;
         }
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: var(--space-sm);
-            background: rgba(200, 150, 62, 0.2);
-            border: 1px solid rgba(200, 150, 62, 0.5);
-            padding: 0.5rem 1.2rem;
+            gap: 0.5rem;
+            background: rgba(200, 150, 62, 0.18);
+            border: 1px solid rgba(200, 150, 62, 0.4);
+            padding: 0.4rem 1.1rem;
             border-radius: 50px;
-            margin-bottom: var(--space-xl);
-            backdrop-filter: blur(8px);
+            margin-bottom: 1.8rem;
+            backdrop-filter: blur(6px);
+            animation: fadeInDown 1s ease forwards;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .hero-badge-dot {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             background: var(--gold-accent);
-            border-radius: var(--radius-full);
+            border-radius: 50%;
             animation: pulse-dot 2s ease-in-out infinite;
         }
         @keyframes pulse-dot {
             0%,
             100% {
-                opacity: 1;
                 box-shadow: 0 0 0 0 rgba(200, 150, 62, 0.6);
             }
             50% {
-                opacity: 0.6;
-                box-shadow: 0 0 0 12px rgba(200, 150, 62, 0);
+                box-shadow: 0 0 0 10px rgba(200, 150, 62, 0);
             }
         }
         .hero-badge-text {
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             font-weight: 600;
             color: var(--gold-light);
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.14em;
         }
         .hero-title {
             color: var(--white);
-            margin-bottom: var(--space-lg);
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .hero-title span {
             color: var(--gold-accent);
@@ -538,392 +585,211 @@
         .hero-title span::after {
             content: '';
             position: absolute;
-            bottom: 4px;
+            bottom: 3px;
             left: 0;
             width: 100%;
             height: 3px;
             background: var(--gold-accent);
             border-radius: 2px;
-            opacity: 0.6;
+            opacity: 0.5;
         }
         .hero-subtitle {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
-            margin: 0 auto var(--space-2xl);
-            line-height: 1.8;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.78);
+            max-width: 550px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease 0.35s forwards;
+            opacity: 0;
         }
         .hero-buttons {
             display: flex;
-            gap: var(--space-md);
+            gap: 0.8rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: var(--space-3xl);
-        }
-        .hero-stats {
-            display: flex;
-            gap: var(--space-2xl);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .hero-stat {
-            text-align: center;
-        }
-        .hero-stat-number {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--gold-accent);
-            line-height: 1;
-        }
-        .hero-stat-label {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: var(--space-xs);
-        }
-        .hero-scroll {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: var(--space-xs);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            animation: bounce-down 2s ease-in-out infinite;
-        }
-        @keyframes bounce-down {
-            0%,
-            100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            50% {
-                transform: translateX(-50%) translateY(10px);
-            }
+            animation: fadeInUp 1s ease 0.5s forwards;
+            opacity: 0;
         }
 
-        /* ============ ABOUT GRID ============ */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-3xl);
+        /* ============ MISSION SECTION ============ */
+        .mission-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
             align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .about-content {
-            padding-right: var(--space-xl);
-        }
-        .about-image {
+        .mission-image-wrap {
             position: relative;
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-2xl);
             overflow: hidden;
             box-shadow: var(--shadow-xl);
+            width: 100%;
+            max-width: 600px;
+            transition: transform var(--transition-smooth);
         }
-        .about-image img {
+        .mission-image-wrap:hover {
+            transform: translateY(-6px);
+        }
+        .mission-image-wrap img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-2xl);
         }
-        .about-image-badge {
+        .mission-image-badge {
             position: absolute;
-            bottom: var(--space-lg);
-            right: var(--space-lg);
+            bottom: 1.5rem;
+            right: 1.5rem;
             background: var(--deep-brown);
             color: var(--gold-accent);
-            padding: var(--space-md) var(--space-lg);
+            padding: 0.8rem 1.2rem;
             border-radius: var(--radius-lg);
             text-align: center;
             box-shadow: var(--shadow-lg);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(200, 150, 62, 0.3);
+            border: 1px solid rgba(200, 150, 62, 0.25);
+            animation: float-badge 3s ease-in-out infinite;
         }
-        .about-image-badge-number {
+        @keyframes float-badge {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        .mission-image-badge-number {
             font-family: var(--font-heading);
             font-size: 2rem;
             font-weight: 700;
             line-height: 1;
         }
-        .about-image-badge-text {
-            font-size: 0.7rem;
+        .mission-image-badge-text {
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--cream);
         }
         .highlight-box {
-            background: rgba(200, 150, 62, 0.1);
+            background: rgba(200, 150, 62, 0.08);
             border-left: 4px solid var(--gold-accent);
-            padding: var(--space-lg);
+            padding: 1.2rem 1.5rem;
             border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            margin: var(--space-lg) 0;
+            margin: 1rem 0;
+            text-align: left;
         }
         .highlight-box p {
             margin: 0;
             font-style: italic;
             color: var(--text-medium);
             font-family: var(--font-heading);
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
-        /* ============ SERVICES GRID ============ */
+        /* ============ WHAT WE DO (no icons, no learn more) ============ */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-xl);
+            gap: 1.5rem;
         }
         .service-card {
             background: var(--white);
             border-radius: var(--radius-xl);
-            padding: var(--space-2xl);
+            padding: 2rem;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-subtle);
             transition: all var(--transition-smooth);
             position: relative;
-            overflow: hidden;
+            text-align: center;
+            cursor: default;
         }
-        .service-card::before {
+        .service-card::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--copper), var(--gold-accent));
+            bottom: 0;
+            left: 20%;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+            border-radius: 2px;
             transform: scaleX(0);
-            transform-origin: left;
             transition: transform var(--transition-smooth);
         }
         .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
             border-color: var(--border-medium);
         }
-        .service-card:hover::before {
+        .service-card:hover::after {
             transform: scaleX(1);
         }
-        .service-card-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(139, 94, 60, 0.1);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--warm-brown);
-            margin-bottom: var(--space-lg);
-            transition: all var(--transition-smooth);
-        }
-        .service-card:hover .service-card-icon {
-            background: var(--warm-brown);
-            color: var(--white);
-            transform: scale(1.08);
-        }
-        .service-card-title {
-            margin-bottom: var(--space-sm);
-            font-size: 1.2rem;
-        }
-        .service-card-text {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: var(--space-lg);
-        }
-        .service-card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--warm-brown);
-            transition: all var(--transition-fast);
-        }
-        .service-card-link:hover {
-            gap: var(--space-sm);
-            color: var(--terracotta);
-        }
-
-        /* ============ IMPACT CARDS ============ */
-        .grid {
-            display: grid;
-            gap: var(--space-xl);
-        }
-        .grid-3 {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .grid-4 {
-            grid-template-columns: repeat(4, 1fr);
-        }
-        .impact-card {
-            text-align: center;
-            padding: var(--space-2xl) var(--space-lg);
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-subtle);
-            transition: all var(--transition-smooth);
-        }
-        .impact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold-accent);
-        }
-        .impact-card-number {
+        .service-card-number {
             font-family: var(--font-heading);
             font-size: 3rem;
             font-weight: 700;
-            color: var(--warm-brown);
+            color: rgba(139, 94, 60, 0.12);
             line-height: 1;
-            margin-bottom: var(--space-sm);
+            margin-bottom: 0.5rem;
+            transition: color var(--transition-smooth);
         }
-        .impact-card-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .service-card:hover .service-card-number {
+            color: rgba(200, 150, 62, 0.25);
         }
-        .quote-block {
-            background: var(--white);
-            padding: var(--space-2xl);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-subtle);
-            position: relative;
-        }
-        .quote-block::before {
-            content: '\201C';
-            position: absolute;
-            top: var(--space-md);
-            left: var(--space-lg);
-            font-size: 5rem;
-            color: rgba(200, 150, 62, 0.2);
-            font-family: var(--font-heading);
-            line-height: 1;
-            pointer-events: none;
-        }
-        .quote-block p {
-            position: relative;
-            z-index: 1;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--text-medium);
-        }
-
-        /* ============ COUNTRIES GRID ============ */
-        .countries-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-lg);
-        }
-        .country-card {
-            position: relative;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            aspect-ratio: 4/5;
-            cursor: pointer;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-smooth);
-        }
-        .country-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-        }
-        .country-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-smooth);
-        }
-        .country-card:hover img {
-            transform: scale(1.08);
-        }
-        .country-card-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: var(--space-xl) var(--space-lg);
-            background: linear-gradient(transparent, rgba(30, 15, 6, 0.9));
-            color: var(--white);
-        }
-        .country-card-name {
-            color: var(--white);
-            font-size: 1.3rem;
-            margin-bottom: 2px;
-        }
-        .country-card-count {
-            font-size: 0.8rem;
-            color: var(--gold-light);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* ============ CARD (NEWS) ============ */
-        .card {
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-subtle);
-            transition: all var(--transition-smooth);
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--border-medium);
-        }
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .card-body {
-            padding: var(--space-xl);
-        }
-        .card-label {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--warm-brown);
-            background: rgba(139, 94, 60, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            margin-bottom: var(--space-md);
-        }
-        .card-title {
+        .service-card-title {
+            margin-bottom: 0.6rem;
             font-size: 1.15rem;
-            margin-bottom: var(--space-sm);
-        }
-        .card-title a {
             color: var(--deep-brown);
         }
-        .card-title a:hover {
-            color: var(--warm-brown);
-        }
-        .card-text {
-            font-size: 0.9rem;
+        .service-card-text {
             color: var(--text-muted);
-            margin-bottom: var(--space-lg);
-        }
-        .card-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: var(--space-md);
-            border-top: 1px solid var(--border-subtle);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.6;
         }
 
-        /* ============ CTA SECTION ============ */
+        /* ============ WHERE WE WORK (text-based, no images) ============ */
+        .countries-text-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+        .country-text-card {
+            background: var(--white);
+            padding: 1.8rem 1rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            transition: all var(--transition-smooth);
+            cursor: default;
+        }
+        .country-text-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold-accent);
+            background: var(--warm-cream);
+        }
+        .country-text-name {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--deep-brown);
+            margin-bottom: 0.2rem;
+        }
+        .country-text-role {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        /* ============ CTA ============ */
         .cta-section {
             background: var(--deep-brown);
-            padding: var(--space-4xl) 0;
+            padding: 5rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -931,33 +797,42 @@
         .cta-section::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -40%;
+            left: -40%;
+            width: 180%;
+            height: 180%;
             background: radial-gradient(ellipse at center,
-                    rgba(200, 150, 62, 0.08) 0%,
-                    transparent 60%);
+                    rgba(200, 150, 62, 0.06) 0%,
+                    transparent 55%);
             pointer-events: none;
+            animation: rotate-glow 20s linear infinite;
+        }
+        @keyframes rotate-glow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
         .cta-content {
             position: relative;
             z-index: 1;
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto;
         }
         .cta-title {
             color: var(--white);
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1rem;
         }
         .cta-text {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-            margin-bottom: var(--space-2xl);
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 1rem;
+            margin-bottom: 2rem;
         }
         .cta-buttons {
             display: flex;
-            gap: var(--space-md);
+            gap: 0.8rem;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -970,13 +845,13 @@
             background-repeat: no-repeat;
             position: relative;
             color: var(--cream);
-            padding: var(--space-4xl) 0 var(--space-xl);
+            padding: 4rem 0 1.5rem;
         }
         .footer::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(30, 15, 6, 0.92);
+            background: rgba(26, 13, 6, 0.93);
             z-index: 0;
         }
         .footer>.container {
@@ -986,21 +861,21 @@
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
-            gap: var(--space-2xl);
-            margin-bottom: var(--space-3xl);
+            gap: 2rem;
+            margin-bottom: 2.5rem;
         }
         .footer-brand p {
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
             line-height: 1.7;
         }
         .footer-title {
             color: var(--gold-accent);
             font-family: var(--font-body);
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: var(--space-lg);
+            letter-spacing: 0.14em;
+            margin-bottom: 1rem;
             font-weight: 700;
         }
         .footer-links {
@@ -1008,130 +883,84 @@
             padding: 0;
         }
         .footer-links li {
-            margin-bottom: var(--space-sm);
+            margin-bottom: 0.4rem;
         }
         .footer-links a {
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
             transition: all var(--transition-fast);
         }
         .footer-links a:hover {
             color: var(--gold-light);
-            padding-left: 4px;
+            padding-left: 3px;
         }
         .footer-contact-item {
             display: flex;
             align-items: flex-start;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-md);
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 0.9rem;
+            gap: 0.5rem;
+            margin-bottom: 0.7rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
         }
         .footer-contact-item svg {
             flex-shrink: 0;
             color: var(--gold-accent);
-            margin-top: 2px;
+            margin-top: 3px;
         }
         .footer-bottom {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: var(--space-md);
-            padding-top: var(--space-xl);
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         .footer-copyright {
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.78rem;
             margin: 0;
         }
         .footer-bottom-links {
             display: flex;
-            gap: var(--space-lg);
+            gap: 1.2rem;
         }
         .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.78rem;
             transition: color var(--transition-fast);
         }
         .footer-bottom-links a:hover {
             color: var(--gold-light);
         }
 
-        /* ============ ANIMATIONS ============ */
-        .fade-in {
+        /* ============ SCROLL ANIMATIONS ============ */
+        .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(35px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        .fade-in.visible {
+        .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .fade-in-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .fade-in-right {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .delay-1 {
+        .reveal-delay-1 {
             transition-delay: 0.1s;
         }
-        .delay-2 {
+        .reveal-delay-2 {
             transition-delay: 0.2s;
         }
-        .delay-3 {
+        .reveal-delay-3 {
             transition-delay: 0.3s;
         }
-        .delay-4 {
+        .reveal-delay-4 {
             transition-delay: 0.4s;
         }
-        .delay-5 {
+        .reveal-delay-5 {
             transition-delay: 0.5s;
         }
-        .delay-6 {
+        .reveal-delay-6 {
             transition-delay: 0.6s;
-        }
-
-        .gap-xs {
-            gap: var(--space-xs);
-        }
-        .gap-sm {
-            gap: var(--space-sm);
-        }
-        .gap-md {
-            gap: var(--space-md);
-        }
-        .gap-lg {
-            gap: var(--space-lg);
-        }
-        .gap-xl {
-            gap: var(--space-xl);
-        }
-        .items-center {
-            align-items: center;
         }
 
         /* ============ RESPONSIVE ============ */
@@ -1142,33 +971,17 @@
             .nav-hamburger {
                 display: flex;
             }
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-2xl);
-            }
-            .about-content {
-                padding-right: 0;
-            }
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .countries-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-3 {
+            .countries-text-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .footer-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-            .hero-stats {
-                gap: var(--space-xl);
-            }
-            .hero-stat-number {
-                font-size: 2rem;
+            .hero {
+                min-height: 55vh;
             }
         }
 
@@ -1176,27 +989,67 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            .grid-4 {
-                grid-template-columns: 1fr 1fr;
-            }
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-            .countries-grid {
-                grid-template-columns: 1fr 1fr;
+            .countries-text-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .hero {
+                min-height: 55vh;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
             }
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            .hero-stats {
-                gap: var(--space-lg);
+            .section {
+                padding: 3rem 0;
             }
-            .hero-stat-number {
-                font-size: 1.6rem;
+            .cta-section {
+                padding: 3rem 0;
+            }
+            .nav-logo-text {
+                display: none;
+            }
+            .mission-wrapper {
+                gap: 2rem;
+            }
+            .mobile-overlay-link {
+                font-size: 1rem;
+                padding: 0.7rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countries-text-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                min-height: 50vh;
+            }
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            .hero-badge-text {
+                font-size: 0.65rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .service-card {
+                padding: 1.5rem;
+            }
+            .service-card-number {
+                font-size: 2.2rem;
             }
             .footer-bottom {
                 flex-direction: column;
@@ -1205,53 +1058,12 @@
             .footer-bottom-links {
                 justify-content: center;
             }
-            .section {
-                padding: var(--space-3xl) 0;
-            }
-            .container {
-                padding: 0 var(--space-lg);
-            }
-            .nav-logo-text {
-                display: none;
-            }
-            .nav-inner {
-                padding: 0.5rem var(--space-lg);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .grid-4 {
-                grid-template-columns: 1fr;
-            }
-            .countries-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-title {
-                font-size: 2rem;
-            }
-            .hero-subtitle {
-                font-size: 0.95rem;
-            }
-            .hero-stat-number {
-                font-size: 1.4rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-            .mobile-menu {
-                width: 100%;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================
-    NAVIGATION
-    ============================================ -->
+    <!-- ============ NAVIGATION ============ -->
     <nav class="nav" role="navigation" aria-label="Main Navigation" id="navbar">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo" aria-label="DefenderLink Africa Home">
@@ -1273,492 +1085,199 @@
                 <a href="donate.html" class="nav-link donate">Donate</a>
             </div>
 
-            <div class="nav-hamburger" aria-label="Toggle Menu" role="button" tabindex="0" id="hamburger">
+            <button class="nav-hamburger" aria-label="Toggle Menu" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-inner">
-            <a href="index.html" class="mobile-menu-link">Home</a>
-            <a href="about.html" class="mobile-menu-link">About Us</a>
-            <a href="what-we-do.html" class="mobile-menu-link">What We Do</a>
-            <a href="where-we-work.html" class="mobile-menu-link">Where We Work</a>
-            <a href="resources.html" class="mobile-menu-link">Resources</a>
-            <a href="news.html" class="mobile-menu-link">News & Updates</a>
-            <a href="contact.html" class="mobile-menu-link">Contact</a>
-            <a href="donate.html" class="mobile-menu-link" style="color: #D4A84B; font-weight:700;">Donate Now</a>
+    <!-- Fullscreen Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-overlay-inner">
+            <a href="index.html" class="mobile-overlay-link">Home</a>
+            <a href="about.html" class="mobile-overlay-link">About Us</a>
+            <a href="what-we-do.html" class="mobile-overlay-link">What We Do</a>
+            <a href="where-we-work.html" class="mobile-overlay-link">Where We Work</a>
+            <a href="resources.html" class="mobile-overlay-link">Resources</a>
+            <a href="news.html" class="mobile-overlay-link">News & Updates</a>
+            <a href="contact.html" class="mobile-overlay-link">Contact</a>
+            <a href="donate.html" class="mobile-overlay-link donate-mobile">Donate Now</a>
         </div>
     </div>
 
-    <!-- ============================================
-    HERO SECTION
-    ============================================ -->
+    <!-- ============ HERO (60vh, no stats, no scroll) ============ -->
     <section class="hero">
         <div class="hero-bg">
             <img src="https://i.imgur.com/A45UKYU.jpeg" alt="African landscape at sunrise">
         </div>
         <div class="hero-content">
-            <div class="hero-badge fade-in">
+            <div class="hero-badge">
                 <span class="hero-badge-dot"></span>
                 <span class="hero-badge-text">Pan-African Human Rights Organization</span>
             </div>
-
-            <h1 class="hero-title fade-in delay-1">
+            <h1 class="hero-title">
                 Protecting Those Who <span>Protect Others</span>
             </h1>
-
-            <p class="hero-subtitle fade-in delay-2">
-                DefenderLink Africa is a dedicated organization providing emergency support, protection, and advocacy for human rights defenders across the African continent. We stand with those who courageously defend the rights of others.
+            <p class="hero-subtitle">
+                DefenderLink Africa provides emergency support, protection, and advocacy for human rights defenders across the African continent.
             </p>
-
-            <div class="hero-buttons fade-in delay-3">
-                <a href="donate.html" class="btn btn-white btn-lg">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                    </svg>
-                    Support Our Mission
-                </a>
-                <a href="about.html" class="btn btn-outline-white btn-lg">
-                    Learn More About Us
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
+            <div class="hero-buttons">
+                <a href="donate.html" class="btn btn-white btn-lg">Support Our Mission</a>
+                <a href="about.html" class="btn btn-outline-white btn-lg">Learn About Us</a>
             </div>
-
-            <div class="hero-stats fade-in delay-4">
-                <div class="hero-stat">
-                    <div class="hero-stat-number" data-counter="500">500+</div>
-                    <div class="hero-stat-label">Defenders Protected</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number" data-counter="25">25+</div>
-                    <div class="hero-stat-label">Countries Reached</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number" data-counter="100">100+</div>
-                    <div class="hero-stat-label">Partner Organizations</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number" data-counter="10">10+</div>
-                    <div class="hero-stat-label">Years of Service</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-scroll">
-            <span>Scroll to explore</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
         </div>
     </section>
 
-    <!-- ============================================
-    MISSION SECTION
-    ============================================ -->
+    <!-- ============ MISSION SECTION (changed layout, no SVG, no learn more links) ============ -->
     <section class="section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content fade-in-left">
-                    <div class="section-overline">Our Mission</div>
-                    <h2 class="section-title">Empowering Defenders Across Africa</h2>
-                    <div class="decorative-line decorative-line-left"></div>
-                    <p class="lead">
-                        At DefenderLink Africa, we believe that human rights defenders are the backbone of democratic societies. Our mission is to ensure their safety, amplify their voices, and strengthen their capacity to create lasting change.
-                    </p>
-                    <p>
-                        Founded on the principles of solidarity, protection, and empowerment, we work tirelessly to provide comprehensive support to defenders facing threats, persecution, or hardship due to their vital work. From emergency response to long-term capacity building, we are committed to standing with those who stand for justice.
-                    </p>
-                    <div class="highlight-box">
-                        <p>"When defenders are protected, communities thrive. When voices are amplified, justice prevails."</p>
-                    </div>
-                    <a href="about.html" class="btn btn-primary">
-                        Discover Our Story
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="about-image fade-in-right">
-                    <img src="https://images.unsplash.com/photo-1559027615-cd462829b288?w=800&q=80" alt="Community meeting and advocacy work" style="border-radius: var(--radius-xl);">
-                    <div class="about-image-badge">
-                        <div class="about-image-badge-number">10+</div>
-                        <div class="about-image-badge-text">Years of Impact</div>
+            <div class="mission-wrapper reveal">
+                <div class="section-overline">Our Mission</div>
+                <h2 class="section-title">Empowering Defenders Across Africa</h2>
+                <div class="accent-line"></div>
+                <p class="lead">
+                    At DefenderLink Africa, we believe that human rights defenders are the backbone of democratic societies. Our mission is to ensure their safety, amplify their voices, and strengthen their capacity to create lasting change.
+                </p>
+                <div class="mission-image-wrap reveal reveal-delay-2">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd462829b288?w=800&q=80" alt="Community meeting and advocacy work">
+                    <div class="mission-image-badge">
+                        <div class="mission-image-badge-number">10+</div>
+                        <div class="mission-image-badge-text">Years of Impact</div>
                     </div>
                 </div>
+                <p class="reveal reveal-delay-3">
+                    Founded on the principles of solidarity, protection, and empowerment, we work tirelessly to provide comprehensive support to defenders facing threats, persecution, or hardship due to their vital work. From emergency response to long-term capacity building, we are committed to standing with those who stand for justice.
+                </p>
+                <div class="highlight-box reveal reveal-delay-4">
+                    <p>"When defenders are protected, communities thrive. When voices are amplified, justice prevails."</p>
+                </div>
+                <a href="about.html" class="btn btn-primary reveal reveal-delay-5">Discover Our Story</a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-    WHAT WE DO SECTION
-    ============================================ -->
-    <section class="section" style="background: rgba(245,237,227,0.7);">
+    <!-- ============ WHAT WE DO (no SVG icons, no learn more buttons) ============ -->
+    <section class="section" style="background: rgba(247, 240, 230, 0.65);">
         <div class="container">
-            <div class="section-header fade-in-up">
+            <div class="section-header reveal">
                 <div class="section-overline">What We Do</div>
                 <h2 class="section-title">Comprehensive Support for Defenders</h2>
                 <p class="section-subtitle">We provide a range of services designed to protect, support, and empower human rights defenders across Africa.</p>
             </div>
 
             <div class="services-grid">
-                <div class="service-card fade-in-up delay-1">
-                    <div class="service-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-card-number">01</div>
                     <h3 class="service-card-title">Emergency Protection</h3>
                     <p class="service-card-text">Rapid response support for defenders facing immediate threats, including relocation assistance, legal aid, and security measures.</p>
-                    <a href="what-we-do.html#emergency" class="service-card-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
-
-                <div class="service-card fade-in-up delay-2">
-                    <div class="service-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-card-number">02</div>
                     <h3 class="service-card-title">Capacity Building</h3>
                     <p class="service-card-text">Training programs and workshops to strengthen defenders' skills in security, advocacy, documentation, and organizational management.</p>
-                    <a href="what-we-do.html#capacity" class="service-card-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
-
-                <div class="service-card fade-in-up delay-3">
-                    <div class="service-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                        </svg>
-                    </div>
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-card-number">03</div>
                     <h3 class="service-card-title">Advocacy & Campaigns</h3>
                     <p class="service-card-text">Strategic advocacy at national, regional, and international levels to advance policies that protect human rights defenders.</p>
-                    <a href="what-we-do.html#advocacy" class="service-card-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
-
-                <div class="service-card fade-in-up delay-4">
-                    <div class="service-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 16v-4"/>
-                            <path d="M12 8h.01"/>
-                        </svg>
-                    </div>
+                <div class="service-card reveal reveal-delay-4">
+                    <div class="service-card-number">04</div>
                     <h3 class="service-card-title">Documentation & Monitoring</h3>
                     <p class="service-card-text">Systematic documentation of violations against defenders to support accountability and inform advocacy strategies.</p>
-                    <a href="what-we-do.html#documentation" class="service-card-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
-
-                <div class="service-card fade-in-up delay-5">
-                    <div class="service-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        </svg>
-                    </div>
+                <div class="service-card reveal reveal-delay-5">
+                    <div class="service-card-number">05</div>
                     <h3 class="service-card-title">Psychosocial Support</h3>
                     <p class="service-card-text">Mental health and wellbeing services for defenders experiencing trauma, stress, or burnout from their challenging work.</p>
-                    <a href="what-we-do.html#psychosocial" class="service-card-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
-
-                <div class="service-card fade-in-up delay-6">
-                    <div class="service-card-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                        </svg>
-                    </div>
+                <div class="service-card reveal reveal-delay-6">
+                    <div class="service-card-number">06</div>
                     <h3 class="service-card-title">Resources & Tools</h3>
                     <p class="service-card-text">Practical guides, toolkits, and resources to help defenders enhance their security and effectiveness in their work.</p>
-                    <a href="resources.html" class="service-card-link">
-                        Learn More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-    IMPACT SECTION
-    ============================================ -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="section-overline">Our Impact</div>
-                <h2 class="section-title">Making a Real Difference</h2>
-                <p class="section-subtitle">Our work has directly contributed to the safety and empowerment of hundreds of human rights defenders across Africa.</p>
-            </div>
-
-            <div class="grid grid-4 gap-xl" style="margin-bottom: var(--space-3xl);">
-                <div class="impact-card fade-in-up delay-1">
-                    <div class="impact-card-number" data-counter="500">500+</div>
-                    <div class="impact-card-label">Defenders Protected</div>
-                </div>
-                <div class="impact-card fade-in-up delay-2">
-                    <div class="impact-card-number" data-counter="150">150+</div>
-                    <div class="impact-card-label">Emergency Responses</div>
-                </div>
-                <div class="impact-card fade-in-up delay-3">
-                    <div class="impact-card-number" data-counter="3000">3K+</div>
-                    <div class="impact-card-label">Trained Individuals</div>
-                </div>
-                <div class="impact-card fade-in-up delay-4">
-                    <div class="impact-card-number" data-counter="50">50+</div>
-                    <div class="impact-card-label">Policy Victories</div>
-                </div>
-            </div>
-
-            <div class="quote-block fade-in-up" style="max-width: 800px; margin: 0 auto;">
-                <p>"DefenderLink Africa saved my life. When I was targeted for my work documenting human rights abuses, they provided emergency support that allowed me to continue my crucial work. I am forever grateful."</p>
-                <div style="margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--border-subtle); display: flex; align-items: center; gap: var(--space-md);">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Testimonial author" style="width: 48px; height: 48px; border-radius: var(--radius-full); object-fit: cover;">
-                    <div>
-                        <strong style="color: var(--deep-brown);">Maria K.</strong>
-                        <span style="display: block; font-size: 0.875rem; color: var(--text-muted);">Human Rights Defender, Kenya</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    WHERE WE WORK SECTION
-    ============================================ -->
+    <!-- ============ WHERE WE WORK (text-based, no images) ============ -->
     <section class="section" style="background: var(--deep-brown); color: var(--white);">
         <div class="container">
-            <div class="section-header fade-in-up">
+            <div class="section-header reveal">
                 <div class="section-overline" style="color: var(--gold-accent); border-color: var(--gold-accent);">Where We Work</div>
                 <h2 class="section-title" style="color: var(--white);">Across the African Continent</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">We operate in over 25 countries, with regional offices strategically positioned to provide timely support to defenders.</p>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.65);">We operate in over 25 countries, with regional offices strategically positioned to provide timely support to defenders.</p>
             </div>
-
-            <div class="countries-grid">
-                <div class="country-card fade-in-up delay-1">
-                    <img src="https://images.unsplash.com/photo-1489392191049-fcfcfd398c97?w=600&q=80" alt="Kenya">
-                    <div class="country-card-overlay">
-                        <h4 class="country-card-name">Kenya</h4>
-                        <p class="country-card-count">East Africa Hub</p>
-                    </div>
+            <div class="countries-text-grid">
+                <div class="country-text-card reveal reveal-delay-1">
+                    <div class="country-text-name">Kenya</div>
+                    <div class="country-text-role">East Africa Hub</div>
                 </div>
-                <div class="country-card fade-in-up delay-2">
-                    <img src="https://images.unsplash.com/photo-1570077108636-74778822f529?w=600&q=80" alt="South Africa">
-                    <div class="country-card-overlay">
-                        <h4 class="country-card-name">South Africa</h4>
-                        <p class="country-card-count">Southern Africa Hub</p>
-                    </div>
+                <div class="country-text-card reveal reveal-delay-2">
+                    <div class="country-text-name">South Africa</div>
+                    <div class="country-text-role">Southern Africa Hub</div>
                 </div>
-                <div class="country-card fade-in-up delay-3">
-                    <img src="https://images.unsplash.com/photo-1589303830797-08f8c87deb26?w=600&q=80" alt="Nigeria">
-                    <div class="country-card-overlay">
-                        <h4 class="country-card-name">Nigeria</h4>
-                        <p class="country-card-count">West Africa Hub</p>
-                    </div>
+                <div class="country-text-card reveal reveal-delay-3">
+                    <div class="country-text-name">Nigeria</div>
+                    <div class="country-text-role">West Africa Hub</div>
                 </div>
-                <div class="country-card fade-in-up delay-4">
-                    <img src="https://images.unsplash.com/photo-1547981606-f443c507233e?w=600&q=80" alt="Zambia">
-                    <div class="country-card-overlay">
-                        <h4 class="country-card-name">Zambia</h4>
-                        <p class="country-card-count">Headquarters</p>
-                    </div>
+                <div class="country-text-card reveal reveal-delay-4">
+                    <div class="country-text-name">Zambia</div>
+                    <div class="country-text-role">Headquarters</div>
+                </div>
+                <div class="country-text-card reveal reveal-delay-1">
+                    <div class="country-text-name">Uganda</div>
+                    <div class="country-text-role">East Africa</div>
+                </div>
+                <div class="country-text-card reveal reveal-delay-2">
+                    <div class="country-text-name">Ghana</div>
+                    <div class="country-text-role">West Africa</div>
+                </div>
+                <div class="country-text-card reveal reveal-delay-3">
+                    <div class="country-text-name">Tanzania</div>
+                    <div class="country-text-role">East Africa</div>
+                </div>
+                <div class="country-text-card reveal reveal-delay-4">
+                    <div class="country-text-name">Zimbabwe</div>
+                    <div class="country-text-role">Southern Africa</div>
                 </div>
             </div>
-
-            <div class="text-center fade-in-up" style="margin-top: var(--space-3xl);">
-                <a href="where-we-work.html" class="btn btn-outline-white">
-                    View All Countries
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
+            <div class="text-center reveal" style="margin-top: 2.5rem;">
+                <a href="where-we-work.html" class="btn btn-outline-white">View All Countries</a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-    LATEST NEWS SECTION
-    ============================================ -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="section-overline">Latest Updates</div>
-                <h2 class="section-title">News & Insights</h2>
-                <p class="section-subtitle">Stay informed about our latest activities, reports, and developments in human rights protection across Africa.</p>
-            </div>
-
-            <div class="grid grid-3 gap-xl">
-                <article class="card fade-in-up delay-1">
-                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48e91d?w=800&q=80" alt="News article" class="card-img">
-                    <div class="card-body">
-                        <span class="card-label">Advocacy</span>
-                        <h3 class="card-title">
-                            <a href="news.html">New Regional Framework for Defender Protection Adopted</a>
-                        </h3>
-                        <p class="card-text">The African Union adopts landmark resolution strengthening protection mechanisms for human rights defenders across the continent.</p>
-                        <div class="card-footer">
-                            <span class="text-small text-muted">December 15, 2024</span>
-                            <a href="news.html" class="service-card-link">
-                                Read More
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card fade-in-up delay-2">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd837?w=800&q=80" alt="News article" class="card-img">
-                    <div class="card-body">
-                        <span class="card-label">Training</span>
-                        <h3 class="card-title">
-                            <a href="news.html">Capacity Building Workshop Reaches 500 Defenders</a>
-                        </h3>
-                        <p class="card-text">Our latest security training program has successfully equipped over 500 human rights defenders with essential protection skills.</p>
-                        <div class="card-footer">
-                            <span class="text-small text-muted">December 10, 2024</span>
-                            <a href="news.html" class="service-card-link">
-                                Read More
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card fade-in-up delay-3">
-                    <img src="https://images.unsplash.com/photo-1469571806173-57b1ad1b7e48?w=800&q=80" alt="News article" class="card-img">
-                    <div class="card-body">
-                        <span class="card-label">Report</span>
-                        <h3 class="card-title">
-                            <a href="news.html">Annual Report 2024: A Year of Impact</a>
-                        </h3>
-                        <p class="card-text">Our comprehensive annual report highlights achievements, challenges, and the ongoing impact of our protection programs.</p>
-                        <div class="card-footer">
-                            <span class="text-small text-muted">December 5, 2024</span>
-                            <a href="news.html" class="service-card-link">
-                                Read More
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="text-center fade-in-up" style="margin-top: var(--space-2xl);">
-                <a href="news.html" class="btn btn-outline">
-                    View All News
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    CTA SECTION
-    ============================================ -->
+    <!-- ============ CTA SECTION ============ -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content fade-in-up">
+            <div class="cta-content reveal">
                 <h2 class="cta-title">Stand With Those Who Stand for Justice</h2>
                 <p class="cta-text">Your support enables us to protect and empower human rights defenders across Africa. Together, we can make a lasting difference in the fight for justice and dignity.</p>
                 <div class="cta-buttons">
-                    <a href="donate.html" class="btn btn-white btn-lg">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                        </svg>
-                        Donate Now
-                    </a>
-                    <a href="contact.html" class="btn btn-outline-white btn-lg">
-                        Partner With Us
-                    </a>
+                    <a href="donate.html" class="btn btn-white btn-lg">Donate Now</a>
+                    <a href="contact.html" class="btn btn-outline-white btn-lg">Partner With Us</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-    PARTNERS SECTION
-    ============================================ -->
-    <section class="section-sm" style="background: rgba(245,237,227,0.7);">
-        <div class="container">
-            <div class="section-header fade-in-up">
-                <div class="section-overline">Our Partners</div>
-                <h2 class="section-title">Working Together for Impact</h2>
-            </div>
-            <div class="grid grid-4 gap-xl items-center fade-in-up" style="opacity: 0.75;">
-                <div class="text-center">
-                    <img src="https://via.placeholder.com/150x60/8B5E3C/FFFFFF?text=Partner+1" alt="Partner Logo" style="filter: grayscale(40%); border-radius:8px;">
-                </div>
-                <div class="text-center">
-                    <img src="https://via.placeholder.com/150x60/8B5E3C/FFFFFF?text=Partner+2" alt="Partner Logo" style="filter: grayscale(40%); border-radius:8px;">
-                </div>
-                <div class="text-center">
-                    <img src="https://via.placeholder.com/150x60/8B5E3C/FFFFFF?text=Partner+3" alt="Partner Logo" style="filter: grayscale(40%); border-radius:8px;">
-                </div>
-                <div class="text-center">
-                    <img src="https://via.placeholder.com/150x60/8B5E3C/FFFFFF?text=Partner+4" alt="Partner Logo" style="filter: grayscale(40%); border-radius:8px;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    FOOTER
-    ============================================ -->
+    <!-- ============ FOOTER ============ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" style="margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-md); text-decoration:none;">
-                        <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa" style="height: 50px;">
+                    <a href="index.html" style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.7rem; text-decoration:none;">
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa" style="height: 44px;">
                         <div>
-                            <span style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;color:var(--white);display:block;">DefenderLink Africa</span>
-                            <span style="font-size:0.7rem;color:var(--gold-accent);text-transform:uppercase;letter-spacing:0.15em;">Protecting Defenders</span>
+                            <span style="font-family:var(--font-heading);font-weight:700;font-size:1rem;color:var(--white);display:block;">DefenderLink Africa</span>
+                            <span style="font-size:0.65rem;color:var(--gold-accent);text-transform:uppercase;letter-spacing:0.14em;">Protecting Defenders</span>
                         </div>
                     </a>
                     <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent. Headquartered in Lusaka, Zambia.</p>
                 </div>
-
                 <div>
                     <h5 class="footer-title">Organization</h5>
                     <ul class="footer-links">
@@ -1769,7 +1288,6 @@
                         <li><a href="careers.html">Careers</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h5 class="footer-title">Resources</h5>
                     <ul class="footer-links">
@@ -1780,7 +1298,6 @@
                         <li><a href="safeguarding.html">Safeguarding</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h5 class="footer-title">Support</h5>
                     <ul class="footer-links">
@@ -1791,24 +1308,23 @@
                         <li><a href="terms.html">Terms of Use</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h5 class="footer-title">Contact</h5>
                     <div class="footer-contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                         <span>Plot 1234, Thabo Mbeki Road<br>Lusaka, Zambia</span>
                     </div>
                     <div class="footer-contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
                         <span>+260 XXX XXX XXX</span>
                     </div>
                     <div class="footer-contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
@@ -1816,7 +1332,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p class="footer-copyright">&copy; 2026 DefenderLink Africa. All rights reserved. Registered NGO in Zambia.</p>
                 <div class="footer-bottom-links">
@@ -1828,29 +1343,46 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         (function() {
-            // Mobile menu toggle
+            // Mobile menu elements
             const hamburger = document.getElementById('hamburger');
-            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileOverlay = document.getElementById('mobileOverlay');
             const navbar = document.getElementById('navbar');
 
-            if (hamburger && mobileMenu) {
+            function openMenu() {
+                hamburger.classList.add('active');
+                mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (hamburger && mobileOverlay) {
                 hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    mobileMenu.classList.toggle('active');
-                    document.body.style.overflow =
-                        mobileMenu.classList.contains('active') ? 'hidden' : '';
+                    if (mobileOverlay.classList.contains('active')) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
                 });
 
-                // Close mobile menu when clicking a link
-                mobileMenu.querySelectorAll('a').forEach(function(link) {
+                // Close when clicking overlay links
+                mobileOverlay.querySelectorAll('a').forEach(function(link) {
                     link.addEventListener('click', function() {
-                        hamburger.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                        document.body.style.overflow = '';
+                        closeMenu();
                     });
+                });
+
+                // Close on Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) {
+                        closeMenu();
+                    }
                 });
             }
 
@@ -1863,38 +1395,30 @@
                 }
             });
 
-            // Intersection Observer for scroll animations
-            const animatedElements = document.querySelectorAll(
-                '.fade-in, .fade-in-up, .fade-in-left, .fade-in-right');
+            // Scroll reveal animations
+            const revealElements = document.querySelectorAll('.reveal');
             const observerOptions = {
                 root: null,
-                rootMargin: '0px 0px -60px 0px',
-                threshold: 0.1
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.08
             };
 
-            const observer = new IntersectionObserver(function(entries) {
+            const revealObserver = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+                        revealObserver.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            animatedElements.forEach(function(el) {
-                observer.observe(el);
+            revealElements.forEach(function(el) {
+                revealObserver.observe(el);
             });
 
-            // Close mobile menu on outside click
-            document.addEventListener('click', function(e) {
-                if (mobileMenu && mobileMenu.classList.contains('active')) {
-                    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                        hamburger.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                }
-            });
+            // Trigger hero animations immediately (they have their own animation via CSS keyframes)
+            // Hero elements use animation-delay via classes, no JS needed for those.
+
         })();
     </script>
 </body>
