@@ -1,529 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover the comprehensive services DefenderLink Africa provides to protect and support human rights defenders - emergency protection, capacity building, advocacy, and more.">
-  <meta property="og:title" content="What We Do - DefenderLink Africa">
-  <meta property="og:description" content="Comprehensive support services for human rights defenders across Africa.">
-  <meta property="og:image" content="https://i.imgur.com/WQp3Kvs.png">
-  <link rel="icon" type="image/png" href="https://i.imgur.com/WQp3Kvs.png">
-  <title>What We Do | DefenderLink Africa</title>
-  <link rel="stylesheet" href="css/style.css">
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the comprehensive services DefenderLink Africa provides to protect and support human rights defenders - emergency protection, capacity building, advocacy, and more.">
+    <meta property="og:title" content="What We Do - DefenderLink Africa">
+    <meta property="og:description" content="Comprehensive support services for human rights defenders across Africa.">
+    <meta property="og:image" content="https://i.imgur.com/KbDuWry.png">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/26vbOoF.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/26vbOoF.png">
+    <title>What We Do | DefenderLink Africa</title>
+
+    <style>
+        :root {
+            --deep-brown: #2C1810;
+            --espresso: #1A0D06;
+            --rich-brown: #3E2016;
+            --warm-brown: #5C3424;
+            --copper: #7D4E34;
+            --terracotta: #8B5A3C;
+            --tan: #B88962;
+            --sand: #C9A07A;
+            --cream: #F2E8DC;
+            --warm-cream: #F7F0E6;
+            --parchment: #FBF6EF;
+            --gold-accent: #C8963E;
+            --gold-light: #D9B056;
+            --gold-dark: #A67C2E;
+            --white: #FFFFFF;
+            --off-white: #FEFBF8;
+            --text-dark: #1A0D06;
+            --text-medium: #3E2016;
+            --text-muted: #7D5C4A;
+            --border-subtle: rgba(139, 94, 60, 0.18);
+            --border-medium: rgba(139, 94, 60, 0.3);
+            --shadow-sm: 0 2px 8px rgba(26, 13, 6, 0.06);
+            --shadow-md: 0 6px 24px rgba(26, 13, 6, 0.1);
+            --shadow-lg: 0 14px 48px rgba(26, 13, 6, 0.16);
+            --shadow-xl: 0 22px 64px rgba(26, 13, 6, 0.22);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-2xl: 28px;
+            --font-heading: 'Georgia', 'Times New Roman', 'Palatino', serif;
+            --font-body: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            --max-width: 1120px;
+            --transition-smooth: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-fast: 0.2s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--parchment);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: url('https://i.imgur.com/Wu44jc7.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(251, 246, 239, 0.9) 0%,
+                    rgba(247, 240, 230, 0.88) 25%,
+                    rgba(242, 232, 220, 0.9) 50%,
+                    rgba(240, 228, 214, 0.92) 100%);
+            z-index: -1;
+        }
+
+        h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1.15; color: var(--deep-brown); }
+        h1 { font-size: clamp(2rem, 4.5vw, 3.4rem); }
+        h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+        h3 { font-size: 1.2rem; }
+        p { margin-bottom: 1rem; color: var(--text-medium); }
+        a { color: var(--warm-brown); text-decoration: none; transition: color var(--transition-fast); }
+        a:hover { color: var(--terracotta); }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 4rem 0; }
+        .text-center { text-align: center; }
+        .text-small { font-size: 0.85rem; }
+        .text-muted { color: var(--text-muted); }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.8rem 1.6rem; font-family: var(--font-body); font-weight: 600;
+            font-size: 0.9rem; border-radius: var(--radius-md); cursor: pointer;
+            transition: all var(--transition-smooth); text-decoration: none;
+            border: 2px solid transparent; white-space: nowrap; letter-spacing: 0.02em;
+        }
+        .btn-primary { background: var(--warm-brown); color: var(--white); border-color: var(--warm-brown); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background: var(--rich-brown); border-color: var(--rich-brown); color: var(--white); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-white { background: var(--white); color: var(--deep-brown); border-color: var(--white); box-shadow: var(--shadow-md); }
+        .btn-white:hover { background: var(--cream); border-color: var(--cream); color: var(--deep-brown); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
+        .btn-outline-white:hover { background: var(--white); color: var(--deep-brown); border-color: var(--white); transform: translateY(-2px); }
+
+        /* NAV */
+        .nav {
+            position: fixed; top:0; left:0; right:0; z-index: 1000;
+            background: rgba(26,13,6,0.88); backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(200,150,62,0.18); transition: all var(--transition-smooth);
+        }
+        .nav.scrolled { background: rgba(26,13,6,0.96); box-shadow: var(--shadow-lg); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--max-width); margin:0 auto; padding:0.55rem 1.5rem; gap:1rem; }
+        .nav-logo { display: flex; align-items: center; gap:0.7rem; text-decoration:none; flex-shrink:0; }
+        .nav-logo img { height:40px; transition: transform var(--transition-smooth); }
+        .nav-logo:hover img { transform: scale(1.06); }
+        .nav-logo-text { display:flex; flex-direction:column; }
+        .nav-logo-title { font-family: var(--font-heading); font-weight:700; font-size:1rem; color:var(--white); line-height:1.2; }
+        .nav-logo-subtitle { font-size:0.65rem; color:var(--gold-accent); text-transform:uppercase; letter-spacing:0.16em; }
+        .nav-menu { display: flex; align-items: center; gap:0.2rem; }
+        .nav-link { padding:0.45rem 0.8rem; font-size:0.82rem; font-weight:500; color:rgba(255,255,255,0.78); text-decoration:none; border-radius:var(--radius-sm); transition:all var(--transition-fast); white-space:nowrap; }
+        .nav-link:hover,.nav-link.active { color:var(--white); background:rgba(200,150,62,0.18); }
+        .nav-link.donate { background:var(--gold-accent)!important; color:var(--deep-brown)!important; font-weight:700; padding:0.5rem 1.2rem; border-radius:var(--radius-md); }
+        .nav-link.donate:hover { background:var(--gold-light)!important; transform:translateY(-2px); box-shadow:0 6px 22px rgba(200,150,62,0.45); }
+
+        .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:0.5rem; z-index:1001; background:none; border:none; }
+        .nav-hamburger span { display:block; width:26px; height:2.5px; background:var(--white); border-radius:2px; transition:all var(--transition-smooth); }
+        .nav-hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity:0; transform:scaleX(0); }
+        .nav-hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+        .mobile-overlay {
+            position:fixed; inset:0; background:rgba(26,13,6,0.97); z-index:999;
+            display:flex; align-items:center; justify-content:center;
+            opacity:0; pointer-events:none; transition:opacity var(--transition-smooth);
+        }
+        .mobile-overlay.active { opacity:1; pointer-events:all; }
+        .mobile-overlay-inner { text-align:center; display:flex; flex-direction:column; gap:0.3rem; }
+        .mobile-overlay-link { display:block; padding:0.9rem 1.5rem; color:var(--cream); font-size:1.2rem; text-decoration:none; }
+        .mobile-overlay-link:hover { color:var(--gold-light); background:rgba(200,150,62,0.1); border-radius:var(--radius-md); }
+        .mobile-overlay-link.donate-mobile { color:var(--gold-accent); font-weight:700; font-size:1.3rem; border:2px solid var(--gold-accent); border-radius:var(--radius-lg); margin-top:0.8rem; }
+
+        /* PAGE HEADER 60vh */
+        .page-header {
+            position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center;
+            text-align:center; overflow:hidden; padding-top:70px;
+        }
+        .page-header-bg { position:absolute; inset:0; z-index:0; }
+        .page-header-bg img { width:100%; height:100%; object-fit:cover; object-position:center 30%; animation:hero-zoom 8s ease-in-out infinite alternate; }
+        @keyframes hero-zoom { 0%{ transform:scale(1); } 100%{ transform:scale(1.06); } }
+        .page-header-bg::after { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.65); }
+        .page-header .container { position:relative; z-index:1; }
+        .breadcrumb { display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:0.8rem; color:rgba(255,255,255,0.7); margin-bottom:1rem; }
+        .breadcrumb a { color:var(--gold-light); }
+        .page-header-overline { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold-accent); margin-bottom:0.5rem; }
+        .page-header-title { color:var(--white); margin-bottom:0.8rem; text-shadow:0 2px 18px rgba(0,0,0,0.5); }
+        .page-header-subtitle { color:rgba(255,255,255,0.75); max-width:500px; margin:0 auto; }
+
+        /* IMPACT CARDS (simple) */
+        .impact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+        .impact-card { background:var(--white); padding:2rem; border-radius:var(--radius-xl); text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--border-subtle); transition:all var(--transition-smooth); }
+        .impact-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--border-medium); }
+        .impact-number { font-family:var(--font-heading); font-size:2.8rem; font-weight:700; color:var(--warm-brown); line-height:1; }
+        .impact-label { font-size:0.9rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-top:0.3rem; }
+
+        /* SERVICE SECTIONS (alternating layout) */
+        .service-row { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+        .service-img { border-radius:var(--radius-2xl); overflow:hidden; box-shadow:var(--shadow-xl); }
+        .service-img img { width:100%; display:block; }
+        .service-content h2 { margin-bottom:0.5rem; }
+        .accent-line { width:50px; height:3px; background:var(--gold-accent); border-radius:2px; margin:1rem 0 1.5rem; }
+        .service-feature-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
+        .feature-card { background:var(--white); padding:1.2rem; border-radius:var(--radius-md); border:1px solid var(--border-subtle); transition:all var(--transition-smooth); }
+        .feature-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+        .feature-card strong { color:var(--warm-brown); display:block; margin-bottom:0.3rem; }
+
+        /* DARK SECTION STYLES */
+        .dark-section { background:var(--deep-brown); color:var(--white); }
+        .dark-section h2 { color:var(--white); }
+        .dark-section p { color:rgba(255,255,255,0.7); }
+        .service-dark-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
+        .dark-card { background:rgba(255,255,255,0.07); padding:2rem; border-radius:var(--radius-xl); text-align:center; transition:all var(--transition-smooth); }
+        .dark-card:hover { background:rgba(255,255,255,0.12); transform:translateY(-4px); }
+        .dark-card h4 { color:var(--white); margin-bottom:0.5rem; }
+
+        /* CTA */
+        .cta-section {
+            background:var(--deep-brown); padding:4rem 0; text-align:center; position:relative; overflow:hidden;
+        }
+        .cta-section::before { content:''; position:absolute; top:-40%; left:-40%; width:180%; height:180%; background:radial-gradient(circle at center,rgba(200,150,62,0.06) 0%,transparent 55%); animation:rotate-glow 20s linear infinite; }
+        @keyframes rotate-glow { from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+        .cta-content { position:relative; z-index:1; max-width:600px; margin:0 auto; }
+        .cta-title { color:var(--white); margin-bottom:1rem; }
+        .cta-text { color:rgba(255,255,255,0.7); margin-bottom:2rem; }
+        .cta-buttons { display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; }
+
+        /* FOOTER */
+        .footer {
+            background-image:url('https://i.imgur.com/FEbqeZI.jpeg'); background-size:cover; background-position:center;
+            position:relative; color:var(--cream); padding:4rem 0 1.5rem;
+        }
+        .footer::before { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.93); z-index:0; }
+        .footer>.container { position:relative; z-index:1; }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1.2fr; gap:2rem; margin-bottom:2.5rem; }
+        .footer-brand p { color:rgba(255,255,255,0.6); font-size:0.85rem; }
+        .footer-title { color:var(--gold-accent); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:1rem; font-weight:700; }
+        .footer-links { list-style:none; padding:0; }
+        .footer-links li { margin-bottom:0.4rem; }
+        .footer-links a { color:rgba(255,255,255,0.6); font-size:0.85rem; transition:all var(--transition-fast); }
+        .footer-links a:hover { color:var(--gold-light); padding-left:3px; }
+        .footer-contact-item { display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.7rem; color:rgba(255,255,255,0.6); font-size:0.85rem; }
+        .footer-contact-item svg { flex-shrink:0; color:var(--gold-accent); margin-top:3px; }
+        .footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); }
+        .footer-copyright { color:rgba(255,255,255,0.35); font-size:0.78rem; margin:0; }
+        .footer-bottom-links { display:flex; gap:1.2rem; }
+        .footer-bottom-links a { color:rgba(255,255,255,0.35); font-size:0.78rem; }
+        .footer-bottom-links a:hover { color:var(--gold-light); }
+
+        .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+
+        @media (max-width:1024px) {
+            .nav-menu { display:none; }
+            .nav-hamburger { display:flex; }
+            .service-row { grid-template-columns:1fr; }
+            .impact-grid { grid-template-columns:repeat(2,1fr); }
+            .service-dark-grid { grid-template-columns:repeat(2,1fr); }
+            .footer-grid { grid-template-columns:repeat(3,1fr); }
+        }
+        @media (max-width:768px) {
+            .impact-grid,.service-dark-grid { grid-template-columns:1fr; }
+            .footer-grid { grid-template-columns:1fr 1fr; }
+            .page-header { min-height:50vh; }
+        }
+        @media (max-width:480px) {
+            .footer-grid { grid-template-columns:1fr; }
+            .nav-logo-text { display:none; }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation" aria-label="Main Navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="DefenderLink Africa Home">
-        <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa Logo">
-        <div class="nav-logo-text">
-          <span class="nav-logo-title">DefenderLink Africa</span>
-          <span class="nav-logo-subtitle">Protecting Defenders</span>
-        </div>
-      </a>
-      
-      <div class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="what-we-do.html" class="nav-link active">What We Do</a>
-        <a href="where-we-work.html" class="nav-link">Where We Work</a>
-        <a href="resources.html" class="nav-link">Resources</a>
-        <a href="news.html" class="nav-link">News</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="donate.html" class="nav-link donate nav-cta">Donate</a>
-      </div>
-      
-      <div class="nav-hamburger" aria-label="Toggle Menu" role="button" tabindex="0">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu">
-    <div class="mobile-menu-inner">
-      <a href="index.html" class="mobile-menu-link">Home</a>
-      <a href="about.html" class="mobile-menu-link">About Us</a>
-      <a href="what-we-do.html" class="mobile-menu-link">What We Do</a>
-      <a href="where-we-work.html" class="mobile-menu-link">Where We Work</a>
-      <a href="resources.html" class="mobile-menu-link">Resources</a>
-      <a href="news.html" class="mobile-menu-link">News & Updates</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
-      <a href="donate.html" class="mobile-menu-link" style="color: var(--accent-gold);">Donate Now</a>
-    </div>
-  </div>
-
-  <!-- PAGE HEADER -->
-  <header class="page-header">
-    <div class="page-header-bg">
-      <img src="https://images.unsplash.com/photo-1559027615-cd462829b288?w=1920&q=80" alt="Advocacy and support work">
-    </div>
-    <div class="container">
-      <div class="page-header-content fade-in-up">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span class="breadcrumb-current">What We Do</span>
-        </div>
-        <p class="page-header-overline">Our Services</p>
-        <h1 class="page-header-title">What We Do</h1>
-        <p class="page-header-subtitle">Comprehensive protection and support services designed to safeguard human rights defenders and strengthen their capacity to create lasting change.</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- INTRO SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in-up" style="max-width: 900px;">
-        <div class="section-overline">Our Approach</div>
-        <h2 class="section-title">Holistic Support for Defenders</h2>
-        <p class="section-subtitle">We understand that human rights defenders face diverse and complex challenges. Our integrated approach addresses their immediate security needs while building long-term capacity for sustainable impact. From emergency response to systemic advocacy, we provide comprehensive support at every level.</p>
-      </div>
-      
-      <div class="grid grid-3 gap-xl fade-in-up" style="margin-top: var(--space-3xl);">
-        <div class="impact-card" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
-          <div class="impact-card-number" data-counter="500">500+</div>
-          <div class="impact-card-label">Defenders Protected</div>
-        </div>
-        <div class="impact-card" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);">
-          <div class="impact-card-number" data-counter="3000">3K+</div>
-          <div class="impact-card-label">People Trained</div>
-        </div>
-        <div class="impact-card" style="background: linear-gradient(135deg, var(--earth) 0%, var(--earth-light) 100%);">
-          <div class="impact-card-number" data-counter="50">50+</div>
-          <div class="impact-card-label">Policy Victories</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EMERGENCY PROTECTION -->
-  <section class="section" id="emergency" style="background: var(--sand);">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image fade-in-left">
-          <img src="https://images.unsplash.com/photo-1582213782179-d384e85b5a48?w=800&q=80" alt="Emergency support" style="border-radius: var(--radius-lg);">
-        </div>
-        <div class="about-content fade-in-right">
-          <div class="section-overline">Core Service</div>
-          <h2 class="section-title">Emergency Protection</h2>
-          <div class="decorative-line decorative-line-left"></div>
-          <p class="lead">When human rights defenders face immediate threats, every second counts. Our Emergency Protection Program provides rapid response support to defenders in crisis.</p>
-          
-          <ul style="margin: var(--space-lg) 0; padding-left: var(--space-lg);">
-            <li style="margin-bottom: var(--space-sm); position: relative;">
-              <strong style="color: var(--primary);">24/7 Emergency Hotline</strong><br>
-              <span style="color: var(--muted);">Round-the-clock support for defenders facing imminent danger</span>
-            </li>
-            <li style="margin-bottom: var(--space-sm); position: relative;">
-              <strong style="color: var(--primary);">Emergency Relocation</strong><br>
-              <span style="color: var(--muted);">Safe temporary relocation for defenders at severe risk</span>
-            </li>
-            <li style="margin-bottom: var(--space-sm); position: relative;">
-              <strong style="color: var(--primary);">Legal Assistance</strong><br>
-              <span style="color: var(--muted);">Rapid access to experienced human rights lawyers</span>
-            </li>
-            <li style="margin-bottom: var(--space-sm); position: relative;">
-              <strong style="color: var(--primary);">Medical Support</strong><br>
-              <span style="color: var(--muted);">Medical care and psychological first aid for traumatized defenders</span>
-            </li>
-            <li style="margin-bottom: var(--space-sm); position: relative;">
-              <strong style="color: var(--primary);">Security Measures</strong><br>
-              <span style="color: var(--muted);">Physical and digital security support for immediate protection</span>
-            </li>
-          </ul>
-          
-          <a href="contact.html" class="btn btn-primary">
-            Request Emergency Support
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAPACITY BUILDING -->
-  <section class="section" id="capacity">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-content fade-in-left">
-          <div class="section-overline">Core Service</div>
-          <h2 class="section-title">Capacity Building</h2>
-          <div class="decorative-line decorative-line-left"></div>
-          <p class="lead">Strong defenders create stronger movements. Our Capacity Building Program equips human rights defenders with the skills, knowledge, and tools they need to work safely and effectively.</p>
-          
-          <div class="grid grid-2 gap-lg" style="margin: var(--space-xl) 0;">
-            <div class="feature-card">
-              <div class="feature-card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-              <h4 class="feature-card-title">Security Training</h4>
-              <p class="feature-card-text">Physical, digital, and psycho-social security training tailored to defenders' specific contexts and risks.</p>
+    <!-- NAV -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="Logo">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-title">DefenderLink Africa</span>
+                    <span class="nav-logo-subtitle">Protecting Defenders</span>
+                </div>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="what-we-do.html" class="nav-link active">What We Do</a>
+                <a href="where-we-work.html" class="nav-link">Where We Work</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link donate">Donate</a>
             </div>
-            <div class="feature-card">
-              <div class="feature-card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                </svg>
-              </div>
-              <h4 class="feature-card-title">Documentation Skills</h4>
-              <p class="feature-card-text">Training in human rights documentation, evidence gathering, and secure information management.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M2 12h20"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-              <h4 class="feature-card-title">Advocacy Training</h4>
-              <p class="feature-card-text">Strategic advocacy skills for engaging national, regional, and international human rights mechanisms.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-              </div>
-              <h4 class="feature-card-title">Organizational Development</h4>
-              <p class="feature-card-text">Support for building resilient, sustainable organizations with strong governance and management.</p>
-            </div>
-          </div>
-          
-          <a href="resources.html" class="btn btn-secondary">
-            Access Training Resources
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+            <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
-        <div class="about-image fade-in-right">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd837?w=800&q=80" alt="Training workshop" style="border-radius: var(--radius-lg);">
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-overlay-inner">
+            <a href="index.html" class="mobile-overlay-link">Home</a>
+            <a href="about.html" class="mobile-overlay-link">About Us</a>
+            <a href="what-we-do.html" class="mobile-overlay-link">What We Do</a>
+            <a href="where-we-work.html" class="mobile-overlay-link">Where We Work</a>
+            <a href="resources.html" class="mobile-overlay-link">Resources</a>
+            <a href="news.html" class="mobile-overlay-link">News</a>
+            <a href="contact.html" class="mobile-overlay-link">Contact</a>
+            <a href="donate.html" class="mobile-overlay-link donate-mobile">Donate Now</a>
         </div>
-      </div>
     </div>
-  </section>
 
-  <!-- ADVOCACY -->
-  <section class="section" id="advocacy" style="background: var(--earth); color: var(--white);">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline" style="color: var(--accent-gold); border-color: var(--accent-gold);">Core Service</div>
-        <h2 class="section-title" style="color: var(--white);">Advocacy & Campaigns</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Creating an enabling environment for human rights defenders requires systemic change. Our Advocacy Program works at all levels to strengthen legal frameworks and protection mechanisms.</p>
-      </div>
-      
-      <div class="grid grid-3 gap-xl" style="margin-top: var(--space-3xl);">
-        <div class="fade-in-up delay-1" style="background: rgba(255,255,255,0.08); padding: var(--space-2xl); border-radius: var(--radius-lg);">
-          <div style="width: 56px; height: 56px; background: var(--accent-gold); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-lg);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--earth)" stroke-width="2">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-          </div>
-          <h4 style="color: var(--white); margin-bottom: var(--space-sm);">National Level</h4>
-          <p style="color: rgba(255,255,255,0.7);">Working with governments to adopt and implement national protection laws and policies for human rights defenders.</p>
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <div class="page-header-bg">
+            <img src="https://i.imgur.com/A45UKYU.jpeg" alt="Background">
         </div>
-        
-        <div class="fade-in-up delay-2" style="background: rgba(255,255,255,0.08); padding: var(--space-2xl); border-radius: var(--radius-lg);">
-          <div style="width: 56px; height: 56px; background: var(--accent-gold); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-lg);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--earth)" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-          </div>
-          <h4 style="color: var(--white); margin-bottom: var(--space-sm);">Regional Level</h4>
-          <p style="color: rgba(255,255,255,0.7);">Engaging the African Union and regional bodies to strengthen continental human rights frameworks and protection mechanisms.</p>
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>What We Do</span></div>
+            <p class="page-header-overline">Our Services</p>
+            <h1 class="page-header-title">What We Do</h1>
+            <p class="page-header-subtitle">Comprehensive protection and support services designed to safeguard human rights defenders and strengthen their capacity to create lasting change.</p>
         </div>
-        
-        <div class="fade-in-up delay-3" style="background: rgba(255,255,255,0.08); padding: var(--space-2xl); border-radius: var(--radius-lg);">
-          <div style="width: 56px; height: 56px; background: var(--accent-gold); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-lg);">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--earth)" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="2" y1="12" x2="22" y2="12"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-          </div>
-          <h4 style="color: var(--white); margin-bottom: var(--space-sm);">International Level</h4>
-          <p style="color: rgba(255,255,255,0.7);">Leveraging UN mechanisms and international partnerships to advance global standards for defender protection.</p>
-        </div>
-      </div>
-      
-      <div class="text-center fade-in-up" style="margin-top: var(--space-3xl);">
-        <a href="contact.html" class="btn btn-outline-white btn-lg">
-          Partner With Us on Advocacy
-        </a>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- DOCUMENTATION -->
-  <section class="section" id="documentation">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-content fade-in-left">
-          <div class="section-overline">Core Service</div>
-          <h2 class="section-title">Documentation & Monitoring</h2>
-          <div class="decorative-line decorative-line-left"></div>
-          <p class="lead">Evidence-based advocacy requires rigorous documentation. We systematically monitor and document violations against human rights defenders to support accountability and inform protection strategies.</p>
-          
-          <div class="highlight-box">
-            <p>In 2024, we documented over 200 cases of violations against human rights defenders across 15 African countries, contributing to 12 successful accountability outcomes.</p>
-          </div>
-          
-          <ul style="margin: var(--space-lg) 0;">
-            <li style="margin-bottom: var(--space-md); display: flex; align-items: flex-start; gap: var(--space-md);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex-shrink: 0; margin-top: 4px;">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span><strong>Incident Documentation:</strong> Comprehensive recording of threats, attacks, and violations against defenders</span>
-            </li>
-            <li style="margin-bottom: var(--space-md); display: flex; align-items: flex-start; gap: var(--space-md);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex-shrink: 0; margin-top: 4px;">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span><strong>Trend Analysis:</strong> Regular reports analyzing patterns and emerging threats to defenders</span>
-            </li>
-            <li style="margin-bottom: var(--space-md); display: flex; align-items: flex-start; gap: var(--space-md);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex-shrink: 0; margin-top: 4px;">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span><strong>Database Management:</strong> Secure, searchable database of documented cases for research and advocacy</span>
-            </li>
-            <li style="margin-bottom: var(--space-md); display: flex; align-items: flex-start; gap: var(--space-md);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="flex-shrink: 0; margin-top: 4px;">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span><strong>Public Reporting:</strong> Annual and thematic reports raising awareness of defender protection needs</span>
-            </li>
-          </ul>
-          
-          <a href="resources.html#reports" class="btn btn-primary">
-            View Our Reports
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-        <div class="about-image fade-in-right">
-          <img src="https://images.unsplash.com/photo-1554224155-679a27c8e25a?w=800&q=80" alt="Documentation work" style="border-radius: var(--radius-lg);">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PSYCHOSOCIAL SUPPORT -->
-  <section class="section" id="psychosocial" style="background: var(--sand);">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image fade-in-left">
-          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88a5c8b?w=800&q=80" alt="Mental health support" style="border-radius: var(--radius-lg);">
-        </div>
-        <div class="about-content fade-in-right">
-          <div class="section-overline">Core Service</div>
-          <h2 class="section-title">Psychosocial Support</h2>
-          <div class="decorative-line decorative-line-left"></div>
-          <p class="lead">Human rights work takes a toll. Our Psychosocial Support Program addresses the mental health and wellbeing needs of defenders, helping them sustain their important work without sacrificing their health.</p>
-          
-          <div class="grid grid-2 gap-lg" style="margin: var(--space-xl) 0;">
-            <div style="padding: var(--space-lg); background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
-              <h5 style="margin-bottom: var(--space-xs);">Individual Counseling</h5>
-              <p class="text-small text-muted" style="margin: 0;">One-on-one sessions with trained counselors experienced in trauma and human rights contexts.</p>
+    <!-- INTRO & IMPACT -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center reveal" style="max-width:800px; margin:0 auto 2rem;">
+                <h2>Holistic Support for Defenders</h2>
+                <p class="text-muted">From emergency response to systemic advocacy, we provide comprehensive support at every level.</p>
             </div>
-            <div style="padding: var(--space-lg); background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
-              <h5 style="margin-bottom: var(--space-xs);">Group Support</h5>
-              <p class="text-small text-muted" style="margin: 0;">Peer support groups connecting defenders with others who understand their experiences.</p>
+            <div class="impact-grid reveal">
+                <div class="impact-card"><div class="impact-number">500+</div><div class="impact-label">Defenders Protected</div></div>
+                <div class="impact-card"><div class="impact-number">3K+</div><div class="impact-label">People Trained</div></div>
+                <div class="impact-card"><div class="impact-number">50+</div><div class="impact-label">Policy Victories</div></div>
             </div>
-            <div style="padding: var(--space-lg); background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
-              <h5 style="margin-bottom: var(--space-xs);">Wellness Workshops</h5>
-              <p class="text-small text-muted" style="margin: 0;">Training in stress management, self-care, and resilience-building techniques.</p>
+        </div>
+    </section>
+
+    <!-- EMERGENCY PROTECTION -->
+    <section class="section" style="background:rgba(247,240,230,0.65);">
+        <div class="container">
+            <div class="service-row reveal">
+                <div class="service-img"><img src="https://images.unsplash.com/photo-1582213782179-d384e85b5a48?w=800&q=80" alt="Emergency"></div>
+                <div class="service-content">
+                    <div class="page-header-overline" style="text-align:left;">Core Service</div>
+                    <h2>Emergency Protection</h2>
+                    <div class="accent-line" style="margin-left:0;"></div>
+                    <p class="lead">When human rights defenders face immediate threats, every second counts. Our Emergency Protection Program provides rapid response support to defenders in crisis.</p>
+                    <div class="service-feature-grid">
+                        <div class="feature-card"><strong>24/7 Hotline</strong>Round-the-clock support</div>
+                        <div class="feature-card"><strong>Emergency Relocation</strong>Safe temporary relocation</div>
+                        <div class="feature-card"><strong>Legal Assistance</strong>Access to human rights lawyers</div>
+                        <div class="feature-card"><strong>Medical Support</strong>Care and psychological first aid</div>
+                        <div class="feature-card"><strong>Security Measures</strong>Physical/digital security</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">Request Emergency Support</a>
+                </div>
             </div>
-            <div style="padding: var(--space-lg); background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
-              <h5 style="margin-bottom: var(--space-xs);">Family Support</h5>
-              <p class="text-small text-muted" style="margin: 0;">Support services for defenders' families who also face stress and security concerns.</p>
+        </div>
+    </section>
+
+    <!-- CAPACITY BUILDING -->
+    <section class="section">
+        <div class="container">
+            <div class="service-row reveal">
+                <div class="service-content">
+                    <div class="page-header-overline" style="text-align:left;">Core Service</div>
+                    <h2>Capacity Building</h2>
+                    <div class="accent-line" style="margin-left:0;"></div>
+                    <p class="lead">Strong defenders create stronger movements. Our Capacity Building Program equips human rights defenders with the skills, knowledge, and tools they need to work safely and effectively.</p>
+                    <div class="service-feature-grid">
+                        <div class="feature-card"><strong>Security Training</strong>Physical, digital, psycho-social</div>
+                        <div class="feature-card"><strong>Documentation Skills</strong>Evidence gathering, secure info</div>
+                        <div class="feature-card"><strong>Advocacy Training</strong>Engaging human rights mechanisms</div>
+                        <div class="feature-card"><strong>Organizational Development</strong>Governance, management support</div>
+                    </div>
+                    <a href="resources.html" class="btn btn-primary">Access Training Resources</a>
+                </div>
+                <div class="service-img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd837?w=800&q=80" alt="Training"></div>
             </div>
-          </div>
-          
-          <a href="contact.html" class="btn btn-secondary">
-            Access Support Services
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DIGITAL SECURITY -->
-  <section class="section" id="digital">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Specialized Service</div>
-        <h2 class="section-title">Digital Security & Technology</h2>
-        <p class="section-subtitle">In an increasingly digital world, online threats are as real as physical ones. Our Digital Security Program helps defenders protect themselves in the digital space.</p>
-      </div>
-      
-      <div class="grid grid-4 gap-xl">
-        <div class="feature-card fade-in-up delay-1">
-          <div class="feature-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-          </div>
-          <h4 class="feature-card-title">Digital Security Audits</h4>
-          <p class="feature-card-text">Comprehensive assessment of digital vulnerabilities and personalized security recommendations.</p>
-        </div>
-        
-        <div class="feature-card fade-in-up delay-2">
-          <div class="feature-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M12 8v4"/>
-              <path d="M12 16h.01"/>
-            </svg>
-          </div>
-          <h4 class="feature-card-title">Secure Communications</h4>
-          <p class="feature-card-text">Training and tools for encrypted communications and secure information sharing.</p>
-        </div>
-        
-        <div class="feature-card fade-in-up delay-3">
-          <div class="feature-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <ellipse cx="12" cy="5" rx="9" ry="3"/>
-              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-            </svg>
-          </div>
-          <h4 class="feature-card-title">Data Protection</h4>
-          <p class="feature-card-text">Support for secure data management, backup strategies, and protection against data breaches.</p>
-        </div>
-        
-        <div class="feature-card fade-in-up delay-4">
-          <div class="feature-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-            </svg>
-          </div>
-          <h4 class="feature-card-title">Incident Response</h4>
-          <p class="feature-card-text">Rapid response to digital security incidents including hacking, surveillance, and online harassment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA SECTION -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content fade-in-up">
-        <h2 class="cta-title">Need Our Support?</h2>
-        <p class="cta-text">If you're a human rights defender facing threats or seeking to strengthen your capacity, we're here to help. Contact us today to learn more about how we can support you.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-white btn-lg">
-            Contact Us Today
-          </a>
-          <a href="donate.html" class="btn btn-outline-white btn-lg">
-            Support Our Work
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-md);">
-            <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa" style="height: 50px;">
-            <div class="nav-logo-text">
-              <span class="nav-logo-title" style="color: var(--white);">DefenderLink Africa</span>
-              <span class="nav-logo-subtitle">Protecting Defenders</span>
+    <!-- ADVOCACY -->
+    <section class="dark-section section">
+        <div class="container">
+            <div class="text-center reveal">
+                <div class="page-header-overline" style="color:var(--gold-accent); border-color:var(--gold-accent);">Core Service</div>
+                <h2>Advocacy & Campaigns</h2>
+                <p style="max-width:600px; margin:0 auto;">Creating an enabling environment for human rights defenders requires systemic change. Our Advocacy Program works at all levels to strengthen legal frameworks and protection mechanisms.</p>
             </div>
-          </a>
-          <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-            <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg></a>
-          </div>
+            <div class="service-dark-grid reveal">
+                <div class="dark-card"><h4>National Level</h4><p>Working with governments to adopt protection laws and policies.</p></div>
+                <div class="dark-card"><h4>Regional Level</h4><p>Engaging the African Union to strengthen continental frameworks.</p></div>
+                <div class="dark-card"><h4>International Level</h4><p>Leveraging UN mechanisms and global partnerships.</p></div>
+            </div>
+            <div class="text-center reveal" style="margin-top:2rem;">
+                <a href="contact.html" class="btn btn-outline-white">Partner With Us on Advocacy</a>
+            </div>
         </div>
-        
-        <div>
-          <h5 class="footer-title">Organization</h5>
-          <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="what-we-do.html">What We Do</a></li>
-            <li><a href="where-we-work.html">Where We Work</a></li>
-            <li><a href="news.html">News & Updates</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h5 class="footer-title">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources.html">Publications</a></li>
-            <li><a href="resources.html#toolkits">Toolkits</a></li>
-            <li><a href="report-violation.html">Report a Violation</a></li>
-            <li><a href="safeguarding.html">Safeguarding</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h5 class="footer-title">Support</h5>
-          <ul class="footer-links">
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h5 class="footer-title">Contact</h5>
-          <div class="footer-contact-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Plot 1234, Thabo Mbeki Road<br>Lusaka, Zambia</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>info@defenderlinkafrica.org</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p class="footer-copyright">© 2025 DefenderLink Africa. All rights reserved. Registered NGO in Zambia.</p>
-        <div class="footer-bottom-links">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="safeguarding.html">Safeguarding Policy</a>
-          <a href="terms.html">Terms of Use</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="js/main.js"></script>
+    <!-- DOCUMENTATION -->
+    <section class="section">
+        <div class="container">
+            <div class="service-row reveal">
+                <div class="service-content">
+                    <div class="page-header-overline" style="text-align:left;">Core Service</div>
+                    <h2>Documentation & Monitoring</h2>
+                    <div class="accent-line" style="margin-left:0;"></div>
+                    <p class="lead">Evidence-based advocacy requires rigorous documentation. We systematically monitor and document violations against human rights defenders to support accountability and inform protection strategies.</p>
+                    <div class="highlight-box" style="background:rgba(200,150,62,0.08); border-left:4px solid var(--gold-accent); padding:1rem; margin:1.5rem 0;">
+                        <p style="margin:0; font-style:italic;">In 2024, we documented over 200 cases across 15 African countries, contributing to 12 successful accountability outcomes.</p>
+                    </div>
+                    <a href="resources.html#reports" class="btn btn-primary">View Our Reports</a>
+                </div>
+                <div class="service-img"><img src="https://images.unsplash.com/photo-1554224155-679a27c8e25a?w=800&q=80" alt="Documentation"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PSYCHOSOCIAL -->
+    <section class="section" style="background:rgba(247,240,230,0.65);">
+        <div class="container">
+            <div class="service-row reveal">
+                <div class="service-img"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88a5c8b?w=800&q=80" alt="Psychosocial"></div>
+                <div class="service-content">
+                    <div class="page-header-overline" style="text-align:left;">Core Service</div>
+                    <h2>Psychosocial Support</h2>
+                    <div class="accent-line" style="margin-left:0;"></div>
+                    <p class="lead">Human rights work takes a toll. Our Psychosocial Support Program addresses the mental health and wellbeing needs of defenders, helping them sustain their important work without sacrificing their health.</p>
+                    <div class="service-feature-grid">
+                        <div class="feature-card"><strong>Individual Counseling</strong>Trauma-informed sessions</div>
+                        <div class="feature-card"><strong>Group Support</strong>Peer support networks</div>
+                        <div class="feature-card"><strong>Wellness Workshops</strong>Stress management, resilience</div>
+                        <div class="feature-card"><strong>Family Support</strong>Services for families</div>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary">Access Support Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIGITAL SECURITY -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center reveal" style="max-width:700px; margin:0 auto 2.5rem;">
+                <div class="page-header-overline">Specialized Service</div>
+                <h2>Digital Security & Technology</h2>
+                <p class="text-muted">Online threats are as real as physical ones. Our Digital Security Program helps defenders protect themselves in the digital space.</p>
+            </div>
+            <div class="impact-grid reveal" style="grid-template-columns: repeat(4,1fr);">
+                <div class="impact-card"><div style="font-size:2rem; font-weight:700; color:var(--warm-brown);">01</div><strong>Digital Audits</strong><p class="text-small text-muted">Personalized vulnerability assessments</p></div>
+                <div class="impact-card"><div style="font-size:2rem; font-weight:700; color:var(--warm-brown);">02</div><strong>Secure Comms</strong><p class="text-small text-muted">Encrypted tools and training</p></div>
+                <div class="impact-card"><div style="font-size:2rem; font-weight:700; color:var(--warm-brown);">03</div><strong>Data Protection</strong><p class="text-small text-muted">Secure storage, backups</p></div>
+                <div class="impact-card"><div style="font-size:2rem; font-weight:700; color:var(--warm-brown);">04</div><strong>Incident Response</strong><p class="text-small text-muted">Rapid digital crisis support</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2 class="cta-title">Need Our Support?</h2>
+            <p class="cta-text">If you're a human rights defender facing threats or seeking to strengthen your capacity, we're here to help.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Contact Us Today</a>
+                <a href="donate.html" class="btn btn-outline-white">Support Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" style="display:flex; align-items:center; gap:0.7rem; margin-bottom:1rem;">
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="Logo" style="height:44px;">
+                        <div>
+                            <span style="font-family:var(--font-heading); font-weight:700; font-size:1rem; color:var(--white);">DefenderLink Africa</span>
+                            <span style="font-size:0.65rem; color:var(--gold-accent); text-transform:uppercase;">Protecting Defenders</span>
+                        </div>
+                    </a>
+                    <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent.</p>
+                </div>
+                <div><h5 class="footer-title">Organization</h5><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="what-we-do.html">What We Do</a></li><li><a href="where-we-work.html">Where We Work</a></li><li><a href="news.html">News</a></li></ul></div>
+                <div><h5 class="footer-title">Resources</h5><ul class="footer-links"><li><a href="resources.html">Publications</a></li><li><a href="resources.html#toolkits">Toolkits</a></li><li><a href="report-violation.html">Report Violation</a></li></ul></div>
+                <div><h5 class="footer-title">Support</h5><ul class="footer-links"><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li></ul></div>
+                <div>
+                    <h5 class="footer-title">Contact</h5>
+                    <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Plot 1234, Thabo Mbeki Road<br>Lusaka, Zambia</span></div>
+                    <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+260 XXX XXX XXX</span></div>
+                    <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@defenderlinkafrica.org</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 DefenderLink Africa. All rights reserved. Registered NGO in Zambia.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="safeguarding.html">Safeguarding</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const navbar = document.getElementById('navbar');
+            function openMenu() { hamburger.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
+            function closeMenu() { hamburger.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow=''; }
+            if (hamburger && mobileOverlay) {
+                hamburger.addEventListener('click', () => mobileOverlay.classList.contains('active') ? closeMenu() : openMenu());
+                mobileOverlay.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) closeMenu(); });
+            }
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            revealElements.forEach(el => observer.observe(el));
+        })();
+    </script>
 </body>
 </html>
