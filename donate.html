@@ -1,374 +1,1158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Support DefenderLink Africa's mission to protect human rights defenders across Africa. Your donation makes a real difference.">
-  <meta property="og:title" content="Donate - DefenderLink Africa">
-  <meta property="og:image" content="https://i.imgur.com/WQp3Kvs.png">
-  <link rel="icon" type="image/png" href="https://i.imgur.com/WQp3Kvs.png">
-  <title>Donate | DefenderLink Africa</title>
-  <link rel="stylesheet" href="css/style.css">
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support DefenderLink Africa's mission to protect human rights defenders across Africa. Your donation makes a real difference.">
+    <meta property="og:title" content="Donate - DefenderLink Africa">
+    <meta property="og:image" content="https://i.imgur.com/KbDuWry.png">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/26vbOoF.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/26vbOoF.png">
+    <title>Donate | DefenderLink Africa</title>
+
+    <style>
+        :root {
+            --deep-brown: #2C1810;
+            --espresso: #1A0D06;
+            --rich-brown: #3E2016;
+            --warm-brown: #5C3424;
+            --copper: #7D4E34;
+            --terracotta: #8B5A3C;
+            --tan: #B88962;
+            --sand: #C9A07A;
+            --cream: #F2E8DC;
+            --warm-cream: #F7F0E6;
+            --parchment: #FBF6EF;
+            --gold-accent: #C8963E;
+            --gold-light: #D9B056;
+            --gold-dark: #A67C2E;
+            --white: #FFFFFF;
+            --off-white: #FEFBF8;
+            --text-dark: #1A0D06;
+            --text-medium: #3E2016;
+            --text-muted: #7D5C4A;
+            --border-subtle: rgba(139, 94, 60, 0.18);
+            --border-medium: rgba(139, 94, 60, 0.3);
+            --shadow-sm: 0 2px 8px rgba(26, 13, 6, 0.06);
+            --shadow-md: 0 6px 24px rgba(26, 13, 6, 0.1);
+            --shadow-lg: 0 14px 48px rgba(26, 13, 6, 0.16);
+            --shadow-xl: 0 22px 64px rgba(26, 13, 6, 0.22);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-2xl: 28px;
+            --font-heading: 'Georgia', 'Times New Roman', 'Palatino', serif;
+            --font-body: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            --max-width: 1120px;
+            --transition-smooth: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-fast: 0.2s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--parchment);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: url('https://i.imgur.com/Wu44jc7.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(251, 246, 239, 0.9) 0%,
+                    rgba(247, 240, 230, 0.88) 25%,
+                    rgba(242, 232, 220, 0.9) 50%,
+                    rgba(240, 228, 214, 0.92) 100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--deep-brown);
+        }
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+        h2 {
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.05rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-medium);
+        }
+        a {
+            color: var(--warm-brown);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+        a:hover {
+            color: var(--terracotta);
+        }
+        .text-small {
+            font-size: 0.85rem;
+        }
+        .text-muted {
+            color: var(--text-muted);
+        }
+        .text-center {
+            text-align: center;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .container-sm {
+            max-width: 680px;
+        }
+        .section {
+            padding: 4rem 0;
+        }
+        .section-sm {
+            padding: 2.5rem 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.6rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            text-decoration: none;
+            border: 2px solid transparent;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+        .btn-lg {
+            padding: 0.95rem 2.2rem;
+            font-size: 0.95rem;
+            border-radius: var(--radius-lg);
+        }
+        .btn-primary {
+            background: var(--warm-brown);
+            color: var(--white);
+            border-color: var(--warm-brown);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-primary:hover {
+            background: var(--rich-brown);
+            border-color: var(--rich-brown);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-white {
+            background: var(--white);
+            color: var(--deep-brown);
+            border-color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-white:hover {
+            background: var(--cream);
+            border-color: var(--cream);
+            color: var(--deep-brown);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--warm-brown);
+            border-color: var(--border-medium);
+        }
+        .btn-outline:hover {
+            background: var(--warm-brown);
+            color: var(--white);
+            border-color: var(--warm-brown);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* NAVIGATION */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 13, 6, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(200, 150, 62, 0.18);
+            transition: all var(--transition-smooth);
+        }
+        .nav.scrolled {
+            background: rgba(26, 13, 6, 0.96);
+            box-shadow: var(--shadow-lg);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0.55rem 1.5rem;
+            gap: 1rem;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            transition: transform var(--transition-smooth);
+        }
+        .nav-logo:hover img {
+            transform: scale(1.06);
+        }
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-logo-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+        .nav-logo-subtitle {
+            font-size: 0.65rem;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-weight: 500;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 0.45rem 0.8rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.78);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--white);
+            background: rgba(200, 150, 62, 0.18);
+        }
+        .nav-link.donate {
+            background: var(--gold-accent) !important;
+            color: var(--deep-brown) !important;
+            font-weight: 700;
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-md);
+            margin-left: 0.4rem;
+            box-shadow: 0 2px 10px rgba(200, 150, 62, 0.3);
+        }
+        .nav-link.donate:hover {
+            background: var(--gold-light) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(200, 150, 62, 0.45);
+        }
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+            background: none;
+            border: none;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all var(--transition-smooth);
+        }
+        .nav-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav-hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .nav-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(26, 13, 6, 0.97);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-smooth);
+        }
+        .mobile-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-overlay-inner {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .mobile-overlay-link {
+            display: block;
+            padding: 0.9rem 1.5rem;
+            color: var(--cream);
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: all var(--transition-fast);
+            border-radius: var(--radius-md);
+        }
+        .mobile-overlay-link:hover {
+            color: var(--gold-light);
+            background: rgba(200, 150, 62, 0.1);
+        }
+        .mobile-overlay-link.donate-mobile {
+            color: var(--gold-accent);
+            font-weight: 700;
+            font-size: 1.3rem;
+            border: 2px solid var(--gold-accent);
+            border-radius: var(--radius-lg);
+            margin-top: 0.8rem;
+            padding: 0.8rem 2rem;
+        }
+        .mobile-overlay-link.donate-mobile:hover {
+            background: var(--gold-accent);
+            color: var(--deep-brown);
+        }
+
+        /* PAGE HEADER (60vh) */
+        .page-header {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 70px;
+        }
+        .page-header-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .page-header-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            animation: hero-zoom 8s ease-in-out infinite alternate;
+        }
+        @keyframes hero-zoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.06);
+            }
+        }
+        .page-header-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 13, 6, 0.65);
+        }
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+            padding: 2rem 1.5rem;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 1rem;
+        }
+        .breadcrumb a {
+            color: var(--gold-light);
+        }
+        .breadcrumb a:hover {
+            color: var(--white);
+        }
+        .page-header-overline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold-accent);
+            margin-bottom: 0.5rem;
+        }
+        .page-header-title {
+            color: var(--white);
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+        }
+        .page-header-subtitle {
+            color: rgba(255,255,255,0.75);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* IMPACT CARDS */
+        .impact-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-subtle);
+            transition: all var(--transition-smooth);
+        }
+        .impact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-medium);
+        }
+        .impact-amount {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--warm-brown);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FORM STYLES */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            margin-bottom: 0.3rem;
+        }
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            background: var(--white);
+            color: var(--text-dark);
+            transition: all var(--transition-fast);
+            outline: none;
+        }
+        .form-input:focus,
+        .form-select:focus {
+            border-color: var(--warm-brown);
+            box-shadow: 0 0 0 3px rgba(92, 52, 36, 0.1);
+        }
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .form-checkbox input {
+            margin-top: 0.2rem;
+            accent-color: var(--warm-brown);
+        }
+        .divider {
+            height: 1px;
+            background: var(--border-subtle);
+            margin: 2rem 0;
+        }
+
+        /* Donation amount tabs */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .amount-radio {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .amount-label {
+            display: block;
+            padding: 0.8rem 0.5rem;
+            text-align: center;
+            border: 2px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-medium);
+            transition: all var(--transition-fast);
+        }
+        .amount-radio:checked+.amount-label {
+            border-color: var(--gold-accent);
+            background: rgba(200, 150, 62, 0.1);
+            color: var(--deep-brown);
+        }
+
+        /* ALTERNATIVE GIVING (no icons) */
+        .giving-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-subtle);
+            text-align: center;
+            transition: all var(--transition-smooth);
+        }
+        .giving-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-medium);
+        }
+        .giving-number {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: rgba(139, 94, 60, 0.15);
+            margin-bottom: 0.5rem;
+        }
+        .giving-title {
+            margin-bottom: 0.5rem;
+        }
+        .giving-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* TRUST SECTION */
+        .trust-card {
+            text-align: center;
+            padding: 2rem;
+            color: var(--white);
+        }
+        .trust-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: rgba(200, 150, 62, 0.15);
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+        .trust-card h5 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        .trust-card p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* FOOTER */
+        .footer {
+            background-image: url('https://i.imgur.com/FEbqeZI.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: var(--cream);
+            padding: 4rem 0 1.5rem;
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 13, 6, 0.93);
+            z-index: 0;
+        }
+        .footer>.container {
+            position: relative;
+            z-index: 1;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+        .footer-title {
+            color: var(--gold-accent);
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.4rem;
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            transition: all var(--transition-fast);
+        }
+        .footer-links a:hover {
+            color: var(--gold-light);
+            padding-left: 3px;
+        }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.7rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+        .footer-contact-item svg {
+            flex-shrink: 0;
+            color: var(--gold-accent);
+            margin-top: 3px;
+        }
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.78rem;
+            margin: 0;
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.78rem;
+            transition: color var(--transition-fast);
+        }
+        .footer-bottom-links a:hover {
+            color: var(--gold-light);
+        }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                display: none;
+            }
+            .nav-hamburger {
+                display: flex;
+            }
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .amount-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .page-header {
+                min-height: 50vh;
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-logo-text {
+                display: none;
+            }
+            .page-header-title {
+                font-size: 1.8rem;
+            }
+            .amount-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa Logo">
-        <div class="nav-logo-text">
-          <span class="nav-logo-title">DefenderLink Africa</span>
-          <span class="nav-logo-subtitle">Protecting Defenders</span>
-        </div>
-      </a>
-      <div class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="what-we-do.html" class="nav-link">What We Do</a>
-        <a href="where-we-work.html" class="nav-link">Where We Work</a>
-        <a href="resources.html" class="nav-link">Resources</a>
-        <a href="news.html" class="nav-link">News</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="donate.html" class="nav-link donate nav-cta active">Donate</a>
-      </div>
-      <div class="nav-hamburger"><span></span><span></span><span></span></div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu">
-    <div class="mobile-menu-inner">
-      <a href="index.html" class="mobile-menu-link">Home</a>
-      <a href="about.html" class="mobile-menu-link">About Us</a>
-      <a href="what-we-do.html" class="mobile-menu-link">What We Do</a>
-      <a href="where-we-work.html" class="mobile-menu-link">Where We Work</a>
-      <a href="resources.html" class="mobile-menu-link">Resources</a>
-      <a href="news.html" class="mobile-menu-link">News</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
-      <a href="donate.html" class="mobile-menu-link" style="color: var(--accent-gold);">Donate Now</a>
-    </div>
-  </div>
-
-  <!-- PAGE HEADER -->
-  <header class="page-header">
-    <div class="page-header-bg">
-      <img src="https://images.unsplash.com/photo-1469571806173-57b1ad1b7e48?w=1920&q=80" alt="Support">
-    </div>
-    <div class="container">
-      <div class="page-header-content fade-in-up">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span class="breadcrumb-current">Donate</span>
-        </div>
-        <p class="page-header-overline">Support Our Mission</p>
-        <h1 class="page-header-title">Donate to DefenderLink Africa</h1>
-        <p class="page-header-subtitle">Your support directly protects human rights defenders across Africa. Every contribution makes a difference.</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- IMPACT SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Your Impact</div>
-        <h2 class="section-title">How Your Donation Helps</h2>
-        <p class="section-subtitle">100% of your donation goes directly to supporting human rights defenders. Here's what your contribution can achieve.</p>
-      </div>
-      
-      <div class="grid grid-4 gap-xl fade-in-up">
-        <div style="text-align: center; padding: var(--space-xl);">
-          <div style="font-size: 3rem; font-weight: var(--font-weight-extrabold); color: var(--primary);">$25</div>
-          <p>Provides emergency phone credit for a defender in need</p>
-        </div>
-        <div style="text-align: center; padding: var(--space-xl);">
-          <div style="font-size: 3rem; font-weight: var(--font-weight-extrabold); color: var(--primary);">$100</div>
-          <p>Covers one session of psychosocial support counseling</p>
-        </div>
-        <div style="text-align: center; padding: var(--space-xl);">
-          <div style="font-size: 3rem; font-weight: var(--font-weight-extrabold); color: var(--primary);">$500</div>
-          <p>Provides security training for one defender</p>
-        </div>
-        <div style="text-align: center; padding: var(--space-xl);">
-          <div style="font-size: 3rem; font-weight: var(--font-weight-extrabold); color: var(--primary);">$5,000</div>
-          <p>Supports emergency relocation for a defender at risk</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DONATION FORM -->
-  <section class="section" style="background: var(--sand);">
-    <div class="container container-sm">
-      <div class="fade-in-up" style="background: var(--white); padding: var(--space-3xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-        <h2 class="section-title text-center" style="margin-bottom: var(--space-xl);">Make Your Donation</h2>
-        
-        <form id="donationForm">
-          <!-- Amount Selection -->
-          <div class="form-group">
-            <label class="form-label">Select Donation Amount</label>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-sm);">
-              <label style="position: relative; cursor: pointer;">
-                <input type="radio" name="amount" value="25" style="position: absolute; opacity: 0;">
-                <div style="padding: var(--space-md); text-align: center; border: 2px solid var(--smoke); border-radius: var(--radius-md); transition: all 0.3s;">
-                  <strong>$25</strong>
+    <!-- NAVIGATION -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa Logo">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-title">DefenderLink Africa</span>
+                    <span class="nav-logo-subtitle">Protecting Defenders</span>
                 </div>
-              </label>
-              <label style="position: relative; cursor: pointer;">
-                <input type="radio" name="amount" value="50" style="position: absolute; opacity: 0;">
-                <div style="padding: var(--space-md); text-align: center; border: 2px solid var(--smoke); border-radius: var(--radius-md); transition: all 0.3s;">
-                  <strong>$50</strong>
-                </div>
-              </label>
-              <label style="position: relative; cursor: pointer;">
-                <input type="radio" name="amount" value="100" style="position: absolute; opacity: 0;">
-                <div style="padding: var(--space-md); text-align: center; border: 2px solid var(--smoke); border-radius: var(--radius-md); transition: all 0.3s;">
-                  <strong>$100</strong>
-                </div>
-              </label>
-              <label style="position: relative; cursor: pointer;">
-                <input type="radio" name="amount" value="500" style="position: absolute; opacity: 0;">
-                <div style="padding: var(--space-md); text-align: center; border: 2px solid var(--smoke); border-radius: var(--radius-md); transition: all 0.3s;">
-                  <strong>$500</strong>
-                </div>
-              </label>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="what-we-do.html" class="nav-link">What We Do</a>
+                <a href="where-we-work.html" class="nav-link">Where We Work</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link donate active">Donate</a>
             </div>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">Or Enter Custom Amount</label>
-            <div style="position: relative;">
-              <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--muted);">$</span>
-              <input type="number" class="form-input" placeholder="Enter amount" style="padding-left: 40px;">
-            </div>
-          </div>
-          
-          <!-- Frequency -->
-          <div class="form-group">
-            <label class="form-label">Donation Frequency</label>
-            <div style="display: flex; gap: var(--space-md);">
-              <label style="flex: 1; position: relative; cursor: pointer;">
-                <input type="radio" name="frequency" value="one-time" checked style="position: absolute; opacity: 0;">
-                <div style="padding: var(--space-md); text-align: center; border: 2px solid var(--smoke); border-radius: var(--radius-md); transition: all 0.3s;">
-                  One-time
-                </div>
-              </label>
-              <label style="flex: 1; position: relative; cursor: pointer;">
-                <input type="radio" name="frequency" value="monthly" style="position: absolute; opacity: 0;">
-                <div style="padding: var(--space-md); text-align: center; border: 2px solid var(--smoke); border-radius: var(--radius-md); transition: all 0.3s;">
-                  Monthly
-                </div>
-              </label>
-            </div>
-          </div>
-          
-          <div class="divider"></div>
-          
-          <!-- Personal Information -->
-          <h4 style="margin-bottom: var(--space-lg);">Your Information</h4>
-          
-          <div class="grid grid-2 gap-md">
-            <div class="form-group">
-              <label class="form-label">First Name *</label>
-              <input type="text" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Last Name *</label>
-              <input type="text" class="form-input" required>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">Email Address *</label>
-            <input type="email" class="form-input" required>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-label">Country</label>
-            <select class="form-select">
-              <option value="">Select Country</option>
-              <option>United States</option>
-              <option>United Kingdom</option>
-              <option>Canada</option>
-              <option>Australia</option>
-              <option>Germany</option>
-              <option>France</option>
-              <option>Netherlands</option>
-              <option>South Africa</option>
-              <option>Zambia</option>
-              <option>Kenya</option>
-              <option>Nigeria</option>
-              <option>Other</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-checkbox">
-              <input type="checkbox">
-              <span>Donate anonymously (your name won't be displayed publicly)</span>
-            </label>
-          </div>
-          
-          <div class="form-group">
-            <label class="form-checkbox">
-              <input type="checkbox">
-              <span>Keep me updated on DefenderLink Africa's work and impact</span>
-            </label>
-          </div>
-          
-          <!-- Payment Methods -->
-          <div class="divider"></div>
-          
-          <h4 style="margin-bottom: var(--space-lg);">Payment Method</h4>
-          
-          <div style="display: flex; gap: var(--space-md); margin-bottom: var(--space-xl);">
-            <button type="button" class="btn btn-primary btn-lg" style="flex: 1;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              Credit Card
-            </button>
-            <button type="button" class="btn btn-outline btn-lg" style="flex: 1;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              Bank Transfer
-            </button>
-          </div>
-          
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; background: var(--secondary); border-color: var(--secondary);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            Complete Donation
-          </button>
-          
-          <p class="text-center text-small text-muted" style="margin-top: var(--space-lg);">
-            DefenderLink Africa is a registered NGO. Your donation may be tax-deductible depending on your country's laws.
-          </p>
-        </form>
-      </div>
+            <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-overlay-inner">
+            <a href="index.html" class="mobile-overlay-link">Home</a>
+            <a href="about.html" class="mobile-overlay-link">About Us</a>
+            <a href="what-we-do.html" class="mobile-overlay-link">What We Do</a>
+            <a href="where-we-work.html" class="mobile-overlay-link">Where We Work</a>
+            <a href="resources.html" class="mobile-overlay-link">Resources</a>
+            <a href="news.html" class="mobile-overlay-link">News</a>
+            <a href="contact.html" class="mobile-overlay-link">Contact</a>
+            <a href="donate.html" class="mobile-overlay-link donate-mobile">Donate Now</a>
+        </div>
     </div>
-  </section>
 
-  <!-- OTHER WAYS TO GIVE -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Other Ways to Support</div>
-        <h2 class="section-title">Alternative Giving Options</h2>
-      </div>
-      
-      <div class="grid grid-3 gap-xl">
-        <div class="feature-card fade-in-up delay-1">
-          <div class="feature-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          </div>
-          <h4 class="feature-card-title">Bank Transfer</h4>
-          <p class="feature-card-text">Make a direct transfer to our bank account. Contact us for banking details.</p>
-          <a href="contact.html" class="service-card-link">Get Details →</a>
+    <!-- PAGE HEADER (60vh) -->
+    <header class="page-header">
+        <div class="page-header-bg">
+            <img src="https://i.imgur.com/A45UKYU.jpeg" alt="Support DefenderLink Africa">
         </div>
-        
-        <div class="feature-card fade-in-up delay-2">
-          <div class="feature-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h4 class="feature-card-title">Legacy Giving</h4>
-          <p class="feature-card-text">Include DefenderLink Africa in your will or estate planning for lasting impact.</p>
-          <a href="contact.html" class="service-card-link">Learn More →</a>
-        </div>
-        
-        <div class="feature-card fade-in-up delay-3">
-          <div class="feature-card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h4 class="feature-card-title">Corporate Partnership</h4>
-          <p class="feature-card-text">Partner with us as an organization for CSR initiatives and employee engagement.</p>
-          <a href="contact.html" class="service-card-link">Partner With Us →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST INDICATORS -->
-  <section class="section" style="background: var(--earth); color: var(--white);">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline" style="color: var(--accent-gold); border-color: var(--accent-gold);">Our Commitment</div>
-        <h2 class="section-title" style="color: var(--white);">Why Trust Us With Your Donation</h2>
-      </div>
-      
-      <div class="grid grid-3 gap-xl fade-in-up">
-        <div style="text-align: center; padding: var(--space-xl);">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" style="margin-bottom: var(--space-md);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <h5 style="margin-bottom: var(--space-sm);">100% Transparency</h5>
-          <p style="color: rgba(255,255,255,0.7);">We publish annual reports detailing exactly how funds are used and the impact achieved.</p>
-        </div>
-        <div style="text-align: center; padding: var(--space-xl);">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" style="margin-bottom: var(--space-md);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <h5 style="margin-bottom: var(--space-sm);">Registered NGO</h5>
-          <p style="color: rgba(255,255,255,0.7);">Fully registered and compliant with all regulatory requirements in Zambia.</p>
-        </div>
-        <div style="text-align: center; padding: var(--space-xl);">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" style="margin-bottom: var(--space-md);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <h5 style="margin-bottom: var(--space-sm);">Direct Impact</h5>
-          <p style="color: rgba(255,255,255,0.7);">Your donation goes directly to protecting human rights defenders, not overhead.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-md);">
-            <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa" style="height: 50px;">
-            <div class="nav-logo-text">
-              <span class="nav-logo-title" style="color: var(--white);">DefenderLink Africa</span>
-              <span class="nav-logo-subtitle">Protecting Defenders</span>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Donate</span>
             </div>
-          </a>
-          <p>A pan-African organization dedicated to protecting and supporting human rights defenders.</p>
+            <p class="page-header-overline">Support Our Mission</p>
+            <h1 class="page-header-title">Donate to DefenderLink Africa</h1>
+            <p class="page-header-subtitle">Your support directly protects human rights defenders across Africa. Every contribution makes a difference.</p>
         </div>
-        <div>
-          <h5 class="footer-title">Organization</h5>
-          <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="what-we-do.html">What We Do</a></li>
-            <li><a href="where-we-work.html">Where We Work</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources.html">Publications</a></li>
-            <li><a href="report-violation.html">Report a Violation</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Support</h5>
-          <ul class="footer-links">
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Contact</h5>
-          <div class="footer-contact-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>info@defenderlinkafrica.org</span>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">© 2025 DefenderLink Africa. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="safeguarding.html">Safeguarding</a>
-          <a href="terms.html">Terms</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </header>
 
-  <script src="js/main.js"></script>
+    <!-- IMPACT SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="reveal text-center" style="max-width: 700px; margin: 0 auto 2.5rem;">
+                <h2 style="margin-bottom: 0.8rem;">How Your Donation Helps</h2>
+                <p class="text-muted">100% of your donation goes directly to supporting human rights defenders. Here's what your contribution can achieve.</p>
+            </div>
+            <div class="grid grid-4">
+                <div class="impact-card reveal"><div class="impact-amount">$25</div><p>Emergency phone credit for a defender in need</p></div>
+                <div class="impact-card reveal"><div class="impact-amount">$100</div><p>One session of psychosocial support counseling</p></div>
+                <div class="impact-card reveal"><div class="impact-amount">$500</div><p>Security training for one defender</p></div>
+                <div class="impact-card reveal"><div class="impact-amount">$5,000</div><p>Emergency relocation for a defender at risk</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATION FORM -->
+    <section class="section" style="background: rgba(247, 240, 230, 0.65);">
+        <div class="container container-sm">
+            <div class="reveal" style="background: var(--white); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+                <h2 class="text-center" style="margin-bottom: 2rem;">Make Your Donation</h2>
+                <form id="donationForm">
+                    <!-- Amount Selection -->
+                    <div class="form-group">
+                        <label class="form-label">Select Donation Amount</label>
+                        <div class="amount-grid">
+                            <label>
+                                <input type="radio" name="amount" value="25" class="amount-radio" checked>
+                                <span class="amount-label">$25</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="amount" value="50" class="amount-radio">
+                                <span class="amount-label">$50</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="amount" value="100" class="amount-radio">
+                                <span class="amount-label">$100</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="amount" value="500" class="amount-radio">
+                                <span class="amount-label">$500</span>
+                            </label>
+                        </div>
+                        <div style="position: relative;">
+                            <span style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);">$</span>
+                            <input type="number" class="form-input" placeholder="Enter custom amount" style="padding-left: 40px;">
+                        </div>
+                    </div>
+
+                    <!-- Frequency -->
+                    <div class="form-group">
+                        <label class="form-label">Donation Frequency</label>
+                        <div style="display: flex; gap: 0.8rem;">
+                            <label style="flex: 1; position: relative; cursor: pointer;">
+                                <input type="radio" name="frequency" value="one-time" checked class="amount-radio" style="position: absolute; opacity: 0;">
+                                <span class="amount-label" style="display: block; padding: 0.7rem;">One-time</span>
+                            </label>
+                            <label style="flex: 1; position: relative; cursor: pointer;">
+                                <input type="radio" name="frequency" value="monthly" class="amount-radio" style="position: absolute; opacity: 0;">
+                                <span class="amount-label" style="display: block; padding: 0.7rem;">Monthly</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Personal Information -->
+                    <h4 style="margin-bottom: 1rem;">Your Information</h4>
+                    <div class="grid grid-2" style="gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label">First Name *</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name *</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address *</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Country</label>
+                        <select class="form-select">
+                            <option value="">Select Country</option>
+                            <option>United States</option><option>United Kingdom</option><option>Canada</option>
+                            <option>Australia</option><option>Germany</option><option>France</option>
+                            <option>Netherlands</option><option>South Africa</option><option>Zambia</option>
+                            <option>Kenya</option><option>Nigeria</option><option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-checkbox">
+                            <input type="checkbox">
+                            <span>Donate anonymously</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-checkbox">
+                            <input type="checkbox">
+                            <span>Keep me updated on DefenderLink Africa's work</span>
+                        </label>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h4 style="margin-bottom: 1rem;">Payment Method</h4>
+                    <div style="display: flex; gap: 0.8rem; margin-bottom: 1.5rem;">
+                        <button type="button" class="btn btn-primary btn-lg" style="flex: 1;">Credit Card</button>
+                        <button type="button" class="btn btn-outline btn-lg" style="flex: 1;">Bank Transfer</button>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; background: var(--gold-accent); border-color: var(--gold-accent); color: var(--deep-brown);">
+                        Complete Donation
+                    </button>
+                    <p class="text-center text-small text-muted" style="margin-top: 1rem;">
+                        DefenderLink Africa is a registered NGO. Your donation may be tax-deductible.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- OTHER WAYS TO GIVE (no icons, no links) -->
+    <section class="section">
+        <div class="container">
+            <div class="reveal text-center" style="max-width: 600px; margin: 0 auto 2.5rem;">
+                <h2>Alternative Giving Options</h2>
+            </div>
+            <div class="grid grid-3">
+                <div class="giving-card reveal">
+                    <div class="giving-number">01</div>
+                    <h4 class="giving-title">Bank Transfer</h4>
+                    <p class="giving-text">Make a direct transfer to our bank account. Contact us for banking details.</p>
+                </div>
+                <div class="giving-card reveal">
+                    <div class="giving-number">02</div>
+                    <h4 class="giving-title">Legacy Giving</h4>
+                    <p class="giving-text">Include DefenderLink Africa in your will or estate planning for lasting impact.</p>
+                </div>
+                <div class="giving-card reveal">
+                    <div class="giving-number">03</div>
+                    <h4 class="giving-title">Corporate Partnership</h4>
+                    <p class="giving-text">Partner with us as an organization for CSR initiatives and employee engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST INDICATORS -->
+    <section class="section" style="background: var(--deep-brown);">
+        <div class="container">
+            <div class="reveal text-center" style="max-width: 600px; margin: 0 auto 2.5rem;">
+                <h2 style="color: var(--white);">Why Trust Us With Your Donation</h2>
+            </div>
+            <div class="grid grid-3">
+                <div class="trust-card reveal">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h5>100% Transparency</h5>
+                    <p>We publish annual reports detailing exactly how funds are used.</p>
+                </div>
+                <div class="trust-card reveal">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h5>Registered NGO</h5>
+                    <p>Fully registered and compliant with all regulatory requirements in Zambia.</p>
+                </div>
+                <div class="trust-card reveal">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h5>Direct Impact</h5>
+                    <p>Your donation goes directly to protecting defenders, not overhead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.7rem; text-decoration:none;">
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa" style="height: 44px;">
+                        <div>
+                            <span style="font-family:var(--font-heading);font-weight:700;font-size:1rem;color:var(--white);display:block;">DefenderLink Africa</span>
+                            <span style="font-size:0.65rem;color:var(--gold-accent);text-transform:uppercase;letter-spacing:0.14em;">Protecting Defenders</span>
+                        </div>
+                    </a>
+                    <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent. Headquartered in Lusaka, Zambia.</p>
+                </div>
+                <div>
+                    <h5 class="footer-title">Organization</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="what-we-do.html">What We Do</a></li>
+                        <li><a href="where-we-work.html">Where We Work</a></li>
+                        <li><a href="news.html">News & Updates</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Publications</a></li>
+                        <li><a href="resources.html#toolkits">Toolkits</a></li>
+                        <li><a href="resources.html#reports">Reports</a></li>
+                        <li><a href="report-violation.html">Report a Violation</a></li>
+                        <li><a href="safeguarding.html">Safeguarding</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-title">Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="footer-title">Contact</h5>
+                    <div class="footer-contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Plot 1234, Thabo Mbeki Road<br>Lusaka, Zambia</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+260 XXX XXX XXX</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@defenderlinkafrica.org</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 DefenderLink Africa. All rights reserved. Registered NGO in Zambia.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="safeguarding.html">Safeguarding Policy</a>
+                    <a href="terms.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const navbar = document.getElementById('navbar');
+
+            function openMenu() {
+                hamburger.classList.add('active');
+                mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (hamburger && mobileOverlay) {
+                hamburger.addEventListener('click', () => {
+                    mobileOverlay.classList.contains('active') ? closeMenu() : openMenu();
+                });
+                mobileOverlay.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) closeMenu();
+                });
+            }
+
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Scroll reveal
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            revealElements.forEach(el => observer.observe(el));
+
+            // Donation form prevent
+            document.getElementById('donationForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your generous donation!');
+                this.reset();
+            });
+        })();
+    </script>
 </body>
 </html>
