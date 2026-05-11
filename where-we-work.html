@@ -1,337 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DefenderLink Africa operates across 25+ African countries with regional offices in Kenya, South Africa, Nigeria, and headquarters in Zambia.">
-  <meta property="og:title" content="Where We Work - DefenderLink Africa">
-  <meta property="og:image" content="https://i.imgur.com/WQp3Kvs.png">
-  <link rel="icon" type="image/png" href="https://i.imgur.com/WQp3Kvs.png">
-  <title>Where We Work | DefenderLink Africa</title>
-  <link rel="stylesheet" href="css/style.css">
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DefenderLink Africa operates across 25+ African countries with regional offices in Kenya, South Africa, Nigeria, and headquarters in Zambia.">
+    <meta property="og:title" content="Where We Work - DefenderLink Africa">
+    <meta property="og:image" content="https://i.imgur.com/KbDuWry.png">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/26vbOoF.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/26vbOoF.png">
+    <title>Where We Work | DefenderLink Africa</title>
+
+    <style>
+        :root {
+            --deep-brown: #2C1810;
+            --espresso: #1A0D06;
+            --rich-brown: #3E2016;
+            --warm-brown: #5C3424;
+            --copper: #7D4E34;
+            --terracotta: #8B5A3C;
+            --tan: #B88962;
+            --sand: #C9A07A;
+            --cream: #F2E8DC;
+            --warm-cream: #F7F0E6;
+            --parchment: #FBF6EF;
+            --gold-accent: #C8963E;
+            --gold-light: #D9B056;
+            --gold-dark: #A67C2E;
+            --white: #FFFFFF;
+            --off-white: #FEFBF8;
+            --text-dark: #1A0D06;
+            --text-medium: #3E2016;
+            --text-muted: #7D5C4A;
+            --border-subtle: rgba(139, 94, 60, 0.18);
+            --border-medium: rgba(139, 94, 60, 0.3);
+            --shadow-sm: 0 2px 8px rgba(26, 13, 6, 0.06);
+            --shadow-md: 0 6px 24px rgba(26, 13, 6, 0.1);
+            --shadow-lg: 0 14px 48px rgba(26, 13, 6, 0.16);
+            --shadow-xl: 0 22px 64px rgba(26, 13, 6, 0.22);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-2xl: 28px;
+            --font-heading: 'Georgia', 'Times New Roman', 'Palatino', serif;
+            --font-body: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            --max-width: 1120px;
+            --transition-smooth: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-fast: 0.2s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--parchment);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: url('https://i.imgur.com/Wu44jc7.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(251, 246, 239, 0.9) 0%,
+                    rgba(247, 240, 230, 0.88) 25%,
+                    rgba(242, 232, 220, 0.9) 50%,
+                    rgba(240, 228, 214, 0.92) 100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        h1,h2,h3,h4,h5 { font-family: var(--font-heading); font-weight: 700; line-height: 1.15; color: var(--deep-brown); }
+        h1 { font-size: clamp(2rem, 4.5vw, 3.4rem); }
+        h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+        h3 { font-size: 1.3rem; }
+        p { margin-bottom: 1rem; color: var(--text-medium); }
+        a { color: var(--warm-brown); text-decoration: none; transition: color var(--transition-fast); }
+        a:hover { color: var(--terracotta); }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 4rem 0; }
+        .text-center { text-align: center; }
+        .text-small { font-size: 0.85rem; }
+        .text-muted { color: var(--text-muted); }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.8rem 1.6rem; font-family: var(--font-body); font-weight: 600;
+            font-size: 0.9rem; border-radius: var(--radius-md); cursor: pointer;
+            transition: all var(--transition-smooth); text-decoration: none;
+            border: 2px solid transparent; white-space: nowrap; letter-spacing: 0.02em;
+        }
+        .btn-primary { background: var(--warm-brown); color: var(--white); border-color: var(--warm-brown); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background: var(--rich-brown); border-color: var(--rich-brown); color: var(--white); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-white { background: var(--white); color: var(--deep-brown); border-color: var(--white); box-shadow: var(--shadow-md); }
+        .btn-white:hover { background: var(--cream); border-color: var(--cream); color: var(--deep-brown); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
+        .btn-outline-white:hover { background: var(--white); color: var(--deep-brown); border-color: var(--white); transform: translateY(-2px); }
+
+        /* NAV */
+        .nav {
+            position: fixed; top:0; left:0; right:0; z-index: 1000;
+            background: rgba(26,13,6,0.88); backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(200,150,62,0.18); transition: all var(--transition-smooth);
+        }
+        .nav.scrolled { background: rgba(26,13,6,0.96); box-shadow: var(--shadow-lg); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--max-width); margin:0 auto; padding:0.55rem 1.5rem; gap:1rem; }
+        .nav-logo { display: flex; align-items: center; gap:0.7rem; text-decoration:none; flex-shrink:0; }
+        .nav-logo img { height:40px; transition: transform var(--transition-smooth); }
+        .nav-logo:hover img { transform: scale(1.06); }
+        .nav-logo-text { display:flex; flex-direction:column; }
+        .nav-logo-title { font-family: var(--font-heading); font-weight:700; font-size:1rem; color:var(--white); line-height:1.2; }
+        .nav-logo-subtitle { font-size:0.65rem; color:var(--gold-accent); text-transform:uppercase; letter-spacing:0.16em; }
+        .nav-menu { display: flex; align-items: center; gap:0.2rem; }
+        .nav-link { padding:0.45rem 0.8rem; font-size:0.82rem; font-weight:500; color:rgba(255,255,255,0.78); text-decoration:none; border-radius:var(--radius-sm); transition:all var(--transition-fast); white-space:nowrap; }
+        .nav-link:hover,.nav-link.active { color:var(--white); background:rgba(200,150,62,0.18); }
+        .nav-link.donate { background:var(--gold-accent)!important; color:var(--deep-brown)!important; font-weight:700; padding:0.5rem 1.2rem; border-radius:var(--radius-md); }
+        .nav-link.donate:hover { background:var(--gold-light)!important; transform:translateY(-2px); box-shadow:0 6px 22px rgba(200,150,62,0.45); }
+
+        .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:0.5rem; z-index:1001; background:none; border:none; }
+        .nav-hamburger span { display:block; width:26px; height:2.5px; background:var(--white); border-radius:2px; transition:all var(--transition-smooth); }
+        .nav-hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity:0; transform:scaleX(0); }
+        .nav-hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+        .mobile-overlay {
+            position:fixed; inset:0; background:rgba(26,13,6,0.97); z-index:999;
+            display:flex; align-items:center; justify-content:center;
+            opacity:0; pointer-events:none; transition:opacity var(--transition-smooth);
+        }
+        .mobile-overlay.active { opacity:1; pointer-events:all; }
+        .mobile-overlay-inner { text-align:center; display:flex; flex-direction:column; gap:0.3rem; }
+        .mobile-overlay-link { display:block; padding:0.9rem 1.5rem; color:var(--cream); font-size:1.2rem; text-decoration:none; }
+        .mobile-overlay-link:hover { color:var(--gold-light); background:rgba(200,150,62,0.1); border-radius:var(--radius-md); }
+        .mobile-overlay-link.donate-mobile { color:var(--gold-accent); font-weight:700; font-size:1.3rem; border:2px solid var(--gold-accent); border-radius:var(--radius-lg); margin-top:0.8rem; }
+
+        /* PAGE HEADER 60vh */
+        .page-header {
+            position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center;
+            text-align:center; overflow:hidden; padding-top:70px;
+        }
+        .page-header-bg { position:absolute; inset:0; z-index:0; }
+        .page-header-bg img { width:100%; height:100%; object-fit:cover; object-position:center 30%; animation:hero-zoom 8s ease-in-out infinite alternate; }
+        @keyframes hero-zoom { 0%{ transform:scale(1); } 100%{ transform:scale(1.06); } }
+        .page-header-bg::after { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.65); }
+        .page-header .container { position:relative; z-index:1; }
+        .breadcrumb { display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:0.8rem; color:rgba(255,255,255,0.7); margin-bottom:1rem; }
+        .breadcrumb a { color:var(--gold-light); }
+        .page-header-overline { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold-accent); margin-bottom:0.5rem; }
+        .page-header-title { color:var(--white); margin-bottom:0.8rem; text-shadow:0 2px 18px rgba(0,0,0,0.5); }
+        .page-header-subtitle { color:rgba(255,255,255,0.75); max-width:500px; margin:0 auto; }
+
+        /* IMPACT STATS */
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; text-align:center; }
+        .stat-card { background:var(--white); padding:2rem; border-radius:var(--radius-xl); box-shadow:var(--shadow-sm); border:1px solid var(--border-subtle); transition:all var(--transition-smooth); }
+        .stat-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--border-medium); }
+        .stat-number { font-family:var(--font-heading); font-size:2.6rem; font-weight:700; color:var(--warm-brown); line-height:1; margin-bottom:0.3rem; }
+        .stat-label { font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; }
+
+        /* REGIONAL OFFICES (dark section) */
+        .dark-section { background:var(--deep-brown); color:var(--white); }
+        .dark-section h2,.dark-section h3,.dark-section h4 { color:var(--white); }
+        .dark-section p { color:rgba(255,255,255,0.7); }
+        .office-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+        .office-card { background:rgba(255,255,255,0.07); border-radius:var(--radius-xl); overflow:hidden; transition:all var(--transition-smooth); }
+        .office-card:hover { background:rgba(255,255,255,0.12); transform:translateY(-4px); }
+        .office-card img { width:100%; height:220px; object-fit:cover; }
+        .office-card-body { padding:2rem; }
+        .office-badge { display:inline-block; padding:0.3rem 1rem; border-radius:50px; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
+        .badge-hq { background:var(--gold-accent); color:var(--deep-brown); }
+        .badge-regional { background:var(--warm-brown); color:var(--white); }
+        .office-card ul { list-style:none; color:rgba(255,255,255,0.6); font-size:0.9rem; margin:1rem 0; }
+        .office-card ul li { margin-bottom:0.3rem; padding-left:1rem; position:relative; }
+        .office-card ul li::before { content:'•'; position:absolute; left:0; color:var(--gold-accent); }
+
+        /* COUNTRIES LIST */
+        .countries-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+        .country-region { background:var(--white); padding:2rem; border-radius:var(--radius-lg); border:1px solid var(--border-subtle); transition:all var(--transition-smooth); }
+        .country-region:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+        .country-region h5 { color:var(--warm-brown); margin-bottom:1rem; }
+        .country-region ul { list-style:none; padding:0; color:var(--text-medium); font-size:0.9rem; }
+        .country-region ul li { margin-bottom:0.3rem; }
+
+        /* CTA */
+        .cta-section {
+            background:var(--deep-brown); padding:4rem 0; text-align:center; position:relative; overflow:hidden;
+        }
+        .cta-section::before { content:''; position:absolute; top:-40%; left:-40%; width:180%; height:180%; background:radial-gradient(circle at center,rgba(200,150,62,0.06) 0%,transparent 55%); animation:rotate-glow 20s linear infinite; }
+        @keyframes rotate-glow { from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+        .cta-content { position:relative; z-index:1; max-width:600px; margin:0 auto; }
+        .cta-title { color:var(--white); margin-bottom:1rem; }
+        .cta-text { color:rgba(255,255,255,0.7); margin-bottom:2rem; }
+        .cta-buttons { display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; }
+
+        /* FOOTER */
+        .footer {
+            background-image:url('https://i.imgur.com/FEbqeZI.jpeg'); background-size:cover; background-position:center;
+            position:relative; color:var(--cream); padding:4rem 0 1.5rem;
+        }
+        .footer::before { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.93); z-index:0; }
+        .footer>.container { position:relative; z-index:1; }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1.2fr; gap:2rem; margin-bottom:2.5rem; }
+        .footer-brand p { color:rgba(255,255,255,0.6); font-size:0.85rem; }
+        .footer-title { color:var(--gold-accent); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:1rem; font-weight:700; }
+        .footer-links { list-style:none; padding:0; }
+        .footer-links li { margin-bottom:0.4rem; }
+        .footer-links a { color:rgba(255,255,255,0.6); font-size:0.85rem; transition:all var(--transition-fast); }
+        .footer-links a:hover { color:var(--gold-light); padding-left:3px; }
+        .footer-contact-item { display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.7rem; color:rgba(255,255,255,0.6); font-size:0.85rem; }
+        .footer-contact-item svg { flex-shrink:0; color:var(--gold-accent); margin-top:3px; }
+        .footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); }
+        .footer-copyright { color:rgba(255,255,255,0.35); font-size:0.78rem; margin:0; }
+        .footer-bottom-links { display:flex; gap:1.2rem; }
+        .footer-bottom-links a { color:rgba(255,255,255,0.35); font-size:0.78rem; }
+        .footer-bottom-links a:hover { color:var(--gold-light); }
+
+        .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+
+        @media (max-width:1024px) {
+            .nav-menu { display:none; }
+            .nav-hamburger { display:flex; }
+            .office-grid { grid-template-columns:1fr; }
+            .countries-grid { grid-template-columns:repeat(2,1fr); }
+            .stats-grid { grid-template-columns:repeat(2,1fr); }
+            .footer-grid { grid-template-columns:repeat(3,1fr); }
+        }
+        @media (max-width:768px) {
+            .stats-grid,.countries-grid { grid-template-columns:1fr 1fr; }
+            .footer-grid { grid-template-columns:1fr 1fr; }
+            .page-header { min-height:50vh; }
+        }
+        @media (max-width:480px) {
+            .stats-grid,.countries-grid { grid-template-columns:1fr; }
+            .footer-grid { grid-template-columns:1fr; }
+            .nav-logo-text { display:none; }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa Logo">
-        <div class="nav-logo-text">
-          <span class="nav-logo-title">DefenderLink Africa</span>
-          <span class="nav-logo-subtitle">Protecting Defenders</span>
-        </div>
-      </a>
-      <div class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="what-we-do.html" class="nav-link">What We Do</a>
-        <a href="where-we-work.html" class="nav-link active">Where We Work</a>
-        <a href="resources.html" class="nav-link">Resources</a>
-        <a href="news.html" class="nav-link">News</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="donate.html" class="nav-link donate nav-cta">Donate</a>
-      </div>
-      <div class="nav-hamburger"><span></span><span></span><span></span></div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu">
-    <div class="mobile-menu-inner">
-      <a href="index.html" class="mobile-menu-link">Home</a>
-      <a href="about.html" class="mobile-menu-link">About Us</a>
-      <a href="what-we-do.html" class="mobile-menu-link">What We Do</a>
-      <a href="where-we-work.html" class="mobile-menu-link">Where We Work</a>
-      <a href="resources.html" class="mobile-menu-link">Resources</a>
-      <a href="news.html" class="mobile-menu-link">News</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
-      <a href="donate.html" class="mobile-menu-link" style="color: var(--accent-gold);">Donate Now</a>
-    </div>
-  </div>
-
-  <!-- PAGE HEADER -->
-  <header class="page-header">
-    <div class="page-header-bg">
-      <img src="https://images.unsplash.com/photo-1547981606-f443c507233e?w=1920&q=80" alt="Africa map">
-    </div>
-    <div class="container">
-      <div class="page-header-content fade-in-up">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span class="breadcrumb-current">Where We Work</span>
-        </div>
-        <p class="page-header-overline">Our Presence</p>
-        <h1 class="page-header-title">Where We Work</h1>
-        <p class="page-header-subtitle">With regional offices across the continent and partnerships spanning 25+ countries, we provide localized support to human rights defenders wherever they are.</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- MAP SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Continental Reach</div>
-        <h2 class="section-title">Pan-African Coverage</h2>
-        <p class="section-subtitle">Our strategic presence across Africa enables us to respond quickly to defender needs while building strong local partnerships.</p>
-      </div>
-      
-      <div class="fade-in-up" style="background: var(--sand); border-radius: var(--radius-lg); padding: var(--space-2xl); margin-bottom: var(--space-3xl);">
-        <div class="grid grid-4 gap-xl text-center">
-          <div>
-            <div class="impact-card-number" data-counter="25" style="color: var(--primary);">25+</div>
-            <div style="font-size: 0.875rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Countries</div>
-          </div>
-          <div>
-            <div class="impact-card-number" style="color: var(--primary);">4</div>
-            <div style="font-size: 0.875rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Regional Offices</div>
-          </div>
-          <div>
-            <div class="impact-card-number" data-counter="100" style="color: var(--primary);">100+</div>
-            <div style="font-size: 0.875rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Partner Organizations</div>
-          </div>
-          <div>
-            <div class="impact-card-number" data-counter="500" style="color: var(--primary);">500+</div>
-            <div style="font-size: 0.875rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Defenders Supported</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGIONAL OFFICES -->
-  <section class="section" style="background: var(--earth); color: var(--white);">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline" style="color: var(--accent-gold); border-color: var(--accent-gold);">Regional Presence</div>
-        <h2 class="section-title" style="color: var(--white);">Our Regional Offices</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Strategically positioned to provide timely, localized support to defenders across Africa.</p>
-      </div>
-      
-      <div class="grid grid-2 gap-3xl">
-        <!-- Headquarters -->
-        <div class="fade-in-up delay-1" style="background: rgba(255,255,255,0.08); border-radius: var(--radius-lg); overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1547981606-f443c507233e?w=800&q=80" alt="Zambia" style="width: 100%; height: 250px; object-fit: cover;">
-          <div style="padding: var(--space-2xl);">
-            <span style="background: var(--accent-gold); color: var(--earth); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.1em;">Headquarters</span>
-            <h3 style="color: var(--white); margin: var(--space-lg) 0 var(--space-sm);">Lusaka, Zambia</h3>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--space-lg);">Our central headquarters coordinates operations across the continent and houses our primary emergency response center.</p>
-            <ul style="color: rgba(255,255,255,0.6); margin-bottom: var(--space-lg);">
-              <li style="margin-bottom: var(--space-xs);">• Executive leadership and governance</li>
-              <li style="margin-bottom: var(--space-xs);">• Central emergency response coordination</li>
-              <li style="margin-bottom: var(--space-xs);">• Continental advocacy and partnerships</li>
-              <li>• Financial and administrative services</li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- East Africa -->
-        <div class="fade-in-up delay-2" style="background: rgba(255,255,255,0.08); border-radius: var(--radius-lg); overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1489392191049-fcfcfd398c97?w=800&q=80" alt="Kenya" style="width: 100%; height: 250px; object-fit: cover;">
-          <div style="padding: var(--space-2xl);">
-            <span style="background: var(--secondary); color: var(--white); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.1em;">Regional Hub</span>
-            <h3 style="color: var(--white); margin: var(--space-lg) 0 var(--space-sm);">Nairobi, Kenya</h3>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--space-lg);">Our East Africa hub serves defenders in Kenya, Uganda, Tanzania, Rwanda, Burundi, Ethiopia, and South Sudan.</p>
-            <ul style="color: rgba(255,255,255,0.6); margin-bottom: var(--space-lg);">
-              <li style="margin-bottom: var(--space-xs);">• East Africa protection programs</li>
-              <li style="margin-bottom: var(--space-xs);">• Regional training and capacity building</li>
-              <li style="margin-bottom: var(--space-xs);">• East African Community advocacy</li>
-              <li>• Local partnership coordination</li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- West Africa -->
-        <div class="fade-in-up delay-3" style="background: rgba(255,255,255,0.08); border-radius: var(--radius-lg); overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1589303830797-08f8c87deb26?w=800&q=80" alt="Nigeria" style="width: 100%; height: 250px; object-fit: cover;">
-          <div style="padding: var(--space-2xl);">
-            <span style="background: var(--secondary); color: var(--white); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.1em;">Regional Hub</span>
-            <h3 style="color: var(--white); margin: var(--space-lg) 0 var(--space-sm);">Lagos, Nigeria</h3>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--space-lg);">Our West Africa hub provides critical support in a region with significant defender protection needs.</p>
-            <ul style="color: rgba(255,255,255,0.6); margin-bottom: var(--space-lg);">
-              <li style="margin-bottom: var(--space-xs);">• West Africa protection programs</li>
-              <li style="margin-bottom: var(--space-xs);">• ECOWAS engagement and advocacy</li>
-              <li style="margin-bottom: var(--space-xs);">• French/English bilingual services</li>
-              <li>• Regional emergency response</li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Southern Africa -->
-        <div class="fade-in-up delay-4" style="background: rgba(255,255,255,0.08); border-radius: var(--radius-lg); overflow: hidden;">
-          <img src="https://images.unsplash.com/photo-1570077108636-74778822f529?w=800&q=80" alt="South Africa" style="width: 100%; height: 250px; object-fit: cover;">
-          <div style="padding: var(--space-2xl);">
-            <span style="background: var(--secondary); color: var(--white); padding: 4px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.1em;">Regional Hub</span>
-            <h3 style="color: var(--white); margin: var(--space-lg) 0 var(--space-sm);">Johannesburg, South Africa</h3>
-            <p style="color: rgba(255,255,255,0.7); margin-bottom: var(--space-lg);">Our Southern Africa hub supports defenders across the SADC region and engages key continental institutions.</p>
-            <ul style="color: rgba(255,255,255,0.6); margin-bottom: var(--space-lg);">
-              <li style="margin-bottom: var(--space-xs);">• Southern Africa protection programs</li>
-              <li style="margin-bottom: var(--space-xs);">• SADC advocacy and engagement</li>
-              <li style="margin-bottom: var(--space-xs);">• Continental civil society coordination</li>
-              <li>• Regional training center</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COUNTRIES LIST -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Country Presence</div>
-        <h2 class="section-title">Countries We Serve</h2>
-        <p class="section-subtitle">Through our regional offices and network of partners, we provide support to human rights defenders across these countries.</p>
-      </div>
-      
-      <div class="grid grid-4 gap-lg fade-in-up">
-        <!-- East Africa -->
-        <div style="padding: var(--space-xl); background: var(--sand); border-radius: var(--radius-md);">
-          <h5 style="color: var(--primary); margin-bottom: var(--space-md);">East Africa</h5>
-          <ul class="text-small" style="color: var(--slate);">
-            <li style="margin-bottom: var(--space-xs);">Kenya</li>
-            <li style="margin-bottom: var(--space-xs);">Uganda</li>
-            <li style="margin-bottom: var(--space-xs);">Tanzania</li>
-            <li style="margin-bottom: var(--space-xs);">Rwanda</li>
-            <li style="margin-bottom: var(--space-xs);">Burundi</li>
-            <li style="margin-bottom: var(--space-xs);">Ethiopia</li>
-            <li>South Sudan</li>
-          </ul>
-        </div>
-        
-        <!-- West Africa -->
-        <div style="padding: var(--space-xl); background: var(--sand); border-radius: var(--radius-md);">
-          <h5 style="color: var(--primary); margin-bottom: var(--space-md);">West Africa</h5>
-          <ul class="text-small" style="color: var(--slate);">
-            <li style="margin-bottom: var(--space-xs);">Nigeria</li>
-            <li style="margin-bottom: var(--space-xs);">Ghana</li>
-            <li style="margin-bottom: var(--space-xs);">Senegal</li>
-            <li style="margin-bottom: var(--space-xs);">Mali</li>
-            <li style="margin-bottom: var(--space-xs);">Cameroon</li>
-            <li style="margin-bottom: var(--space-xs);">Côte d'Ivoire</li>
-            <li>Niger</li>
-          </ul>
-        </div>
-        
-        <!-- Southern Africa -->
-        <div style="padding: var(--space-xl); background: var(--sand); border-radius: var(--radius-md);">
-          <h5 style="color: var(--primary); margin-bottom: var(--space-md);">Southern Africa</h5>
-          <ul class="text-small" style="color: var(--slate);">
-            <li style="margin-bottom: var(--space-xs);">South Africa</li>
-            <li style="margin-bottom: var(--space-xs);">Zambia</li>
-            <li style="margin-bottom: var(--space-xs);">Zimbabwe</li>
-            <li style="margin-bottom: var(--space-xs);">Malawi</li>
-            <li style="margin-bottom: var(--space-xs);">Mozambique</li>
-            <li style="margin-bottom: var(--space-xs);">Namibia</li>
-            <li>Botswana</li>
-          </ul>
-        </div>
-        
-        <!-- Central & North Africa -->
-        <div style="padding: var(--space-xl); background: var(--sand); border-radius: var(--radius-md);">
-          <h5 style="color: var(--primary); margin-bottom: var(--space-md);">Central & North Africa</h5>
-          <ul class="text-small" style="color: var(--slate);">
-            <li style="margin-bottom: var(--space-xs);">DR Congo</li>
-            <li style="margin-bottom: var(--space-xs);">Republic of Congo</li>
-            <li style="margin-bottom: var(--space-xs);">Central African Republic</li>
-            <li style="margin-bottom: var(--space-xs);">Chad</li>
-            <li style="margin-bottom: var(--space-xs);">Sudan</li>
-            <li style="margin-bottom: var(--space-xs);">Tunisia</li>
-            <li>Morocco</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="text-center fade-in-up" style="margin-top: var(--space-3xl);">
-        <p style="color: var(--muted); margin-bottom: var(--space-lg);">Don't see your country listed? We may still be able to provide support through our network.</p>
-        <a href="contact.html" class="btn btn-primary">
-          Contact Us for Support
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content fade-in-up">
-        <h2 class="cta-title">Need Support in Your Region?</h2>
-        <p class="cta-text">Contact the regional office nearest you or reach out to our headquarters for guidance on available support services.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-white btn-lg">Contact Us</a>
-          <a href="donate.html" class="btn btn-outline-white btn-lg">Support Our Work</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-md);">
-            <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa" style="height: 50px;">
-            <div class="nav-logo-text">
-              <span class="nav-logo-title" style="color: var(--white);">DefenderLink Africa</span>
-              <span class="nav-logo-subtitle">Protecting Defenders</span>
+    <!-- NAV -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="Logo">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-title">DefenderLink Africa</span>
+                    <span class="nav-logo-subtitle">Protecting Defenders</span>
+                </div>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="what-we-do.html" class="nav-link">What We Do</a>
+                <a href="where-we-work.html" class="nav-link active">Where We Work</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link donate">Donate</a>
             </div>
-          </a>
-          <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-            <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg></a>
-          </div>
+            <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
-        <div>
-          <h5 class="footer-title">Organization</h5>
-          <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="what-we-do.html">What We Do</a></li>
-            <li><a href="where-we-work.html">Where We Work</a></li>
-            <li><a href="news.html">News</a></li>
-          </ul>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-overlay-inner">
+            <a href="index.html" class="mobile-overlay-link">Home</a>
+            <a href="about.html" class="mobile-overlay-link">About Us</a>
+            <a href="what-we-do.html" class="mobile-overlay-link">What We Do</a>
+            <a href="where-we-work.html" class="mobile-overlay-link">Where We Work</a>
+            <a href="resources.html" class="mobile-overlay-link">Resources</a>
+            <a href="news.html" class="mobile-overlay-link">News</a>
+            <a href="contact.html" class="mobile-overlay-link">Contact</a>
+            <a href="donate.html" class="mobile-overlay-link donate-mobile">Donate Now</a>
         </div>
-        <div>
-          <h5 class="footer-title">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources.html">Publications</a></li>
-            <li><a href="report-violation.html">Report a Violation</a></li>
-            <li><a href="safeguarding.html">Safeguarding</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Support</h5>
-          <ul class="footer-links">
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Contact</h5>
-          <div class="footer-contact-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>info@defenderlinkafrica.org</span>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">© 2025 DefenderLink Africa. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="safeguarding.html">Safeguarding</a>
-          <a href="terms.html">Terms</a>
-        </div>
-      </div>
     </div>
-  </footer>
 
-  <script src="js/main.js"></script>
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <div class="page-header-bg">
+            <img src="https://i.imgur.com/A45UKYU.jpeg" alt="Africa landscape">
+        </div>
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Where We Work</span></div>
+            <p class="page-header-overline">Our Presence</p>
+            <h1 class="page-header-title">Where We Work</h1>
+            <p class="page-header-subtitle">With regional offices across the continent and partnerships spanning 25+ countries, we provide localized support to human rights defenders wherever they are.</p>
+        </div>
+    </header>
+
+    <!-- IMPACT STATS -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center reveal" style="max-width:700px; margin:0 auto 2.5rem;">
+                <h2>Pan-African Coverage</h2>
+                <p class="text-muted">Our strategic presence across Africa enables us to respond quickly to defender needs.</p>
+            </div>
+            <div class="stats-grid reveal">
+                <div class="stat-card"><div class="stat-number">25+</div><div class="stat-label">Countries</div></div>
+                <div class="stat-card"><div class="stat-number">4</div><div class="stat-label">Regional Offices</div></div>
+                <div class="stat-card"><div class="stat-number">100+</div><div class="stat-label">Partners</div></div>
+                <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Defenders Supported</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGIONAL OFFICES -->
+    <section class="dark-section section">
+        <div class="container">
+            <div class="text-center reveal" style="max-width:700px; margin:0 auto 2.5rem;">
+                <div class="page-header-overline" style="color:var(--gold-accent); border-color:var(--gold-accent);">Regional Presence</div>
+                <h2>Our Regional Offices</h2>
+                <p>Strategically positioned to provide timely, localized support to defenders across Africa.</p>
+            </div>
+            <div class="office-grid reveal">
+                <!-- HQ -->
+                <div class="office-card">
+                    <img src="https://images.unsplash.com/photo-1547981606-f443c507233e?w=800&q=80" alt="Zambia">
+                    <div class="office-card-body">
+                        <span class="office-badge badge-hq">Headquarters</span>
+                        <h3>Lusaka, Zambia</h3>
+                        <p>Our central headquarters coordinates operations across the continent and houses our primary emergency response center.</p>
+                        <ul>
+                            <li>Executive leadership and governance</li>
+                            <li>Central emergency response coordination</li>
+                            <li>Continental advocacy and partnerships</li>
+                            <li>Financial and administrative services</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- East Africa -->
+                <div class="office-card">
+                    <img src="https://images.unsplash.com/photo-1489392191049-fcfcfd398c97?w=800&q=80" alt="Kenya">
+                    <div class="office-card-body">
+                        <span class="office-badge badge-regional">Regional Hub</span>
+                        <h3>Nairobi, Kenya</h3>
+                        <p>Our East Africa hub serves defenders in Kenya, Uganda, Tanzania, Rwanda, Burundi, Ethiopia, and South Sudan.</p>
+                        <ul>
+                            <li>East Africa protection programs</li>
+                            <li>Regional training and capacity building</li>
+                            <li>East African Community advocacy</li>
+                            <li>Local partnership coordination</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- West Africa -->
+                <div class="office-card">
+                    <img src="https://images.unsplash.com/photo-1589303830797-08f8c87deb26?w=800&q=80" alt="Nigeria">
+                    <div class="office-card-body">
+                        <span class="office-badge badge-regional">Regional Hub</span>
+                        <h3>Lagos, Nigeria</h3>
+                        <p>Our West Africa hub provides critical support in a region with significant defender protection needs.</p>
+                        <ul>
+                            <li>West Africa protection programs</li>
+                            <li>ECOWAS engagement and advocacy</li>
+                            <li>French/English bilingual services</li>
+                            <li>Regional emergency response</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Southern Africa -->
+                <div class="office-card">
+                    <img src="https://images.unsplash.com/photo-1570077108636-74778822f529?w=800&q=80" alt="South Africa">
+                    <div class="office-card-body">
+                        <span class="office-badge badge-regional">Regional Hub</span>
+                        <h3>Johannesburg, South Africa</h3>
+                        <p>Our Southern Africa hub supports defenders across the SADC region and engages key continental institutions.</p>
+                        <ul>
+                            <li>Southern Africa protection programs</li>
+                            <li>SADC advocacy and engagement</li>
+                            <li>Continental civil society coordination</li>
+                            <li>Regional training center</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTRIES LIST -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center reveal" style="max-width:700px; margin:0 auto 2.5rem;">
+                <div class="page-header-overline">Country Presence</div>
+                <h2>Countries We Serve</h2>
+                <p class="text-muted">Through our regional offices and network of partners, we provide support to human rights defenders across these countries.</p>
+            </div>
+            <div class="countries-grid reveal">
+                <div class="country-region">
+                    <h5>East Africa</h5>
+                    <ul><li>Kenya</li><li>Uganda</li><li>Tanzania</li><li>Rwanda</li><li>Burundi</li><li>Ethiopia</li><li>South Sudan</li></ul>
+                </div>
+                <div class="country-region">
+                    <h5>West Africa</h5>
+                    <ul><li>Nigeria</li><li>Ghana</li><li>Senegal</li><li>Mali</li><li>Cameroon</li><li>Côte d'Ivoire</li><li>Niger</li></ul>
+                </div>
+                <div class="country-region">
+                    <h5>Southern Africa</h5>
+                    <ul><li>South Africa</li><li>Zambia</li><li>Zimbabwe</li><li>Malawi</li><li>Mozambique</li><li>Namibia</li><li>Botswana</li></ul>
+                </div>
+                <div class="country-region">
+                    <h5>Central & North Africa</h5>
+                    <ul><li>DR Congo</li><li>Congo</li><li>Central African Republic</li><li>Chad</li><li>Sudan</li><li>Tunisia</li><li>Morocco</li></ul>
+                </div>
+            </div>
+            <div class="text-center reveal" style="margin-top:2rem;">
+                <p class="text-muted">Don't see your country listed? We may still be able to provide support through our network.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us for Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2 class="cta-title">Need Support in Your Region?</h2>
+            <p class="cta-text">Contact the regional office nearest you or reach out to our headquarters for guidance on available support services.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">Contact Us</a>
+                <a href="donate.html" class="btn btn-outline-white">Support Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" style="display:flex; align-items:center; gap:0.7rem; margin-bottom:1rem;">
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="Logo" style="height:44px;">
+                        <div>
+                            <span style="font-family:var(--font-heading); font-weight:700; font-size:1rem; color:var(--white);">DefenderLink Africa</span>
+                            <span style="font-size:0.65rem; color:var(--gold-accent); text-transform:uppercase;">Protecting Defenders</span>
+                        </div>
+                    </a>
+                    <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent.</p>
+                </div>
+                <div><h5 class="footer-title">Organization</h5><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="what-we-do.html">What We Do</a></li><li><a href="where-we-work.html">Where We Work</a></li><li><a href="news.html">News</a></li></ul></div>
+                <div><h5 class="footer-title">Resources</h5><ul class="footer-links"><li><a href="resources.html">Publications</a></li><li><a href="report-violation.html">Report a Violation</a></li><li><a href="safeguarding.html">Safeguarding</a></li></ul></div>
+                <div><h5 class="footer-title">Support</h5><ul class="footer-links"><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+                <div>
+                    <h5 class="footer-title">Contact</h5>
+                    <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Plot 1234, Thabo Mbeki Road<br>Lusaka, Zambia</span></div>
+                    <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+260 XXX XXX XXX</span></div>
+                    <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@defenderlinkafrica.org</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 DefenderLink Africa. All rights reserved. Registered NGO in Zambia.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="safeguarding.html">Safeguarding</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const navbar = document.getElementById('navbar');
+            function openMenu() { hamburger.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
+            function closeMenu() { hamburger.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow=''; }
+            if (hamburger && mobileOverlay) {
+                hamburger.addEventListener('click', () => mobileOverlay.classList.contains('active') ? closeMenu() : openMenu());
+                mobileOverlay.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) closeMenu(); });
+            }
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            revealElements.forEach(el => observer.observe(el));
+        })();
+    </script>
 </body>
 </html>
