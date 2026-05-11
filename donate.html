@@ -78,7 +78,6 @@
             background-repeat: no-repeat;
             position: relative;
         }
-
         body::before {
             content: '';
             position: fixed;
@@ -104,7 +103,7 @@
             color: var(--deep-brown);
         }
         h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
         }
         h2 {
             font-size: clamp(1.6rem, 2.5vw, 2.2rem);
@@ -161,9 +160,6 @@
         }
         .grid-3 {
             grid-template-columns: repeat(3, 1fr);
-        }
-        .grid-4 {
-            grid-template-columns: repeat(4, 1fr);
         }
 
         .btn {
@@ -403,10 +399,10 @@
             color: var(--deep-brown);
         }
 
-        /* PAGE HEADER (60vh) */
+        /* PAGE HEADER (100vh) */
         .page-header {
             position: relative;
-            min-height: 60vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -476,30 +472,6 @@
             color: rgba(255,255,255,0.75);
             max-width: 500px;
             margin: 0 auto;
-        }
-
-        /* IMPACT CARDS */
-        .impact-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--white);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-subtle);
-            transition: all var(--transition-smooth);
-        }
-        .impact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--border-medium);
-        }
-        .impact-amount {
-            font-family: var(--font-heading);
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: var(--warm-brown);
-            line-height: 1;
-            margin-bottom: 0.5rem;
         }
 
         /* FORM STYLES */
@@ -605,30 +577,6 @@
         .giving-text {
             font-size: 0.9rem;
             color: var(--text-muted);
-        }
-
-        /* TRUST SECTION */
-        .trust-card {
-            text-align: center;
-            padding: 2rem;
-            color: var(--white);
-        }
-        .trust-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 64px;
-            height: 64px;
-            background: rgba(200, 150, 62, 0.15);
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-        .trust-card h5 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-        .trust-card p {
-            color: rgba(255,255,255,0.7);
         }
 
         /* FOOTER */
@@ -747,9 +695,6 @@
             .nav-hamburger {
                 display: flex;
             }
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
             .grid-3 {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -768,13 +713,10 @@
                 grid-template-columns: 1fr 1fr;
             }
             .page-header {
-                min-height: 50vh;
+                min-height: 60vh;
             }
         }
         @media (max-width: 480px) {
-            .grid-4 {
-                grid-template-columns: 1fr;
-            }
             .grid-3 {
                 grid-template-columns: 1fr;
             }
@@ -831,7 +773,7 @@
         </div>
     </div>
 
-    <!-- PAGE HEADER (60vh) -->
+    <!-- PAGE HEADER (100vh) -->
     <header class="page-header">
         <div class="page-header-bg">
             <img src="https://i.imgur.com/A45UKYU.jpeg" alt="Support DefenderLink Africa">
@@ -847,22 +789,6 @@
             <p class="page-header-subtitle">Your support directly protects human rights defenders across Africa. Every contribution makes a difference.</p>
         </div>
     </header>
-
-    <!-- IMPACT SECTION -->
-    <section class="section">
-        <div class="container">
-            <div class="reveal text-center" style="max-width: 700px; margin: 0 auto 2.5rem;">
-                <h2 style="margin-bottom: 0.8rem;">How Your Donation Helps</h2>
-                <p class="text-muted">100% of your donation goes directly to supporting human rights defenders. Here's what your contribution can achieve.</p>
-            </div>
-            <div class="grid grid-4">
-                <div class="impact-card reveal"><div class="impact-amount">$25</div><p>Emergency phone credit for a defender in need</p></div>
-                <div class="impact-card reveal"><div class="impact-amount">$100</div><p>One session of psychosocial support counseling</p></div>
-                <div class="impact-card reveal"><div class="impact-amount">$500</div><p>Security training for one defender</p></div>
-                <div class="impact-card reveal"><div class="impact-amount">$5,000</div><p>Emergency relocation for a defender at risk</p></div>
-            </div>
-        </div>
-    </section>
 
     <!-- DONATION FORM -->
     <section class="section" style="background: rgba(247, 240, 230, 0.65);">
@@ -993,38 +919,6 @@
                     <div class="giving-number">03</div>
                     <h4 class="giving-title">Corporate Partnership</h4>
                     <p class="giving-text">Partner with us as an organization for CSR initiatives and employee engagement.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST INDICATORS -->
-    <section class="section" style="background: var(--deep-brown);">
-        <div class="container">
-            <div class="reveal text-center" style="max-width: 600px; margin: 0 auto 2.5rem;">
-                <h2 style="color: var(--white);">Why Trust Us With Your Donation</h2>
-            </div>
-            <div class="grid grid-3">
-                <div class="trust-card reveal">
-                    <div class="trust-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    </div>
-                    <h5>100% Transparency</h5>
-                    <p>We publish annual reports detailing exactly how funds are used.</p>
-                </div>
-                <div class="trust-card reveal">
-                    <div class="trust-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h5>Registered NGO</h5>
-                    <p>Fully registered and compliant with all regulatory requirements in Zambia.</p>
-                </div>
-                <div class="trust-card reveal">
-                    <div class="trust-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-accent)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    </div>
-                    <h5>Direct Impact</h5>
-                    <p>Your donation goes directly to protecting defenders, not overhead.</p>
                 </div>
             </div>
         </div>
