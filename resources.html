@@ -325,11 +325,27 @@
         .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
 
+        /* Report card responsive fix */
+        .report-card-side {
+            width: 200px;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
         @media (max-width:1024px) {
             .nav-menu { display:none; }
             .nav-hamburger { display:flex; }
             .grid-3 { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns:repeat(3,1fr); }
+            .report-card-side {
+                width: 100%;
+                min-width: unset;
+                min-height: 140px;
+            }
+            .report-card { flex-direction: column !important; }
         }
         @media (max-width:768px) {
             .grid-2, .grid-3 { grid-template-columns: 1fr; }
@@ -337,6 +353,11 @@
             .page-header { min-height:50vh; }
             .hero-logo img { height: 70px; }
             .footer-logo-img { height: 50px; }
+            .newsletter-form {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+            .newsletter-form .btn { width: 100%; justify-content: center; }
         }
         @media (max-width:480px) {
             .footer-grid { grid-template-columns:1fr; }
@@ -534,8 +555,8 @@
             </div>
             
             <div class="grid grid-2 gap-xl reveal">
-                <article class="card" style="display: flex; flex-direction: row;">
-                    <div style="width: 200px; min-width: 200px; background: var(--warm-brown); display: flex; align-items: center; justify-content: center; color: white;">
+                <article class="card report-card" style="display: flex; flex-direction: row;">
+                    <div class="report-card-side" style="background: var(--warm-brown);">
                         <div style="text-align: center;">
                             <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Annual Report</div>
                             <div style="font-size: 2.5rem; font-weight: 700;">2024</div>
@@ -552,8 +573,8 @@
                     </div>
                 </article>
                 
-                <article class="card" style="display: flex; flex-direction: row;">
-                    <div style="width: 200px; min-width: 200px; background: var(--copper); display: flex; align-items: center; justify-content: center; color: white;">
+                <article class="card report-card" style="display: flex; flex-direction: row;">
+                    <div class="report-card-side" style="background: var(--copper);">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                             <polyline points="14 2 14 8 20 8"/>
@@ -570,8 +591,8 @@
                     </div>
                 </article>
                 
-                <article class="card" style="display: flex; flex-direction: row;">
-                    <div style="width: 200px; min-width: 200px; background: var(--deep-brown); display: flex; align-items: center; justify-content: center; color: white;">
+                <article class="card report-card" style="display: flex; flex-direction: row;">
+                    <div class="report-card-side" style="background: var(--deep-brown);">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="12" cy="12" r="10"/>
                             <line x1="12" y1="8" x2="12" y2="12"/>
@@ -589,8 +610,8 @@
                     </div>
                 </article>
                 
-                <article class="card" style="display: flex; flex-direction: row;">
-                    <div style="width: 200px; min-width: 200px; background: var(--terracotta); display: flex; align-items: center; justify-content: center; color: white;">
+                <article class="card report-card" style="display: flex; flex-direction: row;">
+                    <div class="report-card-side" style="background: var(--terracotta);">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                             <circle cx="9" cy="7" r="4"/>
@@ -683,10 +704,11 @@
             <div class="cta-content reveal">
                 <h2 class="cta-title">Stay Updated</h2>
                 <p class="cta-text">Subscribe to our newsletter for the latest resources, news, and updates on human rights defender protection in Africa.</p>
-                <form style="display: flex; gap: 1rem; max-width: 500px; margin: 2rem auto 0;">
-                    <input type="email" placeholder="Your email address" class="form-input" style="flex: 1;">
+                <form class="newsletter-form" style="display: flex; gap: 1rem; max-width: 500px; margin: 2rem auto 0;" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Your email address" class="form-input" style="flex: 1;" required>
                     <button type="submit" class="btn btn-white">Subscribe</button>
                 </form>
+                <p id="newsletter-confirm" style="display:none; margin-top: 1rem; color: var(--gold-light); font-size: 0.9rem;">Thank you! Your subscription request has been sent.</p>
             </div>
         </div>
     </section>
@@ -724,6 +746,16 @@
         </div>
     </footer>
 
+    <script>
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const form = e.target;
+            const email = form.querySelector('input[type="email"]').value;
+            window.location.href = 'mailto:info@defenderlinkafrica.org?subject=Newsletter%20Subscription&body=Please%20subscribe%20me%20to%20the%20DefenderLink%20Africa%20newsletter.%0A%0AEmail%3A%20' + encodeURIComponent(email);
+            document.getElementById('newsletter-confirm').style.display = 'block';
+            form.reset();
+        }
+    </script>
     <script>
         (function() {
             const hamburger = document.getElementById('hamburger');
