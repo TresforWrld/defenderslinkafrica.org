@@ -77,6 +77,12 @@
             background-repeat: no-repeat;
             position: relative;
         }
+        @supports (-webkit-touch-callout: none) {
+            /* iOS Safari: background-attachment: fixed is broken, use scroll instead */
+            body {
+                background-attachment: scroll;
+            }
+        }
         body::before {
             content: '';
             position: fixed;
@@ -310,17 +316,26 @@
         .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
 
+        /* 4-column grid for digital security section */
+        .impact-grid-4col { grid-template-columns: repeat(4, 1fr); }
+
         @media (max-width:1024px) {
             .nav-menu { display:none; }
             .nav-hamburger { display:flex; }
             .service-row { grid-template-columns:1fr; }
             .impact-grid { grid-template-columns:repeat(2,1fr); }
+            .impact-grid-4col { grid-template-columns:repeat(2,1fr); }
             .service-dark-grid { grid-template-columns:repeat(2,1fr); }
             .footer-grid { grid-template-columns:repeat(3,1fr); }
             .service-icon-block { min-height: 280px; }
+            /* On mobile, always show icon block after the content for alternating layouts */
+            .service-row .service-icon-block { order: 2; }
+            .service-row .service-content { order: 1; }
         }
         @media (max-width:768px) {
+            .section { padding: 2.5rem 0; }
             .impact-grid,.service-dark-grid { grid-template-columns:1fr; }
+            .impact-grid-4col { grid-template-columns:repeat(2,1fr); }
             .footer-grid { grid-template-columns:1fr 1fr; }
             .page-header { min-height:50vh; }
             .hero-logo img { height: 70px; }
@@ -328,13 +343,24 @@
             .service-feature-grid { grid-template-columns: 1fr; }
             .service-icon-block { min-height: 220px; padding: 2rem 1.5rem; }
             .service-icon-block svg { width: 60px; height: 60px; }
+            .service-row { gap: 1.5rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-buttons .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
         }
         @media (max-width:480px) {
+            .section { padding: 2rem 0; }
             .footer-grid { grid-template-columns:1fr; }
             .nav-logo-text { display:none; }
             .hero-logo img { height: 60px; }
             .footer-logo-img { height: 45px; }
             .impact-grid { grid-template-columns: 1fr; }
+            .impact-grid-4col { grid-template-columns: 1fr 1fr; }
+            .container { padding: 0 1rem; }
+            h1 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+            h2 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+            .feature-card { padding: 1rem; }
+            .dark-section .service-dark-grid { grid-template-columns: 1fr; }
         }
     </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
@@ -531,7 +557,7 @@
                 <h2>Digital Security & Technology</h2>
                 <p class="text-muted">Online threats are as real as physical ones. Our Digital Security Program helps defenders protect themselves in the digital space.</p>
             </div>
-            <div class="impact-grid reveal" style="grid-template-columns: repeat(4,1fr);">
+            <div class="impact-grid impact-grid-4col reveal">
                 <div class="impact-card"><div style="font-size:2rem; font-weight:700; color:var(--warm-brown);">01</div><strong>Digital Audits</strong><p class="text-small text-muted">Personalized vulnerability assessments</p></div>
                 <div class="impact-card"><div style="font-size:2rem; font-weight:700; color:var(--warm-brown);">02</div><strong>Secure Comms</strong><p class="text-small text-muted">Encrypted tools and training</p></div>
                 <div class="impact-card"><div style="font-size:2rem; font-weight:700; color:var(--warm-brown);">03</div><strong>Data Protection</strong><p class="text-small text-muted">Secure storage, backups</p></div>
