@@ -86,7 +86,6 @@
                     rgba(242, 232, 220, 0.9) 50%,
                     rgba(240, 228, 214, 0.92) 100%);
             z-index: -1;
-            pointer-events: none;
         }
 
         h1,h2,h3,h4,h5 { font-family: var(--font-heading); font-weight: 700; line-height: 1.15; color: var(--deep-brown); }
@@ -153,7 +152,7 @@
         .mobile-overlay-link:hover { color:var(--gold-light); background:rgba(200,150,62,0.1); border-radius:var(--radius-md); }
         .mobile-overlay-link.donate-mobile { color:var(--gold-accent); font-weight:700; font-size:1.3rem; border:2px solid var(--gold-accent); border-radius:var(--radius-lg); margin-top:0.8rem; }
 
-        /* PAGE HEADER 60vh */
+        /* PAGE HEADER WITH LOGO */
         .page-header {
             position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center;
             text-align:center; overflow:hidden; padding-top:70px;
@@ -163,6 +162,20 @@
         @keyframes hero-zoom { 0%{ transform:scale(1); } 100%{ transform:scale(1.06); } }
         .page-header-bg::after { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.65); }
         .page-header .container { position:relative; z-index:1; }
+        
+        .hero-logo {
+            display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;
+        }
+        .hero-logo img {
+            height: 90px; width: auto;
+            filter: drop-shadow(0 2px 12px rgba(200,150,62,0.5)) drop-shadow(0 0 20px rgba(200,150,62,0.3));
+            animation: fadeInDown 0.8s ease-out;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .breadcrumb { display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:0.8rem; color:rgba(255,255,255,0.7); margin-bottom:1rem; }
         .breadcrumb a { color:var(--gold-light); }
         .page-header-overline { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold-accent); margin-bottom:0.5rem; }
@@ -183,14 +196,34 @@
         .office-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
         .office-card { background:rgba(255,255,255,0.07); border-radius:var(--radius-xl); overflow:hidden; transition:all var(--transition-smooth); }
         .office-card:hover { background:rgba(255,255,255,0.12); transform:translateY(-4px); }
-        .office-card img { width:100%; height:220px; object-fit:cover; }
+        
+        /* Office Icon Header (replacing unsplash images) */
+        .office-card-header {
+            background: linear-gradient(135deg, var(--warm-brown) 0%, var(--rich-brown) 100%);
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+        .office-card-header svg {
+            width: 70px; height: 70px;
+            color: var(--gold-accent);
+        }
+        .office-card-header.hq {
+            background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-dark) 100%);
+        }
+        .office-card-header.hq svg {
+            color: var(--deep-brown);
+        }
+        
         .office-card-body { padding:2rem; }
         .office-badge { display:inline-block; padding:0.3rem 1rem; border-radius:50px; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
         .badge-hq { background:var(--gold-accent); color:var(--deep-brown); }
         .badge-regional { background:var(--warm-brown); color:var(--white); }
         .office-card ul { list-style:none; color:rgba(255,255,255,0.6); font-size:0.9rem; margin:1rem 0; }
         .office-card ul li { margin-bottom:0.3rem; padding-left:1rem; position:relative; }
-        .office-card ul li::before { content:'•'; position:absolute; left:0; color:var(--gold-accent); }
+        .office-card ul li::before { content:'\u2022'; position:absolute; left:0; color:var(--gold-accent); }
 
         /* COUNTRIES LIST */
         .countries-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
@@ -211,7 +244,7 @@
         .cta-text { color:rgba(255,255,255,0.7); margin-bottom:2rem; }
         .cta-buttons { display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; }
 
-        /* FOOTER */
+        /* FOOTER WITH ENHANCED LOGO */
         .footer {
             background-image:url('https://i.imgur.com/FEbqeZI.jpeg'); background-size:cover; background-position:center;
             position:relative; color:var(--cream); padding:4rem 0 1.5rem;
@@ -219,6 +252,34 @@
         .footer::before { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.93); z-index:0; }
         .footer>.container { position:relative; z-index:1; }
         .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1.2fr; gap:2rem; margin-bottom:2.5rem; }
+        
+        .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+        .footer-logo {
+            display: flex; align-items: center; gap: 0.8rem;
+            text-decoration: none;
+        }
+        .footer-logo-img {
+            height: 60px; width: auto;
+            filter: drop-shadow(0 0 10px rgba(200,150,62,0.4)) drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+            transition: transform var(--transition-smooth);
+        }
+        .footer-logo:hover .footer-logo-img {
+            transform: scale(1.05);
+        }
+        .footer-logo-text {
+            display: flex; flex-direction: column;
+        }
+        .footer-logo-title {
+            font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem;
+            color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        .footer-logo-subtitle {
+            font-size: 0.7rem; color: var(--gold-accent);
+            text-transform: uppercase; letter-spacing: 0.12em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
         .footer-brand p { color:rgba(255,255,255,0.6); font-size:0.85rem; }
         .footer-title { color:var(--gold-accent); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:1rem; font-weight:700; }
         .footer-links { list-style:none; padding:0; }
@@ -248,13 +309,18 @@
             .stats-grid,.countries-grid { grid-template-columns:1fr 1fr; }
             .footer-grid { grid-template-columns:1fr 1fr; }
             .page-header { min-height:50vh; }
+            .hero-logo img { height: 70px; }
+            .footer-logo-img { height: 50px; }
         }
         @media (max-width:480px) {
             .stats-grid,.countries-grid { grid-template-columns:1fr; }
             .footer-grid { grid-template-columns:1fr; }
             .nav-logo-text { display:none; }
+            .hero-logo img { height: 60px; }
+            .footer-logo-img { height: 45px; }
         }
     </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
     <!-- NAV -->
@@ -293,12 +359,15 @@
         </div>
     </div>
 
-    <!-- PAGE HEADER -->
+    <!-- PAGE HEADER WITH LOGO -->
     <header class="page-header">
         <div class="page-header-bg">
             <img src="https://i.imgur.com/A45UKYU.jpeg" alt="Africa landscape">
         </div>
         <div class="container">
+            <div class="hero-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa Logo">
+            </div>
             <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Where We Work</span></div>
             <p class="page-header-overline">Our Presence</p>
             <h1 class="page-header-title">Where We Work</h1>
@@ -333,7 +402,9 @@
             <div class="office-grid reveal">
                 <!-- HQ -->
                 <div class="office-card">
-                    <img src="https://images.unsplash.com/photo-1547981606-f443c507233e?w=800&q=80" alt="Zambia">
+                    <div class="office-card-header hq">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 10a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v11H9V10z"/></svg>
+                    </div>
                     <div class="office-card-body">
                         <span class="office-badge badge-hq">Headquarters</span>
                         <h3>Lusaka, Zambia</h3>
@@ -348,7 +419,9 @@
                 </div>
                 <!-- East Africa -->
                 <div class="office-card">
-                    <img src="https://images.unsplash.com/photo-1489392191049-fcfcfd398c97?w=800&q=80" alt="Kenya">
+                    <div class="office-card-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
                     <div class="office-card-body">
                         <span class="office-badge badge-regional">Regional Hub</span>
                         <h3>Nairobi, Kenya</h3>
@@ -363,7 +436,9 @@
                 </div>
                 <!-- West Africa -->
                 <div class="office-card">
-                    <img src="https://images.unsplash.com/photo-1589303830797-08f8c87deb26?w=800&q=80" alt="Nigeria">
+                    <div class="office-card-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
                     <div class="office-card-body">
                         <span class="office-badge badge-regional">Regional Hub</span>
                         <h3>Lagos, Nigeria</h3>
@@ -378,7 +453,9 @@
                 </div>
                 <!-- Southern Africa -->
                 <div class="office-card">
-                    <img src="https://images.unsplash.com/photo-1570077108636-74778822f529?w=800&q=80" alt="South Africa">
+                    <div class="office-card-header">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <div class="office-card-body">
                         <span class="office-badge badge-regional">Regional Hub</span>
                         <h3>Johannesburg, South Africa</h3>
@@ -440,16 +517,16 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER WITH ENHANCED LOGO -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" style="display:flex; align-items:center; gap:0.7rem; margin-bottom:1rem;">
-                        <img src="https://i.imgur.com/KbDuWry.png" alt="Logo" style="height:44px;">
-                        <div>
-                            <span style="font-family:var(--font-heading); font-weight:700; font-size:1rem; color:var(--white);">DefenderLink Africa</span>
-                            <span style="font-size:0.65rem; color:var(--gold-accent); text-transform:uppercase;">Protecting Defenders</span>
+                    <a href="index.html" class="footer-logo">
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">DefenderLink Africa</span>
+                            <span class="footer-logo-subtitle">Protecting Defenders</span>
                         </div>
                     </a>
                     <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent.</p>

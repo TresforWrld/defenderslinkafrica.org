@@ -154,7 +154,7 @@
         .mobile-overlay-link:hover { color:var(--gold-light); background:rgba(200,150,62,0.1); border-radius:var(--radius-md); }
         .mobile-overlay-link.donate-mobile { color:var(--gold-accent); font-weight:700; font-size:1.3rem; border:2px solid var(--gold-accent); border-radius:var(--radius-lg); margin-top:0.8rem; }
 
-        /* PAGE HEADER 60vh */
+        /* PAGE HEADER 60vh WITH LOGO */
         .page-header {
             position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center;
             text-align:center; overflow:hidden; padding-top:70px;
@@ -164,6 +164,20 @@
         @keyframes hero-zoom { 0%{ transform:scale(1); } 100%{ transform:scale(1.06); } }
         .page-header-bg::after { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.65); }
         .page-header .container { position:relative; z-index:1; }
+        
+        .hero-logo {
+            display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;
+        }
+        .hero-logo img {
+            height: 90px; width: auto;
+            filter: drop-shadow(0 2px 12px rgba(200,150,62,0.5)) drop-shadow(0 0 20px rgba(200,150,62,0.3));
+            animation: fadeInDown 0.8s ease-out;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .breadcrumb { display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:0.8rem; color:rgba(255,255,255,0.7); margin-bottom:1rem; }
         .breadcrumb a { color:var(--gold-light); }
         .page-header-overline { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold-accent); margin-bottom:0.5rem; }
@@ -192,27 +206,128 @@
         .value-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--border-medium); }
         .value-number { font-family:var(--font-heading); font-size:2.4rem; font-weight:700; color:rgba(139,94,60,0.12); line-height:1; margin-bottom:0.5rem; }
 
-        /* IMPACT & TIMELINE (dark section) */
+        /* IMPACT CHART SECTION (dark section) */
         .dark-section { background:var(--deep-brown); color:var(--white); }
         .dark-section h2,.dark-section h3,.dark-section h4 { color:var(--white); }
-        .impact-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; text-align:center; margin-bottom:3rem; }
-        .impact-card { background:rgba(255,255,255,0.08); padding:2rem; border-radius:var(--radius-xl); transition:all var(--transition-smooth); }
-        .impact-card:hover { transform:translateY(-4px); background:rgba(255,255,255,0.12); }
-        .impact-number { font-family:var(--font-heading); font-size:2.6rem; font-weight:700; color:var(--gold-accent); line-height:1; }
-        .impact-label { font-size:0.85rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em; }
+        
+        .impact-chart-container {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(200,150,62,0.2);
+        }
+        
+        .chart-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .chart-title h3 {
+            color: var(--gold-accent);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .chart-title p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        
+        .chart-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .chart-bar-label {
+            min-width: 140px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            text-align: right;
+        }
+        
+        .chart-bar-track {
+            flex: 1;
+            height: 40px;
+            background: rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold-accent) 0%, var(--gold-light) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            transition: width 1.5s ease-out;
+            position: relative;
+        }
+        
+        .chart-bar-fill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .chart-bar-value {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--deep-brown);
+            text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+        }
+        
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--gold-accent) 0%, var(--gold-light) 100%);
+        }
 
         .timeline { max-width:700px; margin:0 auto; }
         .timeline-item { display:flex; gap:2rem; margin-bottom:2rem; }
         .timeline-date { font-size:1.2rem; font-weight:700; color:var(--gold-accent); min-width:60px; }
         .timeline-content h4 { color:var(--white); margin-bottom:0.2rem; }
         .timeline-content p { color:rgba(255,255,255,0.7); }
-
-        /* TEAM CARDS */
-        .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
-        .team-card { text-align:center; }
-        .team-card img { width:100%; max-width:180px; border-radius:50%; margin-bottom:1rem; box-shadow:var(--shadow-md); }
-        .team-card h4 { margin-bottom:0.2rem; }
-        .team-role { font-size:0.8rem; color:var(--gold-accent); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; }
 
         /* CTA */
         .cta-section {
@@ -225,7 +340,7 @@
         .cta-text { color:rgba(255,255,255,0.7); margin-bottom:2rem; }
         .cta-buttons { display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap; }
 
-        /* FOOTER */
+        /* FOOTER WITH ENHANCED LOGO */
         .footer {
             background-image:url('https://i.imgur.com/FEbqeZI.jpeg'); background-size:cover; background-position:center;
             position:relative; color:var(--cream); padding:4rem 0 1.5rem;
@@ -233,6 +348,34 @@
         .footer::before { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.93); z-index:0; }
         .footer>.container { position:relative; z-index:1; }
         .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1.2fr; gap:2rem; margin-bottom:2.5rem; }
+        
+        .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+        .footer-logo {
+            display: flex; align-items: center; gap: 0.8rem;
+            text-decoration: none;
+        }
+        .footer-logo-img {
+            height: 60px; width: auto;
+            filter: drop-shadow(0 0 10px rgba(200,150,62,0.4)) drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+            transition: transform var(--transition-smooth);
+        }
+        .footer-logo:hover .footer-logo-img {
+            transform: scale(1.05);
+        }
+        .footer-logo-text {
+            display: flex; flex-direction: column;
+        }
+        .footer-logo-title {
+            font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem;
+            color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        .footer-logo-subtitle {
+            font-size: 0.7rem; color: var(--gold-accent);
+            text-transform: uppercase; letter-spacing: 0.12em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
         .footer-brand p { color:rgba(255,255,255,0.6); font-size:0.85rem; }
         .footer-title { color:var(--gold-accent); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:1rem; font-weight:700; }
         .footer-links { list-style:none; padding:0; }
@@ -254,20 +397,35 @@
             .nav-menu { display:none; }
             .nav-hamburger { display:flex; }
             .story-grid,.mv-grid { grid-template-columns:1fr; }
-            .values-grid,.team-grid,.impact-grid { grid-template-columns:repeat(2,1fr); }
+            .values-grid { grid-template-columns:repeat(2,1fr); }
             .footer-grid { grid-template-columns:repeat(3,1fr); }
+            .chart-bar-label { min-width: 100px; font-size: 0.75rem; }
+            .chart-bar-value { font-size: 1.1rem; }
         }
         @media (max-width:768px) {
-            .values-grid,.team-grid,.impact-grid { grid-template-columns:1fr; }
+            .values-grid { grid-template-columns:1fr; }
             .footer-grid { grid-template-columns:1fr 1fr; }
             .page-header { min-height:50vh; }
+            .hero-logo img { height: 70px; }
+            .footer-logo-img { height: 50px; }
+            .chart-bars { gap: 1rem; }
+            .chart-bar { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+            .chart-bar-label { text-align: left; min-width: auto; }
+            .chart-bar-track { height: 35px; }
+            .chart-bar-value { font-size: 1rem; padding-right: 0.8rem; }
+            .chart-legend { flex-direction: column; gap: 0.8rem; }
         }
         @media (max-width:480px) {
             .footer-grid { grid-template-columns:1fr; }
             .nav-logo-text { display:none; }
-            .impact-grid { grid-template-columns:1fr 1fr; }
+            .hero-logo img { height: 60px; }
+            .footer-logo-img { height: 45px; }
+            .impact-chart-container { padding: 1.5rem 1rem; }
+            .chart-bar-track { height: 30px; }
+            .chart-bar-value { font-size: 0.9rem; padding-right: 0.6rem; }
         }
     </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
     <!-- NAV -->
@@ -306,12 +464,15 @@
         </div>
     </div>
 
-    <!-- PAGE HEADER -->
+    <!-- PAGE HEADER WITH LOGO -->
     <header class="page-header">
         <div class="page-header-bg">
             <img src="https://i.imgur.com/A45UKYU.jpeg" alt="Africa landscape">
         </div>
         <div class="container">
+            <div class="hero-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa Logo">
+            </div>
             <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About Us</span></div>
             <p class="page-header-overline">Who We Are</p>
             <h1 class="page-header-title">About DefenderLink Africa</h1>
@@ -332,7 +493,7 @@
                     <p>Today, DefenderLink Africa has grown into a respected pan-African organization with regional offices in Kenya, South Africa, and Nigeria, and our headquarters in Lusaka, Zambia. We have supported over 500 human rights defenders across more than 25 countries, providing emergency assistance, training, and advocacy support.</p>
                 </div>
                 <div class="story-img">
-                    <img src="https://images.unsplash.com/photo-1529155401887-70aa64b14e54?w=800&q=80" alt="African landscape">
+                    <img src="https://i.imgur.com/A45UKYU.jpeg" alt="African landscape">
                     <div class="story-badge">
                         <div class="story-badge-number">2014</div>
                         <div class="story-badge-text">Founded</div>
@@ -377,7 +538,7 @@
         </div>
     </section>
 
-    <!-- OUR IMPACT & TIMELINE -->
+    <!-- OUR IMPACT CHART & TIMELINE -->
     <section class="dark-section section">
         <div class="container">
             <div class="text-center reveal" style="max-width:700px; margin:0 auto 2.5rem;">
@@ -385,12 +546,56 @@
                 <h2>A Decade of Making a Difference</h2>
                 <p>Since our founding, we have made significant strides in protecting and empowering human rights defenders across Africa.</p>
             </div>
-            <div class="impact-grid reveal">
-                <div class="impact-card"><div class="impact-number">500+</div><div class="impact-label">Defenders Protected</div></div>
-                <div class="impact-card"><div class="impact-number">25+</div><div class="impact-label">Countries Reached</div></div>
-                <div class="impact-card"><div class="impact-number">3K+</div><div class="impact-label">People Trained</div></div>
-                <div class="impact-card"><div class="impact-number">150+</div><div class="impact-label">Emergency Responses</div></div>
+            
+            <!-- IMPACT CHART -->
+            <div class="impact-chart-container reveal">
+                <div class="chart-title">
+                    <h3>Our Impact by the Numbers</h3>
+                    <p>Measurable results from our decade of dedicated service</p>
+                </div>
+                <div class="chart-bars">
+                    <div class="chart-bar">
+                        <div class="chart-bar-label">Defenders Protected</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 85%;">
+                                <span class="chart-bar-value">500+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-bar-label">Countries Reached</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 65%;">
+                                <span class="chart-bar-value">25+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-bar-label">People Trained</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 95%;">
+                                <span class="chart-bar-value">3,000+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="chart-bar-label">Emergency Responses</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 75%;">
+                                <span class="chart-bar-value">150+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-color"></div>
+                        <span>Impact Metrics (2014-2024)</span>
+                    </div>
+                </div>
             </div>
+            
+            <!-- TIMELINE -->
             <div class="timeline reveal">
                 <div class="timeline-item"><div class="timeline-date">2014</div><div class="timeline-content"><h4>Foundation</h4><p>Established in Lusaka, Zambia, with a team of five dedicated activists.</p></div></div>
                 <div class="timeline-item"><div class="timeline-date">2016</div><div class="timeline-content"><h4>Regional Expansion</h4><p>Opened our first regional office in Nairobi, Kenya, expanding our reach across East Africa.</p></div></div>
@@ -398,98 +603,6 @@
                 <div class="timeline-item"><div class="timeline-date">2020</div><div class="timeline-content"><h4>Digital Security Program</h4><p>Introduced comprehensive digital security training and support for defenders facing online threats.</p></div></div>
                 <div class="timeline-item"><div class="timeline-date">2022</div><div class="timeline-content"><h4>West Africa Hub</h4><p>Established our West Africa regional office in Lagos, Nigeria, strengthening our continental presence.</p></div></div>
                 <div class="timeline-item"><div class="timeline-date">2024</div><div class="timeline-content"><h4>10 Year Anniversary</h4><p>Celebrating a decade of impact with over 500 defenders protected and 25 countries served.</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LEADERSHIP TEAM -->
-    <section class="section">
-        <div class="container">
-            <div class="text-center reveal" style="max-width:700px; margin:0 auto 2.5rem;">
-                <div class="page-header-overline">Leadership</div>
-                <h2>Meet Our Team</h2>
-                <p class="text-muted">Our dedicated leadership team brings decades of combined experience in human rights, advocacy, and organizational management.</p>
-            </div>
-            <div class="team-grid reveal">
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528f04f6?w=300&h=300&fit=crop" alt="Executive Director">
-                    <h4>Dr. Emmanuel Phiri</h4>
-                    <p class="team-role">Executive Director</p>
-                    <p class="text-small text-muted">Former human rights lawyer with 20+ years of experience in defender protection across Southern Africa.</p>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop" alt="Deputy Director">
-                    <h4>Amara Osei</h4>
-                    <p class="team-role">Deputy Director</p>
-                    <p class="text-small text-muted">Expert in organizational development and human rights advocacy with focus on West Africa.</p>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1519085908420-489b6c6bbd2d?w=300&h=300&fit=crop" alt="Head of Programs">
-                    <h4>Dr. Fatima Mbowe</h4>
-                    <p class="team-role">Head of Programs</p>
-                    <p class="text-small text-muted">Specialist in program design and monitoring with extensive experience in East Africa.</p>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Head of Advocacy">
-                    <h4>James Okonkwo</h4>
-                    <p class="team-role">Head of Advocacy</p>
-                    <p class="text-small text-muted">Seasoned advocate with expertise in regional and international human rights mechanisms.</p>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15b19e10c478?w=300&h=300&fit=crop" alt="Head of Protection">
-                    <h4>Sarah Nkomo</h4>
-                    <p class="team-role">Head of Protection</p>
-                    <p class="text-small text-muted">Security specialist with background in emergency response and defender protection protocols.</p>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="Finance Director">
-                    <h4>Michael Tembo</h4>
-                    <p class="team-role">Finance Director</p>
-                    <p class="text-small text-muted">Certified accountant with 15 years of experience in nonprofit financial management.</p>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d35?w=300&h=300&fit=crop" alt="Communications Manager">
-                    <h4>Grace Mwansa</h4>
-                    <p class="team-role">Communications Manager</p>
-                    <p class="text-small text-muted">Communications strategist specializing in human rights storytelling and media relations.</p>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1500648644201-78cfe0f8e5e2?w=300&h=300&fit=crop" alt="Regional Coordinator">
-                    <h4>David Mensah</h4>
-                    <p class="team-role">Regional Coordinator, West Africa</p>
-                    <p class="text-small text-muted">Experienced coordinator with deep networks across West African civil society organizations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BOARD OF DIRECTORS -->
-    <section class="section" style="background:rgba(247,240,230,0.65);">
-        <div class="container">
-            <div class="text-center reveal" style="max-width:700px; margin:0 auto 2.5rem;">
-                <div class="page-header-overline">Governance</div>
-                <h2>Our Board of Directors</h2>
-                <p class="text-muted">Our distinguished Board provides strategic guidance and oversight to ensure we fulfill our mission effectively and sustainably.</p>
-            </div>
-            <div class="values-grid reveal" style="grid-template-columns: repeat(3,1fr);">
-                <div class="value-card">
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e1b9c6c?w=200&h=200&fit=crop" alt="Board Chair" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem;">
-                    <h4>Prof. Amina Diallo</h4>
-                    <p style="color:var(--gold-accent); font-weight:600; font-size:0.8rem; margin-bottom:0.5rem;">Board Chairperson</p>
-                    <p class="text-muted">Distinguished Professor of Human Rights Law at the University of Cape Town and former UN Special Rapporteur.</p>
-                </div>
-                <div class="value-card">
-                    <img src="https://images.unsplash.com/photo-1544005312-64b8a4f8f6c0?w=200&h=200&fit=crop" alt="Board Member" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem;">
-                    <h4>Dr. Robert Mugisha</h4>
-                    <p style="color:var(--gold-accent); font-weight:600; font-size:0.8rem; margin-bottom:0.5rem;">Vice Chairperson</p>
-                    <p class="text-muted">Renowned peace and security expert with extensive experience in conflict resolution across Africa.</p>
-                </div>
-                <div class="value-card">
-                    <img src="https://images.unsplash.com/photo-1507598673266-8afd24c80e1c?w=200&h=200&fit=crop" alt="Board Member" style="width:80px; height:80px; border-radius:50%; margin-bottom:1rem;">
-                    <h4>Amb. Wanjiru Gichuru</h4>
-                    <p style="color:var(--gold-accent); font-weight:600; font-size:0.8rem; margin-bottom:0.5rem;">Board Member</p>
-                    <p class="text-muted">Former Kenyan Ambassador to the African Union with expertise in continental human rights mechanisms.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -506,16 +619,16 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER WITH ENHANCED LOGO -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" style="display:flex; align-items:center; gap:0.7rem; margin-bottom:1rem;">
-                        <img src="https://i.imgur.com/KbDuWry.png" alt="Logo" style="height:44px;">
-                        <div>
-                            <span style="font-family:var(--font-heading); font-weight:700; font-size:1rem; color:var(--white);">DefenderLink Africa</span>
-                            <span style="font-size:0.65rem; color:var(--gold-accent); text-transform:uppercase;">Protecting Defenders</span>
+                    <a href="index.html" class="footer-logo">
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">DefenderLink Africa</span>
+                            <span class="footer-logo-subtitle">Protecting Defenders</span>
                         </div>
                     </a>
                     <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent. Headquartered in Lusaka, Zambia.</p>

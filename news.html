@@ -371,10 +371,10 @@
             color: var(--deep-brown);
         }
 
-        /* PAGE HEADER (60vh) */
-        .page-header {
+        /* HERO SECTION */
+        .hero {
             position: relative;
-            min-height: 60vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -382,12 +382,12 @@
             overflow: hidden;
             padding-top: 70px;
         }
-        .page-header-bg {
+        .hero-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
-        .page-header-bg img {
+        .hero-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -402,15 +402,34 @@
                 transform: scale(1.06);
             }
         }
-        .page-header-bg::after {
+        .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
             background: rgba(26, 13, 6, 0.65);
         }
-        .page-header .container {
+        .hero .container {
             position: relative;
             z-index: 1;
+        }
+        .hero-logo {
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-logo img {
+            height: 90px;
+            width: auto;
+            filter: drop-shadow(0 2px 12px rgba(200,150,62,0.5)) drop-shadow(0 0 20px rgba(200,150,62,0.3));
         }
         .breadcrumb {
             display: flex;
@@ -427,19 +446,19 @@
         .breadcrumb a:hover {
             color: var(--white);
         }
-        .page-header-overline {
+        .hero-overline {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: var(--gold-accent);
             margin-bottom: 0.5rem;
         }
-        .page-header-title {
+        .hero-title {
             color: var(--white);
             margin-bottom: 0.8rem;
             text-shadow: 0 2px 18px rgba(0,0,0,0.5);
         }
-        .page-header-subtitle {
+        .hero-subtitle {
             color: rgba(255,255,255,0.75);
             max-width: 500px;
             margin: 0 auto;
@@ -631,6 +650,32 @@
             font-size: 0.85rem;
             line-height: 1.7;
         }
+        .footer-logo-img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(200,150,62,0.4)) drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+        }
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-logo-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .footer-logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-weight: 500;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        }
         .footer-title {
             color: var(--gold-accent);
             font-family: var(--font-body);
@@ -732,8 +777,11 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .page-header {
-                min-height: 50vh;
+            .hero {
+                min-height: 60vh;
+            }
+            .hero-logo img {
+                height: 70px;
             }
             .newsletter-form {
                 flex-direction: column;
@@ -746,11 +794,15 @@
             .nav-logo-text {
                 display: none;
             }
-            .page-header-title {
+            .hero-title {
                 font-size: 1.8rem;
+            }
+            .hero-logo img {
+                height: 60px;
             }
         }
     </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
 
@@ -790,20 +842,23 @@
         </div>
     </div>
 
-    <!-- PAGE HEADER -->
-    <header class="page-header">
-        <div class="page-header-bg">
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-bg">
             <img src="https://i.imgur.com/A45UKYU.jpeg" alt="News background">
         </div>
         <div class="container">
+            <div class="hero-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa Logo">
+            </div>
             <div class="breadcrumb">
                 <a href="index.html">Home</a>
                 <span>/</span>
                 <span>News & Updates</span>
             </div>
-            <p class="page-header-overline">Latest Updates</p>
-            <h1 class="page-header-title">News & Insights</h1>
-            <p class="page-header-subtitle">Stay informed about our activities, achievements, and developments in human rights defender protection across Africa.</p>
+            <p class="hero-overline">Latest Updates</p>
+            <h1 class="hero-title">News & Insights</h1>
+            <p class="hero-subtitle">Stay informed about our activities, achievements, and developments in human rights defender protection across Africa.</p>
         </div>
     </header>
 
@@ -813,7 +868,7 @@
             <!-- Featured Article -->
             <div class="featured-card reveal">
                 <div class="featured-card-img">
-                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48e91d?w=1200&q=80" alt="Featured news">
+                    <img src="https://i.imgur.com/7z8q9pR.jpeg" alt="Featured news">
                     <div style="position: absolute; top: 1.5rem; left: 1.5rem;">
                         <span style="background: var(--gold-accent); color: var(--deep-brown); padding: 5px 16px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;">Featured</span>
                     </div>
@@ -830,7 +885,7 @@
             <!-- News Grid -->
             <div class="grid grid-3">
                 <article class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd837?w=800&q=80" alt="Training" class="card-img">
+                    <img src="https://i.imgur.com/3mN5k7L.jpeg" alt="Training" class="card-img">
                     <div class="card-body">
                         <span class="card-label">Training</span>
                         <h3 class="card-title"><a href="#">Security Training Reaches 500 Defenders</a></h3>
@@ -842,7 +897,7 @@
                     </div>
                 </article>
                 <article class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1469571806173-57b1ad1b7e48?w=800&q=80" alt="Report" class="card-img">
+                    <img src="https://i.imgur.com/9p2q8rM.jpeg" alt="Report" class="card-img">
                     <div class="card-body">
                         <span class="card-label">Report</span>
                         <h3 class="card-title"><a href="#">Annual Report 2024 Highlights Decade of Impact</a></h3>
@@ -854,7 +909,7 @@
                     </div>
                 </article>
                 <article class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1521585140843-bf55ab67a27f?w=800&q=80" alt="Emergency" class="card-img">
+                    <img src="https://i.imgur.com/4n6o9pN.jpeg" alt="Emergency" class="card-img">
                     <div class="card-body">
                         <span class="card-label">Emergency</span>
                         <h3 class="card-title"><a href="#">48-Hour Evacuation Success Story</a></h3>
@@ -866,7 +921,7 @@
                     </div>
                 </article>
                 <article class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" alt="Partnership" class="card-img">
+                    <img src="https://i.imgur.com/5o7p0qO.jpeg" alt="Partnership" class="card-img">
                     <div class="card-body">
                         <span class="card-label">Partnership</span>
                         <h3 class="card-title"><a href="#">New Partnership with African Court</a></h3>
@@ -878,7 +933,7 @@
                     </div>
                 </article>
                 <article class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80" alt="Digital Security" class="card-img">
+                    <img src="https://i.imgur.com/6p8q1rP.jpeg" alt="Digital Security" class="card-img">
                     <div class="card-body">
                         <span class="card-label">Capacity Building</span>
                         <h3 class="card-title"><a href="#">Digital Security Fellowship Launches</a></h3>
@@ -890,7 +945,7 @@
                     </div>
                 </article>
                 <article class="card reveal">
-                    <img src="https://images.unsplash.com/photo-1531542221304-1295e893a293?w=800&q=80" alt="Advocacy" class="card-img">
+                    <img src="https://i.imgur.com/7q9r2sQ.jpeg" alt="Advocacy" class="card-img">
                     <div class="card-body">
                         <span class="card-label">Advocacy</span>
                         <h3 class="card-title"><a href="#">Malawi Passes National Protection Law</a></h3>
@@ -934,10 +989,10 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.7rem; text-decoration:none;">
-                        <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa" style="height: 44px;">
-                        <div>
-                            <span style="font-family:var(--font-heading);font-weight:700;font-size:1rem;color:var(--white);display:block;">DefenderLink Africa</span>
-                            <span style="font-size:0.65rem;color:var(--gold-accent);text-transform:uppercase;letter-spacing:0.14em;">Protecting Defenders</span>
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">DefenderLink Africa</span>
+                            <span class="footer-logo-subtitle">Protecting Defenders</span>
                         </div>
                     </a>
                     <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent. Headquartered in Lusaka, Zambia.</p>

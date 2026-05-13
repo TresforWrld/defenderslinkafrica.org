@@ -1,432 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Access DefenderLink Africa's publications, toolkits, reports, and resources for human rights defenders.">
-  <meta property="og:title" content="Resources - DefenderLink Africa">
-  <meta property="og:image" content="https://i.imgur.com/WQp3Kvs.png">
-  <link rel="icon" type="image/png" href="https://i.imgur.com/WQp3Kvs.png">
-  <title>Resources | DefenderLink Africa</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access DefenderLink Africa's publications, toolkits, reports, and resources for human rights defenders.">
+    <meta property="og:title" content="Resources - DefenderLink Africa">
+    <meta property="og:image" content="https://i.imgur.com/KbDuWry.png">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/26vbOoF.png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/26vbOoF.png">
+    <title>Resources | DefenderLink Africa</title>
+
+    <style>
+        :root {
+            --deep-brown: #2C1810;
+            --espresso: #1A0D06;
+            --rich-brown: #3E2016;
+            --warm-brown: #5C3424;
+            --copper: #7D4E34;
+            --terracotta: #8B5A3C;
+            --tan: #B88962;
+            --sand: #C9A07A;
+            --cream: #F2E8DC;
+            --warm-cream: #F7F0E6;
+            --parchment: #FBF6EF;
+            --gold-accent: #C8963E;
+            --gold-light: #D9B056;
+            --gold-dark: #A67C2E;
+            --white: #FFFFFF;
+            --off-white: #FEFBF8;
+            --text-dark: #1A0D06;
+            --text-medium: #3E2016;
+            --text-muted: #7D5C4A;
+            --border-subtle: rgba(139, 94, 60, 0.18);
+            --border-medium: rgba(139, 94, 60, 0.3);
+            --shadow-sm: 0 2px 8px rgba(26, 13, 6, 0.06);
+            --shadow-md: 0 6px 24px rgba(26, 13, 6, 0.1);
+            --shadow-lg: 0 14px 48px rgba(26, 13, 6, 0.16);
+            --shadow-xl: 0 22px 64px rgba(26, 13, 6, 0.22);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-2xl: 28px;
+            --font-heading: 'Georgia', 'Times New Roman', 'Palatino', serif;
+            --font-body: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            --max-width: 1120px;
+            --transition-smooth: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-fast: 0.2s ease;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--parchment);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: url('https://i.imgur.com/Wu44jc7.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg,
+                    rgba(251, 246, 239, 0.9) 0%,
+                    rgba(247, 240, 230, 0.88) 25%,
+                    rgba(242, 232, 220, 0.9) 50%,
+                    rgba(240, 228, 214, 0.92) 100%);
+            z-index: -1;
+        }
+
+        h1,h2,h3,h4,h5 { font-family: var(--font-heading); font-weight: 700; line-height: 1.15; color: var(--deep-brown); }
+        h1 { font-size: clamp(2rem, 4.5vw, 3.4rem); }
+        h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+        h3 { font-size: 1.3rem; }
+        p { margin-bottom: 1rem; color: var(--text-medium); }
+        a { color: var(--warm-brown); text-decoration: none; transition: color var(--transition-fast); }
+        a:hover { color: var(--terracotta); }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 4rem 0; }
+        .text-center { text-align: center; }
+        .text-small { font-size: 0.85rem; }
+        .text-muted { color: var(--text-muted); }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.8rem 1.6rem; font-family: var(--font-body); font-weight: 600;
+            font-size: 0.9rem; border-radius: var(--radius-md); cursor: pointer;
+            transition: all var(--transition-smooth); text-decoration: none;
+            border: 2px solid transparent; white-space: nowrap; letter-spacing: 0.02em;
+        }
+        .btn-primary { background: var(--warm-brown); color: var(--white); border-color: var(--warm-brown); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background: var(--rich-brown); border-color: var(--rich-brown); color: var(--white); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-white { background: var(--white); color: var(--deep-brown); border-color: var(--white); box-shadow: var(--shadow-md); }
+        .btn-white:hover { background: var(--cream); border-color: var(--cream); color: var(--deep-brown); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline { background: transparent; color: var(--warm-brown); border-color: var(--warm-brown); }
+        .btn-outline:hover { background: var(--warm-brown); color: var(--white); transform: translateY(-2px); }
+        .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
+        .btn-outline-white:hover { background: var(--white); color: var(--deep-brown); border-color: var(--white); transform: translateY(-2px); }
+        .btn-sm { padding: 0.6rem 1.2rem; font-size: 0.85rem; }
+
+        /* NAV */
+        .nav {
+            position: fixed; top:0; left:0; right:0; z-index: 1000;
+            background: rgba(26,13,6,0.88); backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(200,150,62,0.18); transition: all var(--transition-smooth);
+        }
+        .nav.scrolled { background: rgba(26,13,6,0.96); box-shadow: var(--shadow-lg); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: var(--max-width); margin:0 auto; padding:0.55rem 1.5rem; gap:1rem; }
+        .nav-logo { display: flex; align-items: center; gap:0.7rem; text-decoration:none; flex-shrink:0; }
+        .nav-logo img { height:40px; transition: transform var(--transition-smooth); }
+        .nav-logo:hover img { transform: scale(1.06); }
+        .nav-logo-text { display:flex; flex-direction:column; }
+        .nav-logo-title { font-family: var(--font-heading); font-weight:700; font-size:1rem; color:var(--white); line-height:1.2; }
+        .nav-logo-subtitle { font-size:0.65rem; color:var(--gold-accent); text-transform:uppercase; letter-spacing:0.16em; }
+        .nav-menu { display: flex; align-items: center; gap:0.2rem; }
+        .nav-link { padding:0.45rem 0.8rem; font-size:0.82rem; font-weight:500; color:rgba(255,255,255,0.78); text-decoration:none; border-radius:var(--radius-sm); transition:all var(--transition-fast); white-space:nowrap; }
+        .nav-link:hover,.nav-link.active { color:var(--white); background:rgba(200,150,62,0.18); }
+        .nav-link.donate { background:var(--gold-accent)!important; color:var(--deep-brown)!important; font-weight:700; padding:0.5rem 1.2rem; border-radius:var(--radius-md); }
+        .nav-link.donate:hover { background:var(--gold-light)!important; transform:translateY(-2px); box-shadow:0 6px 22px rgba(200,150,62,0.45); }
+
+        .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:0.5rem; z-index:1001; background:none; border:none; }
+        .nav-hamburger span { display:block; width:26px; height:2.5px; background:var(--white); border-radius:2px; transition:all var(--transition-smooth); }
+        .nav-hamburger.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity:0; transform:scaleX(0); }
+        .nav-hamburger.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+        .mobile-overlay {
+            position:fixed; inset:0; background:rgba(26,13,6,0.97); z-index:999;
+            display:flex; align-items:center; justify-content:center;
+            opacity:0; pointer-events:none; transition:opacity var(--transition-smooth);
+        }
+        .mobile-overlay.active { opacity:1; pointer-events:all; }
+        .mobile-overlay-inner { text-align:center; display:flex; flex-direction:column; gap:0.3rem; }
+        .mobile-overlay-link { display:block; padding:0.9rem 1.5rem; color:var(--cream); font-size:1.2rem; text-decoration:none; }
+        .mobile-overlay-link:hover { color:var(--gold-light); background:rgba(200,150,62,0.1); border-radius:var(--radius-md); }
+        .mobile-overlay-link.donate-mobile { color:var(--gold-accent); font-weight:700; font-size:1.3rem; border:2px solid var(--gold-accent); border-radius:var(--radius-lg); margin-top:0.8rem; }
+
+        /* PAGE HEADER WITH LOGO */
+        .page-header {
+            position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center;
+            text-align:center; overflow:hidden; padding-top:70px;
+        }
+        .page-header-bg { position:absolute; inset:0; z-index:0; }
+        .page-header-bg img { width:100%; height:100%; object-fit:cover; object-position:center 30%; animation:hero-zoom 8s ease-in-out infinite alternate; }
+        @keyframes hero-zoom { 0%{ transform:scale(1); } 100%{ transform:scale(1.06); } }
+        .page-header-bg::after { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.65); }
+        .page-header .container { position:relative; z-index:1; }
+        
+        .hero-logo {
+            display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem;
+        }
+        .hero-logo img {
+            height: 90px; width: auto;
+            filter: drop-shadow(0 2px 12px rgba(200,150,62,0.5)) drop-shadow(0 0 20px rgba(200,150,62,0.3));
+            animation: fadeInDown 0.8s ease-out;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .breadcrumb { display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:0.8rem; color:rgba(255,255,255,0.7); margin-bottom:1rem; }
+        .breadcrumb a { color:var(--gold-light); }
+        .page-header-overline { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold-accent); margin-bottom:0.5rem; }
+        .page-header-title { color:var(--white); margin-bottom:0.8rem; text-shadow:0 2px 18px rgba(0,0,0,0.5); }
+        .page-header-subtitle { color:rgba(255,255,255,0.75); max-width:500px; margin:0 auto; }
+
+        /* CARDS & GRIDS */
+        .grid { display: grid; gap: 1.5rem; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .gap-xl { gap: 2rem; }
+
+        .card { background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle); overflow: hidden; transition: all var(--transition-smooth); }
+        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--border-medium); }
+        .card-body { padding: 1.5rem; }
+        .card-label { display: inline-block; padding: 0.3rem 0.8rem; background: rgba(200,150,62,0.1); color: var(--gold-accent); border-radius: 50px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+        .card-title { font-size: 1.2rem; margin-bottom: 0.6rem; }
+        .card-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+        .card-img { width: 100%; height: 200px; object-fit: cover; }
+
+        /* SECTION HEADER */
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 2.5rem; }
+        .section-overline { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-accent); margin-bottom: 0.5rem; }
+        .section-title { margin-bottom: 0.8rem; }
+        .section-subtitle { color: var(--text-muted); }
+
+        /* VIDEO THUMBNAIL REPLACEMENT */
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, var(--warm-brown) 0%, var(--rich-brown) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        .video-play-btn {
+            position: relative;
+            width: 60px; height: 60px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            transition: transform var(--transition-smooth);
+        }
+        .video-thumbnail:hover .video-play-btn {
+            transform: scale(1.1);
+        }
+        .video-duration {
+            position: absolute;
+            bottom: 10px; right: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            font-size: 0.75rem;
+            z-index: 1;
+        }
+
+        /* CTA */
+        .cta-section {
+            background:var(--deep-brown); padding:4rem 0; text-align:center; position:relative; overflow:hidden;
+        }
+        .cta-section::before { content:''; position:absolute; top:-40%; left:-40%; width:180%; height:180%; background:radial-gradient(circle at center,rgba(200,150,62,0.06) 0%,transparent 55%); animation:rotate-glow 20s linear infinite; }
+        @keyframes rotate-glow { from{ transform:rotate(0deg); } to{ transform:rotate(360deg); } }
+        .cta-content { position:relative; z-index:1; max-width:600px; margin:0 auto; }
+        .cta-title { color:var(--white); margin-bottom:1rem; }
+        .cta-text { color:rgba(255,255,255,0.7); margin-bottom:2rem; }
+        .form-input {
+            padding: 0.8rem 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: var(--radius-md);
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 0.9rem;
+            transition: all var(--transition-fast);
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold-accent);
+            background: rgba(255,255,255,0.15);
+        }
+        .form-input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* FOOTER WITH ENHANCED LOGO */
+        .footer {
+            background-image:url('https://i.imgur.com/FEbqeZI.jpeg'); background-size:cover; background-position:center;
+            position:relative; color:var(--cream); padding:4rem 0 1.5rem;
+        }
+        .footer::before { content:''; position:absolute; inset:0; background:rgba(26,13,6,0.93); z-index:0; }
+        .footer>.container { position:relative; z-index:1; }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1.2fr; gap:2rem; margin-bottom:2.5rem; }
+        
+        .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+        .footer-logo {
+            display: flex; align-items: center; gap: 0.8rem;
+            text-decoration: none;
+        }
+        .footer-logo-img {
+            height: 60px; width: auto;
+            filter: drop-shadow(0 0 10px rgba(200,150,62,0.4)) drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+            transition: transform var(--transition-smooth);
+        }
+        .footer-logo:hover .footer-logo-img {
+            transform: scale(1.05);
+        }
+        .footer-logo-text {
+            display: flex; flex-direction: column;
+        }
+        .footer-logo-title {
+            font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem;
+            color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        .footer-logo-subtitle {
+            font-size: 0.7rem; color: var(--gold-accent);
+            text-transform: uppercase; letter-spacing: 0.12em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .footer-brand p { color:rgba(255,255,255,0.6); font-size:0.85rem; }
+        .footer-title { color:var(--gold-accent); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:1rem; font-weight:700; }
+        .footer-links { list-style:none; padding:0; }
+        .footer-links li { margin-bottom:0.4rem; }
+        .footer-links a { color:rgba(255,255,255,0.6); font-size:0.85rem; transition:all var(--transition-fast); }
+        .footer-links a:hover { color:var(--gold-light); padding-left:3px; }
+        .footer-contact-item { display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.7rem; color:rgba(255,255,255,0.6); font-size:0.85rem; }
+        .footer-contact-item svg { flex-shrink:0; color:var(--gold-accent); margin-top:3px; }
+        .footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); }
+        .footer-copyright { color:rgba(255,255,255,0.35); font-size:0.78rem; margin:0; }
+        .footer-bottom-links { display:flex; gap:1.2rem; }
+        .footer-bottom-links a { color:rgba(255,255,255,0.35); font-size:0.78rem; }
+        .footer-bottom-links a:hover { color:var(--gold-light); }
+
+        .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+
+        @media (max-width:1024px) {
+            .nav-menu { display:none; }
+            .nav-hamburger { display:flex; }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns:repeat(3,1fr); }
+        }
+        @media (max-width:768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns:1fr 1fr; }
+            .page-header { min-height:50vh; }
+            .hero-logo img { height: 70px; }
+            .footer-logo-img { height: 50px; }
+        }
+        @media (max-width:480px) {
+            .footer-grid { grid-template-columns:1fr; }
+            .nav-logo-text { display:none; }
+            .hero-logo img { height: 60px; }
+            .footer-logo-img { height: 45px; }
+        }
+    </style>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
-
-  <!-- NAVIGATION -->
-  <nav class="nav" role="navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa Logo">
-        <div class="nav-logo-text">
-          <span class="nav-logo-title">DefenderLink Africa</span>
-          <span class="nav-logo-subtitle">Protecting Defenders</span>
-        </div>
-      </a>
-      <div class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="what-we-do.html" class="nav-link">What We Do</a>
-        <a href="where-we-work.html" class="nav-link">Where We Work</a>
-        <a href="resources.html" class="nav-link active">Resources</a>
-        <a href="news.html" class="nav-link">News</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="donate.html" class="nav-link donate nav-cta">Donate</a>
-      </div>
-      <div class="nav-hamburger"><span></span><span></span><span></span></div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu">
-    <div class="mobile-menu-inner">
-      <a href="index.html" class="mobile-menu-link">Home</a>
-      <a href="about.html" class="mobile-menu-link">About Us</a>
-      <a href="what-we-do.html" class="mobile-menu-link">What We Do</a>
-      <a href="where-we-work.html" class="mobile-menu-link">Where We Work</a>
-      <a href="resources.html" class="mobile-menu-link">Resources</a>
-      <a href="news.html" class="mobile-menu-link">News</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
-      <a href="donate.html" class="mobile-menu-link" style="color: var(--accent-gold);">Donate Now</a>
-    </div>
-  </div>
-
-  <!-- PAGE HEADER -->
-  <header class="page-header">
-    <div class="page-header-bg">
-      <img src="https://images.unsplash.com/photo-1456513080585-0b050b0eb26a?w=1920&q=80" alt="Resources">
-    </div>
-    <div class="container">
-      <div class="page-header-content fade-in-up">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span>/</span>
-          <span class="breadcrumb-current">Resources</span>
-        </div>
-        <p class="page-header-overline">Knowledge Hub</p>
-        <h1 class="page-header-title">Resources & Publications</h1>
-        <p class="page-header-subtitle">Practical tools, guides, and publications to support human rights defenders in their crucial work.</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- FEATURED TOOLS -->
-  <section class="section" id="toolkits">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Practical Tools</div>
-        <h2 class="section-title">Toolkits for Defenders</h2>
-        <p class="section-subtitle">Downloadable resources designed to enhance your security, effectiveness, and wellbeing.</p>
-      </div>
-      
-      <div class="grid grid-3 gap-xl">
-        <div class="card fade-in-up delay-1">
-          <div style="height: 180px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); display: flex; align-items: center; justify-content: center;">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M12 8v4"/>
-              <path d="M12 16h.01"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Security Guide</span>
-            <h3 class="card-title">Personal Security Handbook</h3>
-            <p class="card-text">Comprehensive guide to physical security for human rights defenders, including threat assessment and protection planning.</p>
-            <a href="#" class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
+    <!-- NAV -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="Logo">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-title">DefenderLink Africa</span>
+                    <span class="nav-logo-subtitle">Protecting Defenders</span>
+                </div>
             </a>
-          </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="what-we-do.html" class="nav-link">What We Do</a>
+                <a href="where-we-work.html" class="nav-link">Where We Work</a>
+                <a href="resources.html" class="nav-link active">Resources</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="donate.html" class="nav-link donate">Donate</a>
+            </div>
+            <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
-        
-        <div class="card fade-in-up delay-2">
-          <div style="height: 180px; background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%); display: flex; align-items: center; justify-content: center;">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Digital Security</span>
-            <h3 class="card-title">Digital Protection Toolkit</h3>
-            <p class="card-text">Essential guide to digital security including secure communications, data protection, and countering online surveillance.</p>
-            <a href="#" class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </a>
-          </div>
+    </nav>
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-overlay-inner">
+            <a href="index.html" class="mobile-overlay-link">Home</a>
+            <a href="about.html" class="mobile-overlay-link">About Us</a>
+            <a href="what-we-do.html" class="mobile-overlay-link">What We Do</a>
+            <a href="where-we-work.html" class="mobile-overlay-link">Where We Work</a>
+            <a href="resources.html" class="mobile-overlay-link">Resources</a>
+            <a href="news.html" class="mobile-overlay-link">News</a>
+            <a href="contact.html" class="mobile-overlay-link">Contact</a>
+            <a href="donate.html" class="mobile-overlay-link donate-mobile">Donate Now</a>
         </div>
-        
-        <div class="card fade-in-up delay-3">
-          <div style="height: 180px; background: linear-gradient(135deg, var(--earth) 0%, var(--earth-light) 100%); display: flex; align-items: center; justify-content: center;">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Documentation</span>
-            <h3 class="card-title">Human Rights Documentation Guide</h3>
-            <p class="card-text">Methodology and best practices for documenting human rights violations securely and effectively.</p>
-            <a href="#" class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </a>
-          </div>
-        </div>
-        
-        <div class="card fade-in-up delay-4">
-          <div style="height: 180px; background: linear-gradient(135deg, var(--accent-teal) 0%, #006666 100%); display: flex; align-items: center; justify-content: center;">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Wellbeing</span>
-            <h3 class="card-title">Self-Care & Resilience Manual</h3>
-            <p class="card-text">Practical strategies for managing stress, preventing burnout, and maintaining wellbeing in challenging work.</p>
-            <a href="#" class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </a>
-          </div>
-        </div>
-        
-        <div class="card fade-in-up delay-5">
-          <div style="height: 180px; background: linear-gradient(135deg, var(--accent-copper) 0%, #8B5A2B 100%); display: flex; align-items: center; justify-content: center;">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20"/>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Advocacy</span>
-            <h3 class="card-title">Advocacy Strategy Toolkit</h3>
-            <p class="card-text">Guide to developing effective advocacy campaigns and engaging regional and international mechanisms.</p>
-            <a href="#" class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </a>
-          </div>
-        </div>
-        
-        <div class="card fade-in-up delay-6">
-          <div style="height: 180px; background: linear-gradient(135deg, var(--accent-gold) 0%, #B8860B 100%); display: flex; align-items: center; justify-content: center;">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Emergency</span>
-            <h3 class="card-title">Emergency Response Protocol</h3>
-            <p class="card-text">Quick reference guide for defenders facing immediate threats, including emergency contacts and step-by-step responses.</p>
-            <a href="#" class="btn btn-outline btn-sm" style="margin-top: var(--space-md);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- REPORTS -->
-  <section class="section" id="reports" style="background: var(--sand);">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Research & Analysis</div>
-        <h2 class="section-title">Reports & Publications</h2>
-        <p class="section-subtitle">In-depth analysis and documentation of human rights defender protection issues across Africa.</p>
-      </div>
-      
-      <div class="grid grid-2 gap-xl">
-        <article class="card fade-in-up delay-1" style="display: flex; flex-direction: row;">
-          <div style="width: 200px; min-width: 200px; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
-            <div style="text-align: center;">
-              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Annual Report</div>
-              <div style="font-size: 2.5rem; font-weight: var(--font-weight-extrabold);">2024</div>
+    <!-- PAGE HEADER WITH LOGO -->
+    <header class="page-header">
+        <div class="page-header-bg">
+            <img src="https://i.imgur.com/A45UKYU.jpeg" alt="Resources">
+        </div>
+        <div class="container">
+            <div class="hero-logo">
+                <img src="https://i.imgur.com/KbDuWry.png" alt="DefenderLink Africa Logo">
             </div>
-          </div>
-          <div class="card-body" style="flex: 1;">
-            <span class="card-label">Annual Report</span>
-            <h3 class="card-title">DefenderLink Africa Annual Report 2024</h3>
-            <p class="card-text">Comprehensive overview of our activities, achievements, and financial statements for 2024.</p>
-            <div style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
-              <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
-              <span class="text-small text-muted" style="align-self: center;">PDF, 5.2 MB</span>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card fade-in-up delay-2" style="display: flex; flex-direction: row;">
-          <div style="width: 200px; min-width: 200px; background: var(--secondary); display: flex; align-items: center; justify-content: center; color: white;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-            </svg>
-          </div>
-          <div class="card-body" style="flex: 1;">
-            <span class="card-label">Research Report</span>
-            <h3 class="card-title">State of Defender Protection in Africa 2024</h3>
-            <p class="card-text">Comprehensive analysis of the protection environment for human rights defenders across the continent.</p>
-            <div style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
-              <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
-              <span class="text-small text-muted" style="align-self: center;">PDF, 3.8 MB</span>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card fade-in-up delay-3" style="display: flex; flex-direction: row;">
-          <div style="width: 200px; min-width: 200px; background: var(--earth); display: flex; align-items: center; justify-content: center; color: white;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <div class="card-body" style="flex: 1;">
-            <span class="card-label">Thematic Report</span>
-            <h3 class="card-title">Digital Threats Against Defenders</h3>
-            <p class="card-text">Analysis of online harassment, surveillance, and digital attacks targeting human rights defenders in Africa.</p>
-            <div style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
-              <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
-              <span class="text-small text-muted" style="align-self: center;">PDF, 2.4 MB</span>
-            </div>
-          </div>
-        </article>
-        
-        <article class="card fade-in-up delay-4" style="display: flex; flex-direction: row;">
-          <div style="width: 200px; min-width: 200px; background: var(--accent-copper); display: flex; align-items: center; justify-content: center; color: white;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <div class="card-body" style="flex: 1;">
-            <span class="card-label">Country Report</span>
-            <h3 class="card-title">Defender Protection in East Africa</h3>
-            <p class="card-text">Regional analysis of the legal framework, challenges, and opportunities for defender protection in East Africa.</p>
-            <div style="display: flex; gap: var(--space-md); margin-top: var(--space-md);">
-              <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
-              <span class="text-small text-muted" style="align-self: center;">PDF, 1.9 MB</span>
-            </div>
-          </div>
-        </article>
-      </div>
-      
-      <div class="text-center fade-in-up" style="margin-top: var(--space-2xl);">
-        <a href="#" class="btn btn-outline">View All Publications</a>
-      </div>
-    </div>
-  </section>
+            <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Resources</span></div>
+            <p class="page-header-overline">Knowledge Hub</p>
+            <h1 class="page-header-title">Resources & Publications</h1>
+            <p class="page-header-subtitle">Practical tools, guides, and publications to support human rights defenders in their crucial work.</p>
+        </div>
+    </header>
 
-  <!-- VIDEO RESOURCES -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <div class="section-overline">Learning Center</div>
-        <h2 class="section-title">Video Resources</h2>
-        <p class="section-subtitle">Training videos and webinars on key topics for human rights defenders.</p>
-      </div>
-      
-      <div class="grid grid-3 gap-xl">
-        <div class="card fade-in-up delay-1">
-          <div style="position: relative;">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e8ad4b?w=800&q=80" alt="Video thumbnail" class="card-img">
-            <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
-              <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                  <polygon points="5 3 19 12 5 21 5 3"/>
-                </svg>
-              </div>
+    <!-- FEATURED TOOLS -->
+    <section class="section" id="toolkits">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-overline">Practical Tools</div>
+                <h2 class="section-title">Toolkits for Defenders</h2>
+                <p class="section-subtitle">Downloadable resources designed to enhance your security, effectiveness, and wellbeing.</p>
             </div>
-            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 4px; color: white; font-size: 0.75rem;">12:34</div>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Training Video</span>
-            <h3 class="card-title">Introduction to Digital Security</h3>
-            <p class="card-text">Essential digital security practices every defender should know.</p>
-          </div>
-        </div>
-        
-        <div class="card fade-in-up delay-2">
-          <div style="position: relative;">
-            <img src="https://images.unsplash.com/photo-1552664730-d307caaa4111?w=800&q=80" alt="Video thumbnail" class="card-img">
-            <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
-              <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                  <polygon points="5 3 19 12 5 21 5 3"/>
-                </svg>
-              </div>
+            
+            <div class="grid grid-3 gap-xl reveal">
+                <div class="card">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--warm-brown) 0%, var(--rich-brown) 100%); display: flex; align-items: center; justify-content: center;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M12 8v4"/>
+                            <path d="M12 16h.01"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Security Guide</span>
+                        <h3 class="card-title">Personal Security Handbook</h3>
+                        <p class="card-text">Comprehensive guide to physical security for human rights defenders, including threat assessment and protection planning.</p>
+                        <a href="#" class="btn btn-outline btn-sm" style="margin-top: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--copper) 0%, var(--warm-brown) 100%); display: flex; align-items: center; justify-content: center;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Digital Security</span>
+                        <h3 class="card-title">Digital Protection Toolkit</h3>
+                        <p class="card-text">Essential guide to digital security including secure communications, data protection, and countering online surveillance.</p>
+                        <a href="#" class="btn btn-outline btn-sm" style="margin-top: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--deep-brown) 0%, var(--espresso) 100%); display: flex; align-items: center; justify-content: center;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Documentation</span>
+                        <h3 class="card-title">Human Rights Documentation Guide</h3>
+                        <p class="card-text">Methodology and best practices for documenting human rights violations securely and effectively.</p>
+                        <a href="#" class="btn btn-outline btn-sm" style="margin-top: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--gold-accent) 0%, var(--gold-dark) 100%); display: flex; align-items: center; justify-content: center;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Wellbeing</span>
+                        <h3 class="card-title">Self-Care & Resilience Manual</h3>
+                        <p class="card-text">Practical strategies for managing stress, preventing burnout, and maintaining wellbeing in challenging work.</p>
+                        <a href="#" class="btn btn-outline btn-sm" style="margin-top: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--terracotta) 0%, var(--warm-brown) 100%); display: flex; align-items: center; justify-content: center;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Advocacy</span>
+                        <h3 class="card-title">Advocacy Strategy Toolkit</h3>
+                        <p class="card-text">Guide to developing effective advocacy campaigns and engaging regional and international mechanisms.</p>
+                        <a href="#" class="btn btn-outline btn-sm" style="margin-top: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--rich-brown) 0%, var(--deep-brown) 100%); display: flex; align-items: center; justify-content: center;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Emergency</span>
+                        <h3 class="card-title">Emergency Response Protocol</h3>
+                        <p class="card-text">Quick reference guide for defenders facing immediate threats, including emergency contacts and step-by-step responses.</p>
+                        <a href="#" class="btn btn-outline btn-sm" style="margin-top: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download PDF
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 4px; color: white; font-size: 0.75rem;">45:00</div>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Webinar</span>
-            <h3 class="card-title">UN Mechanisms for Defender Protection</h3>
-            <p class="card-text">How to effectively engage UN special procedures and treaty bodies.</p>
-          </div>
         </div>
-        
-        <div class="card fade-in-up delay-3">
-          <div style="position: relative;">
-            <img src="https://images.unsplash.com/photo-1517245386770-e536d13b4db8?w=800&q=80" alt="Video thumbnail" class="card-img">
-            <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
-              <div style="width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                  <polygon points="5 3 19 12 5 21 5 3"/>
-                </svg>
-              </div>
-            </div>
-            <div style="position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 4px; color: white; font-size: 0.75rem;">28:15</div>
-          </div>
-          <div class="card-body">
-            <span class="card-label">Workshop</span>
-            <h3 class="card-title">Self-Care Strategies for Defenders</h3>
-            <p class="card-text">Practical techniques for managing stress and preventing burnout.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NEWSLETTER -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content fade-in-up">
-        <h2 class="cta-title">Stay Updated</h2>
-        <p class="cta-text">Subscribe to our newsletter for the latest resources, news, and updates on human rights defender protection in Africa.</p>
-        <form style="display: flex; gap: var(--space-md); max-width: 500px; margin: var(--space-xl) auto 0;">
-          <input type="email" placeholder="Your email address" class="form-input" style="flex: 1; border: 2px solid white; background: rgba(255,255,255,0.1); color: white;">
-          <button type="submit" class="btn btn-white">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-lg); display: flex; align-items: center; gap: var(--space-md);">
-            <img src="https://i.imgur.com/WQp3Kvs.png" alt="DefenderLink Africa" style="height: 50px;">
-            <div class="nav-logo-text">
-              <span class="nav-logo-title" style="color: var(--white);">DefenderLink Africa</span>
-              <span class="nav-logo-subtitle">Protecting Defenders</span>
+    <!-- REPORTS -->
+    <section class="section" id="reports" style="background: rgba(247,240,230,0.65);">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-overline">Research & Analysis</div>
+                <h2 class="section-title">Reports & Publications</h2>
+                <p class="section-subtitle">In-depth analysis and documentation of human rights defender protection issues across Africa.</p>
             </div>
-          </a>
-          <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent.</p>
+            
+            <div class="grid grid-2 gap-xl reveal">
+                <article class="card" style="display: flex; flex-direction: row;">
+                    <div style="width: 200px; min-width: 200px; background: var(--warm-brown); display: flex; align-items: center; justify-content: center; color: white;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">Annual Report</div>
+                            <div style="font-size: 2.5rem; font-weight: 700;">2024</div>
+                        </div>
+                    </div>
+                    <div class="card-body" style="flex: 1;">
+                        <span class="card-label">Annual Report</span>
+                        <h3 class="card-title">DefenderLink Africa Annual Report 2024</h3>
+                        <p class="card-text">Comprehensive overview of our activities, achievements, and financial statements for 2024.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
+                            <span class="text-small text-muted" style="align-self: center;">PDF, 5.2 MB</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card" style="display: flex; flex-direction: row;">
+                    <div style="width: 200px; min-width: 200px; background: var(--copper); display: flex; align-items: center; justify-content: center; color: white;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                    </div>
+                    <div class="card-body" style="flex: 1;">
+                        <span class="card-label">Research Report</span>
+                        <h3 class="card-title">State of Defender Protection in Africa 2024</h3>
+                        <p class="card-text">Comprehensive analysis of the protection environment for human rights defenders across the continent.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
+                            <span class="text-small text-muted" style="align-self: center;">PDF, 3.8 MB</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card" style="display: flex; flex-direction: row;">
+                    <div style="width: 200px; min-width: 200px; background: var(--deep-brown); display: flex; align-items: center; justify-content: center; color: white;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                    </div>
+                    <div class="card-body" style="flex: 1;">
+                        <span class="card-label">Thematic Report</span>
+                        <h3 class="card-title">Digital Threats Against Defenders</h3>
+                        <p class="card-text">Analysis of online harassment, surveillance, and digital attacks targeting human rights defenders in Africa.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
+                            <span class="text-small text-muted" style="align-self: center;">PDF, 2.4 MB</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card" style="display: flex; flex-direction: row;">
+                    <div style="width: 200px; min-width: 200px; background: var(--terracotta); display: flex; align-items: center; justify-content: center; color: white;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="card-body" style="flex: 1;">
+                        <span class="card-label">Country Report</span>
+                        <h3 class="card-title">Defender Protection in East Africa</h3>
+                        <p class="card-text">Regional analysis of the legal framework, challenges, and opportunities for defender protection in East Africa.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <a href="#" class="btn btn-primary btn-sm">Download PDF</a>
+                            <span class="text-small text-muted" style="align-self: center;">PDF, 1.9 MB</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center reveal" style="margin-top: 2rem;">
+                <a href="#" class="btn btn-outline">View All Publications</a>
+            </div>
         </div>
-        <div>
-          <h5 class="footer-title">Organization</h5>
-          <ul class="footer-links">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="what-we-do.html">What We Do</a></li>
-            <li><a href="where-we-work.html">Where We Work</a></li>
-            <li><a href="news.html">News</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources.html">Publications</a></li>
-            <li><a href="report-violation.html">Report a Violation</a></li>
-            <li><a href="safeguarding.html">Safeguarding</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Support</h5>
-          <ul class="footer-links">
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="footer-title">Contact</h5>
-          <div class="footer-contact-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>info@defenderlinkafrica.org</span>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">© 2025 DefenderLink Africa. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="privacy.html">Privacy</a>
-          <a href="safeguarding.html">Safeguarding</a>
-          <a href="terms.html">Terms</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="js/main.js"></script>
+    <!-- VIDEO RESOURCES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-overline">Learning Center</div>
+                <h2 class="section-title">Video Resources</h2>
+                <p class="section-subtitle">Training videos and webinars on key topics for human rights defenders.</p>
+            </div>
+            
+            <div class="grid grid-3 gap-xl reveal">
+                <div class="card">
+                    <div class="video-thumbnail">
+                        <div class="video-play-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                        <div class="video-duration">12:34</div>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Training Video</span>
+                        <h3 class="card-title">Introduction to Digital Security</h3>
+                        <p class="card-text">Essential digital security practices every defender should know.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="video-thumbnail">
+                        <div class="video-play-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                        <div class="video-duration">45:00</div>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Webinar</span>
+                        <h3 class="card-title">UN Mechanisms for Defender Protection</h3>
+                        <p class="card-text">How to effectively engage UN special procedures and treaty bodies.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="video-thumbnail">
+                        <div class="video-play-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                        <div class="video-duration">28:15</div>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-label">Workshop</span>
+                        <h3 class="card-title">Self-Care Strategies for Defenders</h3>
+                        <p class="card-text">Practical techniques for managing stress and preventing burnout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2 class="cta-title">Stay Updated</h2>
+                <p class="cta-text">Subscribe to our newsletter for the latest resources, news, and updates on human rights defender protection in Africa.</p>
+                <form style="display: flex; gap: 1rem; max-width: 500px; margin: 2rem auto 0;">
+                    <input type="email" placeholder="Your email address" class="form-input" style="flex: 1;">
+                    <button type="submit" class="btn btn-white">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH ENHANCED LOGO -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="https://i.imgur.com/KbDuWry.png" alt="Logo" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-title">DefenderLink Africa</span>
+                            <span class="footer-logo-subtitle">Protecting Defenders</span>
+                        </div>
+                    </a>
+                    <p>A pan-African organization dedicated to protecting and supporting human rights defenders across the continent.</p>
+                </div>
+                <div><h5 class="footer-title">Organization</h5><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="what-we-do.html">What We Do</a></li><li><a href="where-we-work.html">Where We Work</a></li><li><a href="news.html">News</a></li></ul></div>
+                <div><h5 class="footer-title">Resources</h5><ul class="footer-links"><li><a href="resources.html">Publications</a></li><li><a href="report-violation.html">Report a Violation</a></li><li><a href="safeguarding.html">Safeguarding</a></li></ul></div>
+                <div><h5 class="footer-title">Support</h5><ul class="footer-links"><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+                <div>
+                    <h5 class="footer-title">Contact</h5>
+                    <div class="footer-contact-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@defenderlinkafrica.org</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 DefenderLink Africa. All rights reserved. Registered NGO in Zambia.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="safeguarding.html">Safeguarding</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            const navbar = document.getElementById('navbar');
+            function openMenu() { hamburger.classList.add('active'); mobileOverlay.classList.add('active'); document.body.style.overflow='hidden'; }
+            function closeMenu() { hamburger.classList.remove('active'); mobileOverlay.classList.remove('active'); document.body.style.overflow=''; }
+            if (hamburger && mobileOverlay) {
+                hamburger.addEventListener('click', () => mobileOverlay.classList.contains('active') ? closeMenu() : openMenu());
+                mobileOverlay.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) closeMenu(); });
+            }
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            revealElements.forEach(el => observer.observe(el));
+        })();
+    </script>
 </body>
 </html>
